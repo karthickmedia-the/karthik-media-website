@@ -13,7 +13,7 @@ const HeroSection = () => {
             <span className="text-foreground font-extrabold">MARKETING</span>
             <span className="text-foreground"> AGENCY</span>
           </h1>
-          <p className="text-accent text-lg md:text-xl lg:text-2xl italic">
+          <p className="text-primary text-lg md:text-xl lg:text-2xl italic">
             THAT DRIVES YOUR BUSINESS WITH
           </p>
         </div>
@@ -30,11 +30,8 @@ const HeroSection = () => {
             </span>
           </div>
 
-          {/* Person Image with Yellow Circle - Centered, overlapping 10X */}
+          {/* Person Image - Centered, overlapping 10X */}
           <div className="relative flex justify-center items-end w-full">
-            {/* Large Yellow Oval Circle */}
-            <div className="absolute bottom-0 w-[600px] h-[600px] md:w-[800px] md:h-[800px] lg:w-[1000px] lg:h-[1000px] bg-primary rounded-full -mb-32 md:-mb-48 lg:-mb-64 z-10"></div>
-            
             {/* Person Image - Large and centered */}
             <img 
               src={heroPersonImage} 
@@ -44,7 +41,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* CTA Buttons - On the yellow circle */}
+        {/* CTA Buttons */}
         <div className="relative flex justify-center gap-4 md:gap-6 z-30 -mt-20 md:-mt-32 flex-wrap px-4">
           <Button 
             variant="hero-primary" 
@@ -69,7 +66,7 @@ const HeroSection = () => {
               <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-primary text-primary" />
             ))}
           </div>
-          <p className="text-accent text-xs md:text-sm italic mb-4">
+          <p className="text-primary text-xs md:text-sm italic mb-4">
             "I was shocked at how smoothly they managed our content, ads, and automation. our revenue grew 8X within only two months."
           </p>
           <div className="flex items-center gap-3">
@@ -81,27 +78,12 @@ const HeroSection = () => {
               />
             </div>
             <div>
-              <p className="text-accent font-bold text-xs md:text-sm">DR. R. KANMANI</p>
+              <p className="text-primary font-bold text-xs md:text-sm">DR. R. KANMANI</p>
               <p className="text-foreground text-[10px] md:text-xs uppercase">Correspondent</p>
               <p className="text-muted-foreground text-[10px] md:text-xs">Dolphin Group of Schools</p>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Curved Wave Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 md:h-32 bg-primary z-0">
-        <svg 
-          className="absolute top-0 left-0 w-full h-24 md:h-32" 
-          viewBox="0 0 1440 100" 
-          preserveAspectRatio="none"
-        >
-          <path 
-            d="M0,50 Q360,0 720,50 T1440,50 L1440,100 L0,100 Z" 
-            fill="currentColor"
-            className="text-background"
-          />
-        </svg>
       </div>
     </section>
   );
