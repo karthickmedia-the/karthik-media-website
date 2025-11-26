@@ -7,7 +7,7 @@ const HeroSection = () => {
     <section className="relative min-h-screen bg-background overflow-hidden pt-20">
       <div className="container mx-auto px-4 py-12 relative">
         {/* Top Headline */}
-        <div className="text-center mb-8 relative z-30">
+        <div className="text-center mb-2 relative z-30">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-2">
             <span className="text-foreground">THE ONLY DIGITAL </span>
             <span className="text-foreground font-extrabold">MARKETING</span>
@@ -21,7 +21,7 @@ const HeroSection = () => {
         {/* Main Content Area - 10X + Person Image Overlapped */}
         <div className="relative flex justify-center items-start min-h-[800px] md:min-h-[1000px]">
           {/* 10X Text - Positioned to overlap with person */}
-          <div className="absolute top-12 left-1/2 -translate-x-1/2 z-20">
+          <div className="absolute top-4 left-1/2 -translate-x-1/2 z-20">
             <h2 className="text-[10rem] md:text-[14rem] lg:text-[18rem] font-black leading-none text-primary">
               10X
             </h2>
@@ -31,7 +31,7 @@ const HeroSection = () => {
           </div>
 
           {/* Person Image - Centered top, 4x larger */}
-          <div className="relative flex justify-center items-start w-full pt-8">
+          <div className="relative flex justify-center items-start w-full pt-2">
             {/* Person Image - Much Larger */}
             <img 
               src={heroPersonImage} 
