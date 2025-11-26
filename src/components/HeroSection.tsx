@@ -4,7 +4,7 @@ import heroPersonImage from "@/assets/hero-person.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen bg-background overflow-hidden">
+    <section className="relative min-h-screen bg-background overflow-hidden pt-20">
       <div className="container mx-auto px-4 py-12 relative">
         {/* Top Headline */}
         <div className="text-center mb-8 relative z-30">
