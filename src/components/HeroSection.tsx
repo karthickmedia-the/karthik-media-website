@@ -26,8 +26,8 @@ const HeroSection = () => {
           </span>
         </div>
 
-        {/* Testimonial Card */}
-        <div className="absolute top-20 right-4 md:right-12 lg:right-24 bg-background/95 backdrop-blur-sm p-6 rounded-2xl max-w-sm border-2 border-primary/20">
+        {/* Testimonial Card - Bottom Right */}
+        <div className="absolute bottom-32 right-4 md:right-12 lg:right-24 bg-background/95 backdrop-blur-sm p-6 rounded-2xl max-w-sm border-2 border-primary/20 z-30">
           <div className="flex gap-1 mb-3">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="w-5 h-5 fill-primary text-primary" />
