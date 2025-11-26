@@ -54,19 +54,19 @@ const HeroSection = () => {
       </div>
 
       {/* Person with circular background - Centered Bottom */}
-      <div className="relative flex justify-center items-end mt-auto">
-        {/* Yellow circular background */}
-        <div className="absolute bottom-0 w-[800px] h-[800px] bg-primary rounded-full -mb-64"></div>
+      <div className="relative flex justify-center items-end mt-auto -mb-32">
+        {/* Yellow circular background - Moved down */}
+        <div className="absolute -bottom-96 w-[1200px] h-[1200px] bg-primary rounded-full"></div>
         
-        {/* Person image - Much Larger */}
+        {/* Person image - 4x Larger */}
         <img 
           src={heroPersonImage} 
           alt="Digital Marketing Expert" 
-          className="relative z-10 w-full max-w-3xl object-contain"
+          className="relative z-10 w-full max-w-[1400px] object-contain scale-150"
         />
         
         {/* CTA Buttons */}
-        <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col sm:flex-row gap-4 z-20 w-full max-w-2xl px-4">
+        <div className="absolute bottom-32 left-1/2 -translate-x-1/2 flex flex-col sm:flex-row gap-4 z-20 w-full max-w-2xl px-4">
           <Button 
             variant="hero-primary" 
             size="xl"
