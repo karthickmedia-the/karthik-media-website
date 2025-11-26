@@ -19,9 +19,9 @@ const HeroSection = () => {
         </div>
 
         {/* Main Content Area - 10X + Person Image Overlapped */}
-        <div className="relative flex justify-center items-center min-h-[600px] md:min-h-[700px]">
+        <div className="relative flex justify-center items-start min-h-[800px] md:min-h-[1000px]">
           {/* 10X Text - Positioned to overlap with person */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
+          <div className="absolute top-12 left-1/2 -translate-x-1/2 z-20">
             <h2 className="text-[10rem] md:text-[14rem] lg:text-[18rem] font-black leading-none text-primary">
               10X
             </h2>
@@ -30,13 +30,14 @@ const HeroSection = () => {
             </span>
           </div>
 
-          {/* Person Image - Centered, overlapping 10X */}
-          <div className="relative flex justify-center items-end w-full">
-            {/* Person Image - Large and centered */}
+          {/* Person Image - Centered top, 4x larger */}
+          <div className="relative flex justify-center items-start w-full pt-8">
+            {/* Person Image - Much Larger */}
             <img 
               src={heroPersonImage} 
               alt="Digital Marketing Expert" 
-              className="relative z-20 w-[400px] md:w-[600px] lg:w-[700px] object-contain mt-24"
+              className="relative z-20 w-[800px] md:w-[1200px] lg:w-[1600px] object-contain"
+              style={{ height: 'auto', minHeight: '800px' }}
             />
           </div>
         </div>
