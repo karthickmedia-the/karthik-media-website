@@ -5,7 +5,9 @@ const HeroSection = () => {
   return <section className="relative min-h-screen bg-background overflow-hidden pt-20">
       {/* Cinematic Background Layers */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-zinc-900 opacity-90" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(200,242,0,0.03),transparent_50%)] animate-pulse" style={{ animationDuration: '4s' }} />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(200,242,0,0.03),transparent_50%)] animate-pulse" style={{
+      animationDuration: '4s'
+    }} />
       <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(200,242,0,0.02)_50%,transparent_52%)] bg-[length:20px_20px] animate-[slide_20s_linear_infinite]" />
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
       <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent" />
@@ -38,11 +40,7 @@ const HeroSection = () => {
           {/* Person Image - Centered, overlapping 10X */}
           <div className="relative flex justify-center items-center w-full px-4 sm:px-0">
             {/* Person Image - Responsive Sizing */}
-            <img 
-              alt="Digital Marketing Expert" 
-              src="/lovable-uploads/018ff520-50b9-4ad3-8314-5e8b6390a523.png" 
-              className="relative z-30 w-full max-w-[400px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[800px] h-auto object-contain border-slate-50 border rounded-3xl opacity-100" 
-            />
+            <img alt="Digital Marketing Expert" src="/lovable-uploads/018ff520-50b9-4ad3-8314-5e8b6390a523.png" className="relative z-30 w-full max-w-[400px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[800px] h-auto object-contain border-slate-50 border rounded-3xl opacity-100" />
           </div>
         </div>
 
@@ -67,7 +65,7 @@ const HeroSection = () => {
         </div>
 
         {/* Testimonial Card - Bottom Right */}
-        <div className="absolute bottom-36 sm:bottom-24 md:bottom-32 right-2 sm:right-4 md:right-8 lg:right-16 bg-background/95 backdrop-blur-sm p-4 sm:p-5 md:p-6 rounded-2xl max-w-[280px] sm:max-w-xs md:max-w-sm border-2 border-primary/20 z-40">
+        <div className="absolute bottom-36 sm:bottom-24 md:bottom-32 right-2 sm:right-4 md:right-8 lg:right-16 bg-background/95 backdrop-blur-sm p-4 sm:p-5 md:p-6 rounded-2xl max-w-[120px] sm:max-w-xs md:max-w-sm border-primary/20 z-0 mx-[32px] px-[19px] border-0 pr-[10px] pb-[200px] pt-0 pl-[12px] ml-[123px] mr-[15px]">
           <div className="flex gap-1 mb-2 sm:mb-3">
             {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 fill-primary text-primary" />)}
           </div>
