@@ -23,7 +23,7 @@ const HeroSection = () => {
             <h2 className="text-[10rem] md:text-[14rem] lg:text-[18rem] font-black leading-none text-primary">
               10X
             </h2>
-            <span className="absolute bottom-8 right-0 text-2xl md:text-3xl lg:text-4xl italic text-foreground">
+            <span className="absolute -bottom-8 md:-bottom-12 right-0 text-2xl md:text-3xl lg:text-4xl italic text-foreground">
               GROWTH
             </span>
           </div>
