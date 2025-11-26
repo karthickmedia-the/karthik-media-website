@@ -31,10 +31,10 @@ const HeroSection = () => {
           {/* Person Image - Centered, overlapping 10X */}
           <div className="relative flex justify-center items-center w-full">
             {/* Person Image - Much Larger */}
-            <img alt="Digital Marketing Expert" className="relative z-30 w-[800px] md:w-[1200px] lg:w-[1600px] object-contain" style={{
+            <img alt="Digital Marketing Expert" style={{
             height: 'auto',
             minHeight: '800px'
-          }} src="/lovable-uploads/6e6d3707-0b3f-44c3-b552-50c2748432fa.png" />
+          }} src="/lovable-uploads/6e6d3707-0b3f-44c3-b552-50c2748432fa.png" className="relative z-30 w-[800px] md:w-[1200px] lg:w-[1600px] object-contain border-slate-50 border" />
           </div>
         </div>
 
