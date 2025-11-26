@@ -49,7 +49,7 @@ const HeroSection = () => {
         </div>
 
         {/* Founder Info - Left Side with Animated Arrow */}
-        <div className="absolute top-1/2 -translate-y-1/2 left-4 md:left-8 lg:left-16 flex items-center gap-3 z-40">
+        <div className="absolute bottom-1/4 left-4 md:left-8 lg:left-16 flex items-center gap-3 z-40">
           <ArrowRight className="w-8 h-8 md:w-10 md:h-10 text-primary animate-pulse" />
           <div className="bg-background/95 backdrop-blur-sm p-4 md:p-5 rounded-xl border-2 border-primary/20">
             <p className="text-foreground font-bold text-sm md:text-base">Karthik Shanmugam</p>
