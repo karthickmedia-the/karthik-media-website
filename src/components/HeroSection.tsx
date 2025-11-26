@@ -3,7 +3,14 @@ import { Star, ArrowRight } from "lucide-react";
 import heroPersonImage from "@/assets/hero-person.png";
 const HeroSection = () => {
   return <section className="relative min-h-screen bg-background overflow-hidden pt-20">
-      <div className="container mx-auto px-4 py-12 relative">
+      {/* Cinematic Background Layers */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-zinc-900 opacity-90" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(200,242,0,0.03),transparent_50%)] animate-pulse" style={{ animationDuration: '4s' }} />
+      <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(200,242,0,0.02)_50%,transparent_52%)] bg-[length:20px_20px] animate-[slide_20s_linear_infinite]" />
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+      <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent" />
+      
+      <div className="container mx-auto px-4 py-12 relative z-10">
         {/* Top Headline */}
         <div className="text-center mb-2 relative z-30">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-2">
