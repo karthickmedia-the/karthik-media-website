@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import heroPersonImage from "@/assets/hero-person.png";
-
 const HeroSection = () => {
-  return (
-    <section className="relative min-h-screen bg-background overflow-hidden pt-20">
+  return <section className="relative min-h-screen bg-background overflow-hidden pt-20">
       <div className="container mx-auto px-4 py-12 relative">
         {/* Top Headline */}
         <div className="text-center mb-2 relative z-30">
@@ -33,29 +31,19 @@ const HeroSection = () => {
           {/* Person Image - Centered, overlapping 10X */}
           <div className="relative flex justify-center items-center w-full">
             {/* Person Image - Much Larger */}
-            <img 
-              src={heroPersonImage} 
-              alt="Digital Marketing Expert" 
-              className="relative z-30 w-[800px] md:w-[1200px] lg:w-[1600px] object-contain"
-              style={{ height: 'auto', minHeight: '800px' }}
-            />
+            <img alt="Digital Marketing Expert" className="relative z-30 w-[800px] md:w-[1200px] lg:w-[1600px] object-contain" style={{
+            height: 'auto',
+            minHeight: '800px'
+          }} src="/lovable-uploads/6e6d3707-0b3f-44c3-b552-50c2748432fa.png" />
           </div>
         </div>
 
         {/* CTA Buttons */}
         <div className="relative flex justify-center gap-4 md:gap-6 z-30 -mt-20 md:-mt-32 flex-wrap px-4">
-          <Button 
-            variant="hero-primary" 
-            size="xl"
-            className="min-w-[250px] md:min-w-[300px]"
-          >
+          <Button variant="hero-primary" size="xl" className="min-w-[250px] md:min-w-[300px]">
             BOOK 1:1 CALL WITH ME
           </Button>
-          <Button 
-            variant="hero-secondary" 
-            size="xl"
-            className="min-w-[250px] md:min-w-[300px]"
-          >
+          <Button variant="hero-secondary" size="xl" className="min-w-[250px] md:min-w-[300px]">
             CHECK OUR WORKS
           </Button>
         </div>
@@ -63,20 +51,14 @@ const HeroSection = () => {
         {/* Testimonial Card - Bottom Right */}
         <div className="absolute bottom-24 md:bottom-32 right-4 md:right-8 lg:right-16 bg-background/95 backdrop-blur-sm p-5 md:p-6 rounded-2xl max-w-xs md:max-w-sm border-2 border-primary/20 z-40">
           <div className="flex gap-1 mb-3">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-primary text-primary" />
-            ))}
+            {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-primary text-primary" />)}
           </div>
           <p className="text-primary text-xs md:text-sm italic mb-4">
             "I was shocked at how smoothly they managed our content, ads, and automation. our revenue grew 8X within only two months."
           </p>
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary overflow-hidden flex-shrink-0">
-              <img 
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" 
-                alt="Dr. R. Kanmani"
-                className="w-full h-full object-cover"
-              />
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Dr. R. Kanmani" className="w-full h-full object-cover" />
             </div>
             <div>
               <p className="text-primary font-bold text-xs md:text-sm">DR. R. KANMANI</p>
@@ -86,8 +68,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
