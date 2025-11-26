@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Star } from "lucide-react";
+import { Star, ArrowRight } from "lucide-react";
 import heroPersonImage from "@/assets/hero-person.png";
 const HeroSection = () => {
   return <section className="relative min-h-screen bg-background overflow-hidden pt-20">
@@ -46,6 +46,16 @@ const HeroSection = () => {
           <Button variant="hero-secondary" size="xl" className="min-w-[250px] md:min-w-[300px]">
             CHECK OUR WORKS
           </Button>
+        </div>
+
+        {/* Founder Info - Left Side with Animated Arrow */}
+        <div className="absolute top-1/2 -translate-y-1/2 left-4 md:left-8 lg:left-16 flex items-center gap-3 z-40">
+          <ArrowRight className="w-8 h-8 md:w-10 md:h-10 text-primary animate-pulse" />
+          <div className="bg-background/95 backdrop-blur-sm p-4 md:p-5 rounded-xl border-2 border-primary/20">
+            <p className="text-foreground font-bold text-sm md:text-base">Karthik Shanmugam</p>
+            <p className="text-primary text-xs md:text-sm">Founder & CEO of</p>
+            <p className="text-primary text-xs md:text-sm font-semibold">THE KARTHIK MEDIA</p>
+          </div>
         </div>
 
         {/* Testimonial Card - Bottom Right */}
