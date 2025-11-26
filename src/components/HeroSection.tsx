@@ -56,17 +56,17 @@ const HeroSection = () => {
       {/* Person with circular background - Centered Bottom */}
       <div className="relative flex justify-center items-end mt-auto">
         {/* Yellow circular background */}
-        <div className="absolute bottom-0 w-[600px] h-[600px] bg-primary rounded-full -mb-48"></div>
+        <div className="absolute bottom-0 w-[800px] h-[800px] bg-primary rounded-full -mb-64"></div>
         
-        {/* Person image */}
+        {/* Person image - Much Larger */}
         <img 
           src={heroPersonImage} 
           alt="Digital Marketing Expert" 
-          className="relative z-10 w-full max-w-lg object-contain"
+          className="relative z-10 w-full max-w-3xl object-contain"
         />
         
         {/* CTA Buttons */}
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex flex-col sm:flex-row gap-4 z-20 w-full max-w-2xl px-4">
+        <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col sm:flex-row gap-4 z-20 w-full max-w-2xl px-4">
           <Button 
             variant="hero-primary" 
             size="xl"
