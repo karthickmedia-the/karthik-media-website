@@ -34,7 +34,7 @@ const HeroSection = () => {
             <img alt="Digital Marketing Expert" style={{
             height: 'auto',
             minHeight: '800px'
-          }} src="/lovable-uploads/018ff520-50b9-4ad3-8314-5e8b6390a523.png" className="relative z-30 w-[800px] md:w-[1200px] lg:w-[1600px] object-contain border-slate-50 border rounded-3xl opacity-100" />
+          }} src="/lovable-uploads/018ff520-50b9-4ad3-8314-5e8b6390a523.png" className="relative z-90 w-[600px] md:w-[800px] lg:w-[800px] object-contain border-slate-50 border rounded-3xl opacity-100" />
           </div>
         </div>
 
