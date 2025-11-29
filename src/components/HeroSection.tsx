@@ -40,7 +40,7 @@ const HeroSection = () => {
           {/* Person Image - Centered, overlapping 10X */}
           <div className="relative flex justify-center items-center w-full px-4 sm:px-0">
             {/* Person Image - Responsive Sizing */}
-            <img alt="Digital Marketing Expert" src="/lovable-uploads/018ff520-50b9-4ad3-8314-5e8b6390a523.png" className="relative z-30 w-full max-w-[400px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[800px] h-auto object-contain border-slate-50 border rounded-3xl opacity-100" />
+            <img alt="Digital Marketing Expert" src="/lovable-uploads/018ff520-50b9-4ad3-8314-5e8b6390a523.png" className="relative z-30 w-full max-w-[800px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[800px] h-auto object-contain border-slate-50 border rounded-3xl opacity-100" />
           </div>
         </div>
 
