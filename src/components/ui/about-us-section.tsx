@@ -88,7 +88,7 @@ export default function AboutUsSection() {
     icon: <Building2 className="w-6 h-6" />,
     secondaryIcon: <Star className="w-4 h-4 absolute -top-1 -right-1 text-primary" />,
     title: "Our Mission",
-    description: "Watch your dream space come to life through our flawless execution. Our skilled team handles every aspect of implementation with precision and care.",
+    description: "Our mission is to support businesses with clear guidance, simple strategies, and honest communication so they can grow confidently without confusion or complexity.",
     position: "right"
   }];
   const stats = [{
