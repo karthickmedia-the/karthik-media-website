@@ -64,7 +64,7 @@ export default function AboutUsSection() {
     icon: <Home className="w-6 h-6" />,
     secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-primary" />,
     title: "What We Stand For",
-    description: "Our Google Ads Services ensure your business appears exactly when customers are searching for what you offer. With precision targeting, smart bidding, much more.",
+    description: "We believe in creativity backed by strategy. Every idea, campaign, and decision is driven by data, insight, and a commitment to real business impact.",
     position: "left"
   }, {
     icon: <PenTool className="w-6 h-6" />,
