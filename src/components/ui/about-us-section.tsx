@@ -296,15 +296,15 @@ export default function AboutUsSection() {
         delay: 0.5
       }}>
           <div className="flex-1">
-            <h3 className="text-2xl font-bold mb-2 text-foreground">Ready to transform your space?</h3>
-            <p className="text-muted-foreground">Let's create something beautiful together.</p>
+            <h3 className="text-2xl font-bold mb-2 text-foreground">Ready to transform your Business?</h3>
+            <p className="text-muted-foreground">Get Connected with our founder with 1:1 for discussing your business growth roadmap!             </p>
           </div>
           <motion.button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg flex items-center gap-2 font-bold transition-colors" whileHover={{
           scale: 1.05
         }} whileTap={{
           scale: 0.95
         }}>
-            Get Started <ArrowRight className="w-4 h-4" />
+            Book 1:1 Call   <ArrowRight className="w-4 h-4" />
           </motion.button>
         </motion.div>
       </motion.div>
