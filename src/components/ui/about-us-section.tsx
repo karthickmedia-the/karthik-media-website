@@ -82,7 +82,7 @@ export default function AboutUsSection() {
     icon: <Ruler className="w-6 h-6" />,
     secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-primary" />,
     title: "The Brands We Help",
-    description: "Our meticulous planning process ensures every project runs smoothly from concept to completion, with careful attention to timelines, budgets, and requirements.",
+    description: "We work closely with startups and small businesses, helping them strengthen their online presence, connect with more people, and grow at a comfortable, steady pace.",
     position: "right"
   }, {
     icon: <Building2 className="w-6 h-6" />,
