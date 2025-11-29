@@ -57,7 +57,7 @@ export default function AboutUsSection() {
   const services = [{
     icon: <Pen className="w-6 h-6" />,
     secondaryIcon: <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-primary" />,
-    title: "Meta Ads Services",
+    title: "Our Story",
     description: "Our Meta Ads Services help you reach the right audience at the right moment with data-driven targeting and high-impact creatives.",
     position: "left"
   }, {
