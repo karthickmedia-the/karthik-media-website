@@ -57,7 +57,7 @@ export default function AboutUsSection() {
   const services = [{
     icon: <Pen className="w-6 h-6" />,
     secondaryIcon: <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-primary" />,
-    title: "SMM",
+    title: "Meta Ads Services",
     description: "Transform your living spaces with our expert interior design services. We blend functionality and aesthetics to create spaces that reflect your unique style and personality.",
     position: "left"
   }, {
