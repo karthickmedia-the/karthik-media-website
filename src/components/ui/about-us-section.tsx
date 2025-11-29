@@ -75,7 +75,7 @@ export default function AboutUsSection() {
   }, {
     icon: <PaintBucket className="w-6 h-6" />,
     secondaryIcon: <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-primary" />,
-    title: "Decoration",
+    title: "Our Core Approach",
     description: "Elevate your space with our curated decoration services. From color schemes to textiles and accessories, we perfect every detail to bring your vision to life.",
     position: "right"
   }, {
