@@ -76,7 +76,7 @@ export default function AboutUsSection() {
     icon: <PaintBucket className="w-6 h-6" />,
     secondaryIcon: <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-primary" />,
     title: "Our Core Approach",
-    description: "Elevate your space with our curated decoration services. From color schemes to textiles and accessories, we perfect every detail to bring your vision to life.",
+    description: "As a Digital Marketing Agency, we follow a simple approach—clear strategy, creative ideas, and consistent execution to help brands grow with effective digital marketing.",
     position: "right"
   }, {
     icon: <Ruler className="w-6 h-6" />,
