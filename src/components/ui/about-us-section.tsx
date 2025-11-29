@@ -63,7 +63,7 @@ export default function AboutUsSection() {
   }, {
     icon: <Home className="w-6 h-6" />,
     secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-primary" />,
-    title: "Exterior",
+    title: "Google Ads Services",
     description: "Make a lasting impression with stunning exterior designs that enhance curb appeal and create harmonious connections between architecture and landscape.",
     position: "left"
   }, {
