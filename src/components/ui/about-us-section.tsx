@@ -64,7 +64,7 @@ export default function AboutUsSection() {
     icon: <Home className="w-6 h-6" />,
     secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-primary" />,
     title: "Google Ads Services",
-    description: "Our Google Ads Services ensure your business appears exactly when customers are searching for what you offer. With precision targeting, smart bidding, and continuous optimisation, we drive high-quality traffic that converts into predictable sales and leads.",
+    description: "Our Google Ads Services ensure your business appears exactly when customers are searching for what you offer. With precision targeting, smart bidding, much more.",
     position: "left"
   }, {
     icon: <PenTool className="w-6 h-6" />,
