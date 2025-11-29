@@ -166,61 +166,9 @@ export default function AboutUsSection() {
         }}></motion.div>
         </motion.div>
 
-        <motion.div className="max-w-4xl mx-auto mb-16 grid grid-cols-1 md:grid-cols-2 gap-6" variants={containerVariants}>
-          <motion.div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg p-6" variants={itemVariants}>
-            <h3 className="text-lg font-bold text-primary mb-2 flex items-center gap-2">
-              <span className="text-2xl">1️⃣</span> Our Story
-            </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              We began as a small creative studio and grew into a trusted digital marketing agency with 12+ years of expertise, helping brands evolve with clarity and purpose.
-            </p>
-          </motion.div>
-
-          <motion.div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg p-6" variants={itemVariants}>
-            <h3 className="text-lg font-bold text-primary mb-2 flex items-center gap-2">
-              <span className="text-2xl">2️⃣</span> What We Stand For
-            </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              We believe in creativity backed by strategy. Every idea, campaign, and decision is driven by data, insight, and a commitment to real business impact.
-            </p>
-          </motion.div>
-
-          <motion.div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg p-6" variants={itemVariants}>
-            <h3 className="text-lg font-bold text-primary mb-2 flex items-center gap-2">
-              <span className="text-2xl">3️⃣</span> Our Experience
-            </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              With 12+ years in the digital space, we've worked with diverse industries, adapting to trends, technologies, and behaviors to deliver consistent growth.
-            </p>
-          </motion.div>
-
-          <motion.div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg p-6" variants={itemVariants}>
-            <h3 className="text-lg font-bold text-primary mb-2 flex items-center gap-2">
-              <span className="text-2xl">4️⃣</span> Our Core Approach
-            </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              We blend creative thinking with performance-focused strategies, ensuring every brand we partner with gets a clear, measurable path to long-term success.
-            </p>
-          </motion.div>
-
-          <motion.div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg p-6" variants={itemVariants}>
-            <h3 className="text-lg font-bold text-primary mb-2 flex items-center gap-2">
-              <span className="text-2xl">5️⃣</span> The Brands We Help
-            </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              We've supported hundreds of SMBs and emerging brands, guiding them through digital transformation with scalable solutions and dependable execution.
-            </p>
-          </motion.div>
-
-          <motion.div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg p-6" variants={itemVariants}>
-            <h3 className="text-lg font-bold text-primary mb-2 flex items-center gap-2">
-              <span className="text-2xl">6️⃣</span> Our Mission
-            </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Our mission is to help businesses grow with clarity, creativity, and systems. We exist to simplify digital marketing and make growth accessible to everyone.
-            </p>
-          </motion.div>
-        </motion.div>
+        <motion.p className="text-center max-w-2xl mx-auto mb-16 text-muted-foreground" variants={itemVariants}>
+          At The Karthik Media, we are a 12+ year-old Digital Marketing Agency built on creativity, strategy, and performance. What started as a small creative studio has grown into a full-scale Digital Marketing and Content Creation Company trusted by brands across industries.
+        </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
           {/* Left Column */}
