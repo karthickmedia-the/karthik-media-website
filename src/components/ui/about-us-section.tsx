@@ -187,9 +187,7 @@ export default function AboutUsSection() {
         </motion.div>
 
         <motion.p className="text-center max-w-2xl mx-auto mb-16 text-muted-foreground" variants={itemVariants}>
-          We are a passionate team of designers and architects dedicated to creating beautiful, functional spaces that
-          inspire and elevate everyday living. With attention to detail and commitment to excellence, we transform
-          visions into reality.
+          At The Karthik Media, we are a 12+ year-old Digital Marketing Agency built on creativity, strategy, and performance. What started as a small creative studio has grown into a full-scale Digital Marketing and Content Creation Company trusted by brands across industries.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
