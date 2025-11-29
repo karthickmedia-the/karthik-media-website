@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
+import AboutUsSection from "@/components/ui/about-us-section";
 import TeamShowcase from "@/components/TeamShowcase";
 import ScrollShowcase from "@/components/ScrollShowcase";
 import Services from "@/components/Services";
@@ -11,6 +12,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
       <HeroSection />
+      <AboutUsSection />
       <TeamShowcase />
       <ScrollShowcase />
       <Services />
