@@ -58,7 +58,7 @@ export default function AboutUsSection() {
     icon: <Pen className="w-6 h-6" />,
     secondaryIcon: <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-primary" />,
     title: "Our Story",
-    description: "Our Meta Ads Services help you reach the right audience at the right moment with data-driven targeting and high-impact creatives.",
+    description: "We began as a small creative studio and grew into a trusted digital marketing agency with 12+ years of expertise, helping brands evolve with clarity and purpose.",
     position: "left"
   }, {
     icon: <Home className="w-6 h-6" />,
