@@ -69,7 +69,7 @@ export default function AboutUsSection() {
   }, {
     icon: <PenTool className="w-6 h-6" />,
     secondaryIcon: <Star className="w-4 h-4 absolute -top-1 -right-1 text-primary" />,
-    title: "Design",
+    title: "Our Experience",
     description: "Our innovative design process combines creativity with practicality, resulting in spaces that are both beautiful and functional for everyday living.",
     position: "left"
   }, {
