@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Star, ArrowRight } from "lucide-react";
 import heroPersonImage from "@/assets/hero-person.png";
 const HeroSection = () => {
-  return <section className="relative h-screen bg-background overflow-hidden pt-16">
+  return <section className="relative min-h-screen pb-12 bg-background overflow-hidden pt-16">
       {/* Cinematic Background Layers */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-zinc-900 opacity-90" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(200,242,0,0.03),transparent_50%)] animate-pulse" style={{
@@ -12,7 +12,7 @@ const HeroSection = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
       <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent" />
       
-      <div className="container mx-auto px-4 py-4 relative z-10">
+      <div className="container mx-auto px-4 py-6 relative z-10">
         {/* Top Headline */}
         <div className="text-center mb-2 md:mb-1 relative z-30 px-2">
           <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-1">
@@ -26,7 +26,7 @@ const HeroSection = () => {
         </div>
 
         {/* Main Content Area - 10X + Person Image Overlapped */}
-        <div className="relative flex justify-center items-center min-h-[350px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[550px]">
+        <div className="relative flex justify-center items-center min-h-[400px] sm:min-h-[450px] md:min-h-[550px] lg:min-h-[600px]">
           {/* 10X Text - Positioned to overlap with person */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
             <h2 className="text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-black leading-none text-primary">
