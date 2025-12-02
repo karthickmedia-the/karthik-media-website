@@ -41,7 +41,9 @@ const HeroSection = () => {
             <circle cx="100" cy="100" r="40" fill="none" stroke="rgba(200,242,0,0.3)" strokeWidth="1" />
             <circle cx="100" cy="100" r="20" fill="none" stroke="rgba(200,242,0,0.5)" strokeWidth="1" />
             {/* Scanning Line */}
-            <line x1="100" y1="100" x2="100" y2="20" stroke="url(#radarGradient)" strokeWidth="2" className="origin-center animate-[radar_4s_linear_infinite]" style={{ transformOrigin: '100px 100px' }} />
+            <line x1="100" y1="100" x2="100" y2="20" stroke="url(#radarGradient)" strokeWidth="2" className="origin-center animate-[radar_4s_linear_infinite]" style={{
+            transformOrigin: '100px 100px'
+          }} />
             {/* Crosshair */}
             <line x1="100" y1="0" x2="100" y2="200" stroke="rgba(200,242,0,0.2)" strokeWidth="1" strokeDasharray="2,2" />
             <line x1="0" y1="100" x2="200" y2="100" stroke="rgba(200,242,0,0.2)" strokeWidth="1" strokeDasharray="2,2" />
@@ -50,14 +52,26 @@ const HeroSection = () => {
 
         {/* Data Stream Particles - Left Side */}
         <div className="absolute left-[15%] top-0 bottom-0 w-1 flex flex-col justify-around">
-          <div className="w-1 h-20 bg-gradient-to-b from-transparent via-primary to-transparent animate-[dataStream_3s_linear_infinite]" style={{ animationDelay: '0s' }} />
-          <div className="w-1 h-16 bg-gradient-to-b from-transparent via-primary to-transparent animate-[dataStream_3s_linear_infinite]" style={{ animationDelay: '1s' }} />
-          <div className="w-1 h-12 bg-gradient-to-b from-transparent via-primary to-transparent animate-[dataStream_3s_linear_infinite]" style={{ animationDelay: '2s' }} />
+          <div className="w-1 h-20 bg-gradient-to-b from-transparent via-primary to-transparent animate-[dataStream_3s_linear_infinite]" style={{
+          animationDelay: '0s'
+        }} />
+          <div className="w-1 h-16 bg-gradient-to-b from-transparent via-primary to-transparent animate-[dataStream_3s_linear_infinite]" style={{
+          animationDelay: '1s'
+        }} />
+          <div className="w-1 h-12 bg-gradient-to-b from-transparent via-primary to-transparent animate-[dataStream_3s_linear_infinite]" style={{
+          animationDelay: '2s'
+        }} />
         </div>
         <div className="absolute right-[15%] top-0 bottom-0 w-1 flex flex-col justify-around">
-          <div className="w-1 h-16 bg-gradient-to-b from-transparent via-primary to-transparent animate-[dataStream_3s_linear_infinite]" style={{ animationDelay: '0.5s' }} />
-          <div className="w-1 h-20 bg-gradient-to-b from-transparent via-primary to-transparent animate-[dataStream_3s_linear_infinite]" style={{ animationDelay: '1.5s' }} />
-          <div className="w-1 h-14 bg-gradient-to-b from-transparent via-primary to-transparent animate-[dataStream_3s_linear_infinite]" style={{ animationDelay: '2.5s' }} />
+          <div className="w-1 h-16 bg-gradient-to-b from-transparent via-primary to-transparent animate-[dataStream_3s_linear_infinite]" style={{
+          animationDelay: '0.5s'
+        }} />
+          <div className="w-1 h-20 bg-gradient-to-b from-transparent via-primary to-transparent animate-[dataStream_3s_linear_infinite]" style={{
+          animationDelay: '1.5s'
+        }} />
+          <div className="w-1 h-14 bg-gradient-to-b from-transparent via-primary to-transparent animate-[dataStream_3s_linear_infinite]" style={{
+          animationDelay: '2.5s'
+        }} />
         </div>
 
         {/* Circular Progress Indicators - Top Right */}
@@ -66,7 +80,9 @@ const HeroSection = () => {
             <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(200,242,0,0.2)" strokeWidth="1" />
             <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(200,242,0,0.8)" strokeWidth="2" strokeDasharray="314" strokeDashoffset="78" className="animate-[progressCircle_2s_ease-in-out_infinite]" strokeLinecap="round" transform="rotate(-90 60 60)" />
             <circle cx="60" cy="60" r="38" fill="none" stroke="rgba(200,242,0,0.3)" strokeWidth="1" />
-            <circle cx="60" cy="60" r="38" fill="none" stroke="rgba(200,242,0,0.6)" strokeWidth="2" strokeDasharray="238" strokeDashoffset="119" className="animate-[progressCircle_2s_ease-in-out_infinite]" strokeLinecap="round" transform="rotate(-90 60 60)" style={{ animationDelay: '0.5s' }} />
+            <circle cx="60" cy="60" r="38" fill="none" stroke="rgba(200,242,0,0.6)" strokeWidth="2" strokeDasharray="238" strokeDashoffset="119" className="animate-[progressCircle_2s_ease-in-out_infinite]" strokeLinecap="round" transform="rotate(-90 60 60)" style={{
+            animationDelay: '0.5s'
+          }} />
           </svg>
         </div>
 
@@ -76,78 +92,41 @@ const HeroSection = () => {
             {/* Grid */}
             <defs>
               <pattern id="chartGrid" width="30" height="30" patternUnits="userSpaceOnUse">
-                <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(200,242,0,0.15)" strokeWidth="0.5"/>
+                <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(200,242,0,0.15)" strokeWidth="0.5" />
               </pattern>
             </defs>
             <rect width="600" height="200" fill="url(#chartGrid)" />
             
             {/* Animated Chart Lines */}
-            <polyline 
-              points="0,180 100,150 200,120 300,90 400,70 500,50 600,30"
-              fill="none"
-              stroke="rgba(200,242,0,0.7)"
-              strokeWidth="2"
-              strokeDasharray="1000"
-              className="animate-[drawLine_4s_ease-out_infinite]"
-            />
-            <polyline 
-              points="0,190 100,170 200,145 300,115 400,95 500,80 600,65"
-              fill="none"
-              stroke="rgba(200,242,0,0.5)"
-              strokeWidth="2"
-              strokeDasharray="1000"
-              className="animate-[drawLine_4s_ease-out_infinite]"
-              style={{ animationDelay: '0.5s' }}
-            />
+            <polyline points="0,180 100,150 200,120 300,90 400,70 500,50 600,30" fill="none" stroke="rgba(200,242,0,0.7)" strokeWidth="2" strokeDasharray="1000" className="animate-[drawLine_4s_ease-out_infinite]" />
+            <polyline points="0,190 100,170 200,145 300,115 400,95 500,80 600,65" fill="none" stroke="rgba(200,242,0,0.5)" strokeWidth="2" strokeDasharray="1000" className="animate-[drawLine_4s_ease-out_infinite]" style={{
+            animationDelay: '0.5s'
+          }} />
             
             {/* Data Points */}
-            {[0, 100, 200, 300, 400, 500, 600].map((x, i) => (
-              <circle 
-                key={i}
-                cx={x} 
-                cy={180 - i * 25} 
-                r="3" 
-                fill="rgba(200,242,0,1)"
-                className="animate-[pulse_2s_ease-in-out_infinite]"
-                style={{ animationDelay: `${i * 0.2}s` }}
-              />
-            ))}
+            {[0, 100, 200, 300, 400, 500, 600].map((x, i) => <circle key={i} cx={x} cy={180 - i * 25} r="3" fill="rgba(200,242,0,1)" className="animate-[pulse_2s_ease-in-out_infinite]" style={{
+            animationDelay: `${i * 0.2}s`
+          }} />)}
           </svg>
         </div>
 
         {/* Hexagonal Grid Pattern - Top Left */}
         <div className="absolute top-[15%] left-[8%] w-32 h-32 md:w-40 md:h-40 animate-[pulse_3s_ease-in-out_infinite]">
           <svg viewBox="0 0 100 100" className="w-full h-full">
-            {[0, 1, 2].map((row) => 
-              [0, 1, 2].map((col) => (
-                <polygon
-                  key={`${row}-${col}`}
-                  points="30,15 45,7.5 60,15 60,30 45,37.5 30,30"
-                  transform={`translate(${col * 20}, ${row * 26})`}
-                  fill="none"
-                  stroke="rgba(200,242,0,0.4)"
-                  strokeWidth="1"
-                  className="animate-[hexPulse_2s_ease-in-out_infinite]"
-                  style={{ animationDelay: `${(row + col) * 0.2}s` }}
-                />
-              ))
-            )}
+            {[0, 1, 2].map(row => [0, 1, 2].map(col => <polygon key={`${row}-${col}`} points="30,15 45,7.5 60,15 60,30 45,37.5 30,30" transform={`translate(${col * 20}, ${row * 26})`} fill="none" stroke="rgba(200,242,0,0.4)" strokeWidth="1" className="animate-[hexPulse_2s_ease-in-out_infinite]" style={{
+            animationDelay: `${(row + col) * 0.2}s`
+          }} />))}
           </svg>
         </div>
 
         {/* Vertical Progress Bars - Right Side */}
         <div className="absolute right-[5%] top-[30%] flex gap-2">
-          {[60, 75, 90, 70, 85].map((height, i) => (
-            <div key={i} className="w-1 h-24 bg-primary/10 relative overflow-hidden">
-              <div 
-                className="absolute bottom-0 w-full bg-primary animate-[fillBar_3s_ease-out_infinite]"
-                style={{ 
-                  animationDelay: `${i * 0.3}s`,
-                  height: `${height}%`
-                }}
-              />
-            </div>
-          ))}
+          {[60, 75, 90, 70, 85].map((height, i) => <div key={i} className="w-1 h-24 bg-primary/10 relative overflow-hidden">
+              <div className="absolute bottom-0 w-full bg-primary animate-[fillBar_3s_ease-out_infinite]" style={{
+            animationDelay: `${i * 0.3}s`,
+            height: `${height}%`
+          }} />
+            </div>)}
         </div>
       </div>
       
@@ -165,7 +144,7 @@ const HeroSection = () => {
             <span className="text-foreground"> AGENCY</span>
           </h1>
           <p className="text-primary text-sm sm:text-base md:text-lg lg:text-xl italic">
-            THAT DRIVES YOUR BUSINESS WITH
+            THAT DRIVES YOUR BUSINESS FOR
           </p>
         </div>
 
@@ -201,7 +180,9 @@ const HeroSection = () => {
         {/* Founder Info - Left Side with Animated Arrow */}
         <div className="absolute bottom-[28%] sm:bottom-[25%] left-2 sm:left-4 md:left-8 lg:left-12 flex items-center gap-1 sm:gap-2 z-40">
           {/* Connecting line to image */}
-          <svg className="absolute left-full top-1/2 -translate-y-1/2 w-16 sm:w-24 md:w-32 h-1 pointer-events-none z-0" style={{ left: 'calc(100% - 0.5rem)' }}>
+          <svg className="absolute left-full top-1/2 -translate-y-1/2 w-16 sm:w-24 md:w-32 h-1 pointer-events-none z-0" style={{
+          left: 'calc(100% - 0.5rem)'
+        }}>
             <line x1="0" y1="50%" x2="100%" y2="50%" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="4 4" opacity="0.6">
               <animate attributeName="stroke-dashoffset" from="8" to="0" dur="1s" repeatCount="indefinite" />
             </line>
@@ -217,7 +198,9 @@ const HeroSection = () => {
         {/* Testimonial Card - Bottom Right */}
         <div className="absolute bottom-[20%] sm:bottom-[18%] right-2 sm:right-4 md:right-8 lg:right-12 bg-background/95 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-xl max-w-[110px] sm:max-w-[140px] md:max-w-[180px] border border-primary/20 z-40">
           {/* Connecting line to image */}
-          <svg className="absolute right-full top-1/2 -translate-y-1/2 w-16 sm:w-24 md:w-32 h-1 pointer-events-none z-0" style={{ right: 'calc(100% - 0.5rem)' }}>
+          <svg className="absolute right-full top-1/2 -translate-y-1/2 w-16 sm:w-24 md:w-32 h-1 pointer-events-none z-0" style={{
+          right: 'calc(100% - 0.5rem)'
+        }}>
             <line x1="0" y1="50%" x2="100%" y2="50%" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="4 4" opacity="0.6">
               <animate attributeName="stroke-dashoffset" from="0" to="8" dur="1s" repeatCount="indefinite" />
             </line>
