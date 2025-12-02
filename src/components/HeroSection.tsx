@@ -63,9 +63,15 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="relative flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-3 md:gap-4 z-30 -mt-6 sm:-mt-8 md:-mt-12 lg:-mt-16 px-4">
-          <Button variant="hero-primary" size="lg" className="w-full sm:w-auto min-w-[200px] md:min-w-[240px] text-sm md:text-base">
-            BOOK 1:1 CALL WITH ME
-          </Button>
+          {/* Animated Border Wrapper for Primary CTA */}
+          <div className="relative w-full sm:w-auto">
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-white via-white/40 to-white opacity-75 blur-sm animate-[revolve_3s_linear_infinite]" style={{
+              clipPath: 'inset(0 round 0.75rem)'
+            }} />
+            <Button variant="hero-primary" size="lg" className="relative w-full sm:w-auto min-w-[200px] md:min-w-[240px] text-sm md:text-base">
+              BOOK 1:1 CALL WITH ME
+            </Button>
+          </div>
           <Button variant="hero-secondary" size="lg" className="w-full sm:w-auto min-w-[200px] md:min-w-[240px] text-sm md:text-base">
             CHECK OUR WORKS
           </Button>
