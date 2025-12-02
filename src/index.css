@@ -206,3 +206,57 @@ All colors MUST be HSL.
     height: 100%;
   }
 }
+
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+}
+
+@keyframes glitchTop {
+  0%, 100% {
+    transform: translate(0);
+    text-shadow: -2px 0 #ff00de, 2px 0 #00ffff;
+  }
+  10% {
+    transform: translate(-5px, -2px);
+    text-shadow: -3px 0 #ff00de, 3px 0 #00ffff;
+  }
+  20% {
+    transform: translate(3px, 2px);
+    text-shadow: 3px 0 #ff00de, -3px 0 #00ffff;
+  }
+  30%, 50% {
+    transform: translate(0);
+  }
+}
+
+@keyframes glitchBottom {
+  0%, 100% {
+    transform: translate(0);
+    text-shadow: 2px 0 #00ff9d, -2px 0 #ff0000;
+  }
+  25% {
+    transform: translate(5px, 3px);
+    text-shadow: 3px 0 #00ff9d, -3px 0 #ff0000;
+  }
+  50% {
+    transform: translate(-3px, -2px);
+    text-shadow: -3px 0 #00ff9d, 3px 0 #ff0000;
+  }
+  75% {
+    transform: translate(0);
+  }
+}
