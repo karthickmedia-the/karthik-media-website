@@ -173,7 +173,7 @@ const HeroSection = () => {
         <div className="relative flex justify-center items-center min-h-[400px] sm:min-h-[450px] md:min-h-[550px] lg:min-h-[600px] mt-8 md:mt-12 lg:mt-16">
           {/* 10X Text - Positioned to overlap with person */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
-            <h2 className="relative text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-black leading-none text-primary animate-[thunderGlitch_0.8s_ease-in-out_infinite] before:content-['10X'] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:text-white before:mix-blend-screen before:animate-[thunderFlashTop_0.6s_steps(1)_infinite] before:opacity-0 after:content-['10X'] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:text-white after:mix-blend-screen after:animate-[thunderFlashBottom_0.7s_steps(1)_infinite] after:opacity-0">
+            <h2 className="relative text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-black leading-none text-primary animate-[quickShake_4s_ease-in-out_infinite] before:content-['10X'] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:text-black before:animate-[blackGlitchLeft_3s_steps(2)_infinite] before:opacity-0 after:content-['10X'] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:text-black after:animate-[blackGlitchRight_3.5s_steps(2)_infinite] after:opacity-0">
               10X
             </h2>
             <span className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 right-0 text-base sm:text-lg md:text-xl lg:text-2xl italic text-foreground">
