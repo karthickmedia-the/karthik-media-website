@@ -143,7 +143,7 @@ const HeroSection = () => {
             <span className="text-foreground font-extrabold">MARKETING</span>
             <span className="text-foreground"> AGENCY</span>
           </h1>
-          <p className="text-primary text-sm sm:text-base md:text-lg lg:text-xl italic">
+          <p className="text-primary text-sm sm:text-base md:text-lg lg:text-xl italic font-extrabold">
             THAT DRIVES YOUR BUSINESS FOR
           </p>
         </div>
