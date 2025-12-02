@@ -24,14 +24,83 @@ const HeroSection = () => {
       <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-[float_10s_ease-in-out_infinite]" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl animate-[float_15s_ease-in-out_infinite_reverse]" />
       
-      {/* Animated Growth Chart Bars */}
-      <div className="absolute bottom-0 left-0 right-0 h-full flex items-end justify-center gap-8 md:gap-12 lg:gap-16 opacity-10 pointer-events-none px-8">
-        <div className="h-[20%] w-4 md:w-6 bg-primary/60 animate-[growBar_3s_ease-out_infinite]" style={{ animationDelay: '0s' }} />
-        <div className="h-[35%] w-4 md:w-6 bg-primary/60 animate-[growBar_3s_ease-out_infinite]" style={{ animationDelay: '0.3s' }} />
-        <div className="h-[50%] w-4 md:w-6 bg-primary/60 animate-[growBar_3s_ease-out_infinite]" style={{ animationDelay: '0.6s' }} />
-        <div className="h-[65%] w-4 md:w-6 bg-primary/70 animate-[growBar_3s_ease-out_infinite]" style={{ animationDelay: '0.9s' }} />
-        <div className="h-[80%] w-4 md:w-6 bg-primary/80 animate-[growBar_3s_ease-out_infinite]" style={{ animationDelay: '1.2s' }} />
-        <div className="h-[95%] w-4 md:w-6 bg-primary animate-[growBar_3s_ease-out_infinite] shadow-[0_0_20px_rgba(200,242,0,0.5)]" style={{ animationDelay: '1.5s' }} />
+      {/* Futuristic HUD Growth Chart */}
+      <div className="absolute bottom-[10%] left-[5%] right-[5%] h-[40%] opacity-15 pointer-events-none">
+        {/* HUD Grid Background */}
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 800 300">
+          {/* Grid Lines */}
+          <defs>
+            <pattern id="hudGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(200,242,0,0.2)" strokeWidth="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="800" height="300" fill="url(#hudGrid)" />
+          
+          {/* Horizontal Reference Lines */}
+          <line x1="0" y1="225" x2="800" y2="225" stroke="rgba(200,242,0,0.3)" strokeWidth="1" strokeDasharray="5,5">
+            <animate attributeName="stroke-dashoffset" from="0" to="10" dur="1s" repeatCount="indefinite" />
+          </line>
+          <line x1="0" y1="150" x2="800" y2="150" stroke="rgba(200,242,0,0.3)" strokeWidth="1" strokeDasharray="5,5">
+            <animate attributeName="stroke-dashoffset" from="0" to="10" dur="1s" repeatCount="indefinite" />
+          </line>
+          <line x1="0" y1="75" x2="800" y2="75" stroke="rgba(200,242,0,0.3)" strokeWidth="1" strokeDasharray="5,5">
+            <animate attributeName="stroke-dashoffset" from="0" to="10" dur="1s" repeatCount="indefinite" />
+          </line>
+          
+          {/* Animated Growth Line */}
+          <polyline 
+            points="50,250 150,220 250,180 350,140 450,100 550,70 650,40 750,20"
+            fill="none"
+            stroke="rgba(200,242,0,0.8)"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeDasharray="1000"
+            strokeDashoffset="1000"
+          >
+            <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="3s" fill="freeze" />
+          </polyline>
+          
+          {/* Glowing Data Points */}
+          <circle cx="50" cy="250" r="4" fill="rgba(200,242,0,1)" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="0s" dur="0.3s" fill="freeze" />
+            <animate attributeName="r" from="4" to="6" begin="0s" dur="0.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="150" cy="220" r="4" fill="rgba(200,242,0,1)" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="0.4s" dur="0.3s" fill="freeze" />
+            <animate attributeName="r" from="4" to="6" begin="0.4s" dur="0.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="250" cy="180" r="4" fill="rgba(200,242,0,1)" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="0.8s" dur="0.3s" fill="freeze" />
+            <animate attributeName="r" from="4" to="6" begin="0.8s" dur="0.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="350" cy="140" r="4" fill="rgba(200,242,0,1)" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="1.2s" dur="0.3s" fill="freeze" />
+            <animate attributeName="r" from="4" to="6" begin="1.2s" dur="0.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="450" cy="100" r="4" fill="rgba(200,242,0,1)" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="1.6s" dur="0.3s" fill="freeze" />
+            <animate attributeName="r" from="4" to="6" begin="1.6s" dur="0.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="550" cy="70" r="4" fill="rgba(200,242,0,1)" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="2s" dur="0.3s" fill="freeze" />
+            <animate attributeName="r" from="4" to="6" begin="2s" dur="0.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="650" cy="40" r="4" fill="rgba(200,242,0,1)" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="2.4s" dur="0.3s" fill="freeze" />
+            <animate attributeName="r" from="4" to="6" begin="2.4s" dur="0.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="750" cy="20" r="5" fill="rgba(200,242,0,1)" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="2.8s" dur="0.3s" fill="freeze" />
+            <animate attributeName="r" from="5" to="8" begin="2.8s" dur="0.5s" repeatCount="indefinite" />
+          </circle>
+          
+          {/* HUD Corner Brackets */}
+          <path d="M 0,0 L 30,0 M 0,0 L 0,30" stroke="rgba(200,242,0,0.6)" strokeWidth="2" fill="none" />
+          <path d="M 800,0 L 770,0 M 800,0 L 800,30" stroke="rgba(200,242,0,0.6)" strokeWidth="2" fill="none" />
+          <path d="M 0,300 L 30,300 M 0,300 L 0,270" stroke="rgba(200,242,0,0.6)" strokeWidth="2" fill="none" />
+          <path d="M 800,300 L 770,300 M 800,300 L 800,270" stroke="rgba(200,242,0,0.6)" strokeWidth="2" fill="none" />
+        </svg>
       </div>
       
       {/* Vignette Effects */}
