@@ -3,14 +3,31 @@ import { Star, ArrowRight } from "lucide-react";
 import heroPersonImage from "@/assets/hero-person.png";
 const HeroSection = () => {
   return <section className="relative min-h-screen pb-12 bg-background overflow-hidden pt-16">
-      {/* Cinematic Background Layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-zinc-900 opacity-90" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(200,242,0,0.03),transparent_50%)] animate-pulse" style={{
-      animationDuration: '4s'
+      {/* Futuristic Background Layers */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-zinc-900" />
+      
+      {/* Animated Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(200,242,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(200,242,0,0.03)_1px,transparent_1px)] bg-[length:50px_50px] animate-[slideGrid_20s_linear_infinite]" />
+      
+      {/* Pulsing Radial Gradient */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(200,242,0,0.05),transparent_60%)] animate-pulse" style={{
+      animationDuration: '3s'
     }} />
-      <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(200,242,0,0.02)_50%,transparent_52%)] bg-[length:20px_20px] animate-[slide_20s_linear_infinite]" />
+      
+      {/* Scanning Lines Effect */}
+      <div className="absolute inset-0 bg-[linear-gradient(0deg,transparent_0%,rgba(200,242,0,0.03)_50%,transparent_100%)] bg-[length:100%_4px] animate-[scan_8s_linear_infinite]" />
+      
+      {/* Diagonal Moving Stripes */}
+      <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(200,242,0,0.02)_50%,transparent_52%)] bg-[length:30px_30px] animate-[slideStripes_15s_linear_infinite]" />
+      
+      {/* Floating Orbs */}
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-[float_10s_ease-in-out_infinite]" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl animate-[float_15s_ease-in-out_infinite_reverse]" />
+      
+      {/* Vignette Effects */}
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
       <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)] opacity-40" />
       
       <div className="container mx-auto px-4 py-6 relative z-10">
         {/* Top Headline */}
