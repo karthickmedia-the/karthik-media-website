@@ -112,7 +112,7 @@ export default function AboutUsSection() {
     label: "Satisfaction Rate",
     suffix: "%"
   }];
-  return <section id="about-section" ref={sectionRef} className="w-full py-24 px-4 bg-background text-foreground overflow-hidden relative">
+  return <section id="about-section" ref={sectionRef} className="w-full pt-8 pb-24 px-4 bg-background text-foreground overflow-hidden relative">
       {/* Decorative background elements */}
       <motion.div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-primary/5 blur-3xl" style={{
       y: y1,
