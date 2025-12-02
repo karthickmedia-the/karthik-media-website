@@ -1,8 +1,49 @@
 import { Button } from "@/components/ui/button";
 import { Star, ArrowRight } from "lucide-react";
 import heroPersonImage from "@/assets/hero-person.png";
+import { useState, useEffect, useRef } from "react";
+
 const HeroSection = () => {
-  return <section className="relative min-h-screen pb-12 bg-background overflow-hidden pt-16">
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [trails, setTrails] = useState<Array<{ x: number; y: number; id: number }>>([]);
+  const sectionRef = useRef<HTMLElement>(null);
+  const trailIdRef = useRef(0);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        setMousePosition({ x, y });
+        
+        // Add trail particle
+        trailIdRef.current += 1;
+        setTrails(prev => [...prev.slice(-15), { x, y, id: trailIdRef.current }]);
+      }
+    };
+
+    const section = sectionRef.current;
+    if (section) {
+      section.addEventListener('mousemove', handleMouseMove);
+    }
+
+    return () => {
+      if (section) {
+        section.removeEventListener('mousemove', handleMouseMove);
+      }
+    };
+  }, []);
+
+  // Clean up old trails
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTrails(prev => prev.slice(-10));
+    }, 100);
+    return () => clearInterval(interval);
+  }, []);
+
+  return <section ref={sectionRef} className="relative min-h-screen pb-12 bg-background overflow-hidden pt-16">
       {/* Futuristic Background Layers */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-zinc-900" />
       
@@ -19,6 +60,32 @@ const HeroSection = () => {
       
       {/* Diagonal Moving Stripes */}
       <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(200,242,0,0.02)_50%,transparent_52%)] bg-[length:30px_30px] animate-[slideStripes_15s_linear_infinite]" />
+      
+      {/* Cursor Glow Effect */}
+      <div 
+        className="absolute w-64 h-64 rounded-full pointer-events-none transition-all duration-100 ease-out"
+        style={{
+          left: mousePosition.x - 128,
+          top: mousePosition.y - 128,
+          background: 'radial-gradient(circle, rgba(200,242,0,0.15) 0%, rgba(200,242,0,0.05) 40%, transparent 70%)',
+          filter: 'blur(20px)',
+        }}
+      />
+      
+      {/* Cursor Trail Particles */}
+      {trails.map((trail, index) => (
+        <div
+          key={trail.id}
+          className="absolute w-2 h-2 rounded-full pointer-events-none animate-[cursorTrailFade_0.8s_ease-out_forwards]"
+          style={{
+            left: trail.x - 4,
+            top: trail.y - 4,
+            backgroundColor: 'hsl(var(--primary))',
+            opacity: (index + 1) / trails.length * 0.6,
+            transform: `scale(${(index + 1) / trails.length})`,
+          }}
+        />
+      ))}
       
       {/* Floating Orbs */}
       <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-[float_10s_ease-in-out_infinite]" />
