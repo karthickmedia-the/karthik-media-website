@@ -173,7 +173,7 @@ const HeroSection = () => {
         <div className="relative flex justify-center items-center min-h-[400px] sm:min-h-[450px] md:min-h-[550px] lg:min-h-[600px] mt-8 md:mt-12 lg:mt-16">
           {/* 10X Text - Positioned to overlap with person */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
-            <h2 className="text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-black leading-none text-primary">
+            <h2 className="relative text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-black leading-none text-primary animate-[glitch_3s_ease-in-out_infinite] before:content-['10X'] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:text-primary before:animate-[glitchTop_2s_linear_infinite] before:clip-path-[polygon(0_0,100%_0,100%_33%,0_33%)] after:content-['10X'] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:text-primary after:animate-[glitchBottom_3s_linear_infinite] after:clip-path-[polygon(0_67%,100%_67%,100%_100%,0_100%)]">
               10X
             </h2>
             <span className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 right-0 text-base sm:text-lg md:text-xl lg:text-2xl italic text-foreground">
