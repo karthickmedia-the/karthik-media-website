@@ -31,7 +31,7 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-4 py-6 relative z-10">
         {/* Top Headline */}
-        <div className="text-center mb-8 md:mb-12 lg:mb-16 relative z-30 px-2">
+        <div className="text-center mb-8 md:mb-12 lg:mb-16 mt-12 md:mt-16 lg:mt-20 relative z-30 px-2">
           <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-1">
             <span className="text-foreground">THE ONLY DIGITAL </span>
             <span className="text-foreground font-extrabold">MARKETING</span>
