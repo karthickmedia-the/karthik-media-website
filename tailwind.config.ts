@@ -74,10 +74,22 @@ export default {
             height: "0",
           },
         },
+        wave: {
+          "0%, 100%": { transform: "translate(0, 0) rotate(0deg)" },
+          "25%": { transform: "translate(10px, -10px) rotate(2deg)" },
+          "50%": { transform: "translate(0, -20px) rotate(0deg)" },
+          "75%": { transform: "translate(-10px, -10px) rotate(-2deg)" },
+        },
+        flagWave: {
+          "0%, 100%": { transform: "scaleX(1) translateY(0)" },
+          "50%": { transform: "scaleX(0.95) translateY(-2px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        wave: "wave 8s ease-in-out infinite",
+        flagWave: "flagWave 3s ease-in-out infinite",
       },
     },
   },
