@@ -4,25 +4,25 @@ import heroPersonImage from "@/assets/hero-person.png";
 const HeroSection = () => {
   return <section className="relative min-h-screen pb-12 bg-background overflow-hidden pt-16">
       {/* Futuristic Background Layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-zinc-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-blue-100" />
       
       {/* Animated Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(200,242,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(200,242,0,0.03)_1px,transparent_1px)] bg-[length:50px_50px] animate-[slideGrid_20s_linear_infinite]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[length:50px_50px] animate-[slideGrid_20s_linear_infinite]" />
       
       {/* Pulsing Radial Gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(200,242,0,0.05),transparent_60%)] animate-pulse" style={{
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.08),transparent_60%)] animate-pulse" style={{
       animationDuration: '3s'
     }} />
       
       {/* Scanning Lines Effect */}
-      <div className="absolute inset-0 bg-[linear-gradient(0deg,transparent_0%,rgba(200,242,0,0.03)_50%,transparent_100%)] bg-[length:100%_4px] animate-[scan_8s_linear_infinite]" />
+      <div className="absolute inset-0 bg-[linear-gradient(0deg,transparent_0%,rgba(59,130,246,0.05)_50%,transparent_100%)] bg-[length:100%_4px] animate-[scan_8s_linear_infinite]" />
       
       {/* Diagonal Moving Stripes */}
-      <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(200,242,0,0.02)_50%,transparent_52%)] bg-[length:30px_30px] animate-[slideStripes_15s_linear_infinite]" />
+      <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(59,130,246,0.03)_50%,transparent_52%)] bg-[length:30px_30px] animate-[slideStripes_15s_linear_infinite]" />
       
       {/* Floating Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-[float_10s_ease-in-out_infinite]" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl animate-[float_15s_ease-in-out_infinite_reverse]" />
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-[float_10s_ease-in-out_infinite]" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-[float_15s_ease-in-out_infinite_reverse]" />
       
       {/* Interactive Futuristic HUD System */}
       <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
@@ -31,20 +31,20 @@ const HeroSection = () => {
           <svg viewBox="0 0 200 200" className="w-full h-full">
             <defs>
               <linearGradient id="radarGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="rgba(200,242,0,0)" />
-                <stop offset="100%" stopColor="rgba(200,242,0,0.8)" />
+                <stop offset="0%" stopColor="rgba(59,130,246,0)" />
+                <stop offset="100%" stopColor="rgba(59,130,246,0.8)" />
               </linearGradient>
             </defs>
             {/* Radar Circles */}
-            <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(200,242,0,0.3)" strokeWidth="1" />
-            <circle cx="100" cy="100" r="60" fill="none" stroke="rgba(200,242,0,0.3)" strokeWidth="1" />
-            <circle cx="100" cy="100" r="40" fill="none" stroke="rgba(200,242,0,0.3)" strokeWidth="1" />
-            <circle cx="100" cy="100" r="20" fill="none" stroke="rgba(200,242,0,0.5)" strokeWidth="1" />
+            <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(59,130,246,0.3)" strokeWidth="1" />
+            <circle cx="100" cy="100" r="60" fill="none" stroke="rgba(59,130,246,0.3)" strokeWidth="1" />
+            <circle cx="100" cy="100" r="40" fill="none" stroke="rgba(59,130,246,0.3)" strokeWidth="1" />
+            <circle cx="100" cy="100" r="20" fill="none" stroke="rgba(59,130,246,0.5)" strokeWidth="1" />
             {/* Scanning Line */}
             <line x1="100" y1="100" x2="100" y2="20" stroke="url(#radarGradient)" strokeWidth="2" className="origin-center animate-[radar_4s_linear_infinite]" style={{ transformOrigin: '100px 100px' }} />
             {/* Crosshair */}
-            <line x1="100" y1="0" x2="100" y2="200" stroke="rgba(200,242,0,0.2)" strokeWidth="1" strokeDasharray="2,2" />
-            <line x1="0" y1="100" x2="200" y2="100" stroke="rgba(200,242,0,0.2)" strokeWidth="1" strokeDasharray="2,2" />
+            <line x1="100" y1="0" x2="100" y2="200" stroke="rgba(59,130,246,0.2)" strokeWidth="1" strokeDasharray="2,2" />
+            <line x1="0" y1="100" x2="200" y2="100" stroke="rgba(59,130,246,0.2)" strokeWidth="1" strokeDasharray="2,2" />
           </svg>
         </div>
 
@@ -63,10 +63,10 @@ const HeroSection = () => {
         {/* Circular Progress Indicators - Top Right */}
         <div className="absolute top-[10%] right-[8%] w-32 h-32 md:w-40 md:h-40">
           <svg viewBox="0 0 120 120" className="w-full h-full animate-[rotate_8s_linear_infinite]">
-            <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(200,242,0,0.2)" strokeWidth="1" />
-            <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(200,242,0,0.8)" strokeWidth="2" strokeDasharray="314" strokeDashoffset="78" className="animate-[progressCircle_2s_ease-in-out_infinite]" strokeLinecap="round" transform="rotate(-90 60 60)" />
-            <circle cx="60" cy="60" r="38" fill="none" stroke="rgba(200,242,0,0.3)" strokeWidth="1" />
-            <circle cx="60" cy="60" r="38" fill="none" stroke="rgba(200,242,0,0.6)" strokeWidth="2" strokeDasharray="238" strokeDashoffset="119" className="animate-[progressCircle_2s_ease-in-out_infinite]" strokeLinecap="round" transform="rotate(-90 60 60)" style={{ animationDelay: '0.5s' }} />
+            <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(59,130,246,0.2)" strokeWidth="1" />
+            <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(59,130,246,0.8)" strokeWidth="2" strokeDasharray="314" strokeDashoffset="78" className="animate-[progressCircle_2s_ease-in-out_infinite]" strokeLinecap="round" transform="rotate(-90 60 60)" />
+            <circle cx="60" cy="60" r="38" fill="none" stroke="rgba(59,130,246,0.3)" strokeWidth="1" />
+            <circle cx="60" cy="60" r="38" fill="none" stroke="rgba(59,130,246,0.6)" strokeWidth="2" strokeDasharray="238" strokeDashoffset="119" className="animate-[progressCircle_2s_ease-in-out_infinite]" strokeLinecap="round" transform="rotate(-90 60 60)" style={{ animationDelay: '0.5s' }} />
           </svg>
         </div>
 
@@ -76,7 +76,7 @@ const HeroSection = () => {
             {/* Grid */}
             <defs>
               <pattern id="chartGrid" width="30" height="30" patternUnits="userSpaceOnUse">
-                <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(200,242,0,0.15)" strokeWidth="0.5"/>
+                <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(59,130,246,0.15)" strokeWidth="0.5"/>
               </pattern>
             </defs>
             <rect width="600" height="200" fill="url(#chartGrid)" />
@@ -85,7 +85,7 @@ const HeroSection = () => {
             <polyline 
               points="0,180 100,150 200,120 300,90 400,70 500,50 600,30"
               fill="none"
-              stroke="rgba(200,242,0,0.7)"
+              stroke="rgba(59,130,246,0.7)"
               strokeWidth="2"
               strokeDasharray="1000"
               className="animate-[drawLine_4s_ease-out_infinite]"
@@ -93,7 +93,7 @@ const HeroSection = () => {
             <polyline 
               points="0,190 100,170 200,145 300,115 400,95 500,80 600,65"
               fill="none"
-              stroke="rgba(200,242,0,0.5)"
+              stroke="rgba(59,130,246,0.5)"
               strokeWidth="2"
               strokeDasharray="1000"
               className="animate-[drawLine_4s_ease-out_infinite]"
@@ -107,7 +107,7 @@ const HeroSection = () => {
                 cx={x} 
                 cy={180 - i * 25} 
                 r="3" 
-                fill="rgba(200,242,0,1)"
+                fill="rgba(59,130,246,1)"
                 className="animate-[pulse_2s_ease-in-out_infinite]"
                 style={{ animationDelay: `${i * 0.2}s` }}
               />
@@ -125,7 +125,7 @@ const HeroSection = () => {
                   points="30,15 45,7.5 60,15 60,30 45,37.5 30,30"
                   transform={`translate(${col * 20}, ${row * 26})`}
                   fill="none"
-                  stroke="rgba(200,242,0,0.4)"
+                  stroke="rgba(59,130,246,0.4)"
                   strokeWidth="1"
                   className="animate-[hexPulse_2s_ease-in-out_infinite]"
                   style={{ animationDelay: `${(row + col) * 0.2}s` }}
@@ -152,9 +152,9 @@ const HeroSection = () => {
       </div>
       
       {/* Vignette Effects */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-      <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)] opacity-40" />
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-white via-transparent to-transparent opacity-60" />
+      <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-white to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(255,255,255,0.4)_100%)] opacity-40" />
       
       <div className="container mx-auto px-4 py-6 relative z-10">
         {/* Top Headline */}
