@@ -56,8 +56,14 @@ const HeroSection = () => {
 
         {/* Founder Info - Left Side with Animated Arrow */}
         <div className="absolute bottom-[28%] sm:bottom-[25%] left-2 sm:left-4 md:left-8 lg:left-12 flex items-center gap-1 sm:gap-2 z-40">
+          {/* Connecting line to image */}
+          <svg className="absolute left-full top-1/2 -translate-y-1/2 w-16 sm:w-24 md:w-32 h-1 pointer-events-none z-0" style={{ left: 'calc(100% - 0.5rem)' }}>
+            <line x1="0" y1="50%" x2="100%" y2="50%" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="4 4" opacity="0.6">
+              <animate attributeName="stroke-dashoffset" from="8" to="0" dur="1s" repeatCount="indefinite" />
+            </line>
+          </svg>
           <ArrowRight className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 text-primary animate-pulse" />
-          <div className="bg-background/95 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-lg border-2 border-primary/20">
+          <div className="bg-background/95 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-lg border-2 border-primary/20 relative">
             <p className="text-foreground font-bold text-[10px] sm:text-xs md:text-sm">Karthik Shanmugam</p>
             <p className="text-primary text-[8px] sm:text-[10px] md:text-xs">Founder & CEO of</p>
             <p className="text-primary text-[8px] sm:text-[10px] md:text-xs font-semibold">THE KARTHIK MEDIA</p>
@@ -66,6 +72,12 @@ const HeroSection = () => {
 
         {/* Testimonial Card - Bottom Right */}
         <div className="absolute bottom-[20%] sm:bottom-[18%] right-2 sm:right-4 md:right-8 lg:right-12 bg-background/95 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-xl max-w-[110px] sm:max-w-[140px] md:max-w-[180px] border border-primary/20 z-40">
+          {/* Connecting line to image */}
+          <svg className="absolute right-full top-1/2 -translate-y-1/2 w-16 sm:w-24 md:w-32 h-1 pointer-events-none z-0" style={{ right: 'calc(100% - 0.5rem)' }}>
+            <line x1="0" y1="50%" x2="100%" y2="50%" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="4 4" opacity="0.6">
+              <animate attributeName="stroke-dashoffset" from="0" to="8" dur="1s" repeatCount="indefinite" />
+            </line>
+          </svg>
           <div className="flex gap-0.5 mb-1 sm:mb-2">
             {[...Array(5)].map((_, i) => <Star key={i} className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 fill-primary text-primary" />)}
           </div>
