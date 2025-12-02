@@ -63,12 +63,12 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="relative flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-3 md:gap-4 z-30 -mt-6 sm:-mt-8 md:-mt-12 lg:-mt-16 px-4">
-          {/* Animated Border Wrapper for Primary CTA */}
-          <div className="relative w-full sm:w-auto">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-white via-white/40 to-white opacity-75 blur-sm animate-[revolve_3s_linear_infinite]" style={{
-              clipPath: 'inset(0 round 0.75rem)'
-            }} />
-            <Button variant="hero-primary" size="lg" className="relative w-full sm:w-auto min-w-[200px] md:min-w-[240px] text-sm md:text-base">
+          {/* Animated Border for Primary CTA */}
+          <div className="relative w-full sm:w-auto p-[2px] rounded-xl bg-gradient-to-r from-transparent via-white to-transparent animate-[revolve_2s_linear_infinite] before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/80 before:to-transparent before:blur-sm before:animate-[revolve_2s_linear_infinite]" style={{
+            background: 'conic-gradient(from 0deg, transparent 0deg, white 90deg, transparent 180deg, transparent 360deg)',
+            animation: 'revolve 2s linear infinite'
+          }}>
+            <Button variant="hero-primary" size="lg" className="relative w-full sm:w-auto min-w-[200px] md:min-w-[240px] text-sm md:text-base border-0">
               BOOK 1:1 CALL WITH ME
             </Button>
           </div>
