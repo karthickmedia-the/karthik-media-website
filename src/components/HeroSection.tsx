@@ -12,35 +12,6 @@ const HeroSection = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
       <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent" />
       
-      {/* Animated Blue Flag in Background */}
-      <div className="absolute top-1/4 right-1/4 w-32 h-48 md:w-40 md:h-56 pointer-events-none z-5 opacity-20">
-        <svg viewBox="0 0 100 150" className="w-full h-full animate-[wave_8s_ease-in-out_infinite]">
-          <defs>
-            <linearGradient id="blueFlag" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{ stopColor: '#3b82f6', stopOpacity: 0.8 }} />
-              <stop offset="50%" style={{ stopColor: '#60a5fa', stopOpacity: 0.6 }} />
-              <stop offset="100%" style={{ stopColor: '#93c5fd', stopOpacity: 0.4 }} />
-            </linearGradient>
-          </defs>
-          <path
-            d="M 10 10 Q 50 5 90 10 T 90 40 Q 50 45 10 40 Z"
-            fill="url(#blueFlag)"
-            className="animate-[flagWave_3s_ease-in-out_infinite]"
-          >
-            <animate
-              attributeName="d"
-              dur="3s"
-              repeatCount="indefinite"
-              values="
-                M 10 10 Q 50 5 90 10 T 90 40 Q 50 45 10 40 Z;
-                M 10 10 Q 50 15 90 10 T 90 40 Q 50 35 10 40 Z;
-                M 10 10 Q 50 5 90 10 T 90 40 Q 50 45 10 40 Z"
-            />
-          </path>
-          <rect x="5" y="10" width="3" height="140" fill="#64748b" opacity="0.6" />
-        </svg>
-      </div>
-      
       <div className="container mx-auto px-4 py-6 relative z-10">
         {/* Top Headline */}
         <div className="text-center mb-2 md:mb-1 relative z-30 px-2">
@@ -98,31 +69,6 @@ const HeroSection = () => {
             <p className="text-primary text-[8px] sm:text-[10px] md:text-xs font-semibold">THE KARTHIK MEDIA</p>
           </div>
         </div>
-
-        {/* Animated Connection Between Text Boxes */}
-        <svg className="absolute left-4 right-4 top-1/2 -translate-y-1/2 h-64 sm:h-80 md:h-96 pointer-events-none z-35 hidden sm:block" style={{ top: '55%' }}>
-          <defs>
-            <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style={{ stopColor: 'hsl(var(--primary))', stopOpacity: 0.4 }} />
-              <stop offset="50%" style={{ stopColor: 'hsl(var(--primary))', stopOpacity: 0.8 }} />
-              <stop offset="100%" style={{ stopColor: 'hsl(var(--primary))', stopOpacity: 0.4 }} />
-            </linearGradient>
-          </defs>
-          <path
-            d="M 50 30 Q 50 50, 50 50 T 50 80"
-            stroke="url(#connectionGradient)"
-            strokeWidth="2"
-            fill="none"
-            strokeDasharray="8 4"
-            opacity="0.5"
-          >
-            <animate attributeName="stroke-dashoffset" from="0" to="12" dur="2s" repeatCount="indefinite" />
-          </path>
-          {/* Animated particles along the connection */}
-          <circle r="3" fill="hsl(var(--primary))" opacity="0.8">
-            <animateMotion dur="4s" repeatCount="indefinite" path="M 50 30 Q 50 50, 50 50 T 50 80" />
-          </circle>
-        </svg>
 
         {/* Testimonial Card - Bottom Right */}
         <div className="absolute bottom-[20%] sm:bottom-[18%] right-2 sm:right-4 md:right-8 lg:right-12 bg-background/95 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-xl max-w-[110px] sm:max-w-[140px] md:max-w-[180px] border border-primary/20 z-40">
