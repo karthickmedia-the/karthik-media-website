@@ -24,6 +24,16 @@ const HeroSection = () => {
       <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-[float_10s_ease-in-out_infinite]" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl animate-[float_15s_ease-in-out_infinite_reverse]" />
       
+      {/* Animated Growth Chart Bars */}
+      <div className="absolute bottom-0 left-0 right-0 h-full flex items-end justify-center gap-8 md:gap-12 lg:gap-16 opacity-10 pointer-events-none px-8">
+        <div className="h-[20%] w-4 md:w-6 bg-primary/60 animate-[growBar_3s_ease-out_infinite]" style={{ animationDelay: '0s' }} />
+        <div className="h-[35%] w-4 md:w-6 bg-primary/60 animate-[growBar_3s_ease-out_infinite]" style={{ animationDelay: '0.3s' }} />
+        <div className="h-[50%] w-4 md:w-6 bg-primary/60 animate-[growBar_3s_ease-out_infinite]" style={{ animationDelay: '0.6s' }} />
+        <div className="h-[65%] w-4 md:w-6 bg-primary/70 animate-[growBar_3s_ease-out_infinite]" style={{ animationDelay: '0.9s' }} />
+        <div className="h-[80%] w-4 md:w-6 bg-primary/80 animate-[growBar_3s_ease-out_infinite]" style={{ animationDelay: '1.2s' }} />
+        <div className="h-[95%] w-4 md:w-6 bg-primary animate-[growBar_3s_ease-out_infinite] shadow-[0_0_20px_rgba(200,242,0,0.5)]" style={{ animationDelay: '1.5s' }} />
+      </div>
+      
       {/* Vignette Effects */}
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
       <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent" />
