@@ -101,3 +101,23 @@ All colors MUST be HSL.
     transform: translate(-20px, 20px) scale(0.9);
   }
 }
+
+@keyframes ctaGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(200, 242, 0, 0.4), 0 0 40px rgba(200, 242, 0, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(200, 242, 0, 0.6), 0 0 60px rgba(200, 242, 0, 0.3), 0 0 80px rgba(200, 242, 0, 0.1);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes ctaShimmer {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(200%) rotate(45deg);
+  }
+}

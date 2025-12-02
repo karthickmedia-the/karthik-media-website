@@ -63,7 +63,7 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="relative flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-3 md:gap-4 z-30 -mt-6 sm:-mt-8 md:-mt-12 lg:-mt-16 px-4">
-          <Button variant="hero-primary" size="lg" className="w-full sm:w-auto min-w-[200px] md:min-w-[240px] text-sm md:text-base">
+          <Button variant="hero-primary" size="lg" className="w-full sm:w-auto min-w-[200px] md:min-w-[240px] text-sm md:text-base relative overflow-hidden animate-[ctaGlow_2s_ease-in-out_infinite] before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:animate-[ctaShimmer_3s_ease-in-out_infinite]">
             BOOK 1:1 CALL WITH ME
           </Button>
           <Button variant="hero-secondary" size="lg" className="w-full sm:w-auto min-w-[200px] md:min-w-[240px] text-sm md:text-base">
