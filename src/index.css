@@ -207,6 +207,17 @@ All colors MUST be HSL.
   }
 }
 
+@keyframes cursorTrailFade {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
 @keyframes quickShake {
   0%, 94%, 100% {
     transform: translate(0, 0);
