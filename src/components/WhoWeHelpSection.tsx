@@ -41,7 +41,7 @@ const WhoWeHelpSection = () => {
       }} viewport={{
         once: true
       }}>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6">WHO WE HELP?<span className="text-primary">HELP?</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6">WHO WE <span className="text-primary">HELP?</span>
           </h2>
           <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             We work with brands that want steady growth, predictable sales, and a marketing system that actually works — not guesswork.
