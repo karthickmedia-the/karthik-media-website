@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/karthik-media-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,10 +11,9 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="text-2xl font-black">
-            <span className="text-primary">10X</span>
-            <span className="text-foreground">GROWTH</span>
-          </div>
+          <a href="/" className="flex items-center">
+            <img src={logo} alt="Karthik Media" className="h-10 w-auto" />
+          </a>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
