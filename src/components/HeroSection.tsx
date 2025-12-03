@@ -240,7 +240,8 @@ const HeroSection = () => {
           <MovingBorderButton
             borderRadius="0.75rem"
             containerClassName="w-full sm:w-auto min-w-[200px] md:min-w-[240px] h-12 md:h-14"
-            className="bg-primary/90 text-primary-foreground font-bold text-sm md:text-base hover:bg-primary transition-colors"
+            className="bg-red-600 text-white font-bold text-sm md:text-base hover:bg-red-500 transition-colors shadow-[0_0_20px_rgba(239,68,68,0.6),0_0_40px_rgba(239,68,68,0.4),0_0_60px_rgba(239,68,68,0.2)]"
+            borderClassName="bg-[radial-gradient(#ef4444_40%,transparent_60%)]"
             duration={3000}
           >
             BOOK 1:1 CALL WITH ME
