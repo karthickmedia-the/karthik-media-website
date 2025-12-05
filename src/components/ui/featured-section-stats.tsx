@@ -22,7 +22,11 @@ export default function FeaturedSectionStats() {
     <div className="w-full max-w-6xl mx-auto text-left">
       <div className="px-4">
         <h3 className="text-lg sm:text-xl lg:text-4xl font-medium text-foreground mb-16">
-          A clear, proven workflow that delivers consistent results for every client.
+          Powering teams with real-time insights.{" "}
+          <span className="text-muted-foreground text-sm sm:text-base lg:text-4xl">
+            Our next-gen analytics dashboard helps you track performance, manage
+            clients, and make data-driven decisions in seconds.
+          </span>
         </h3>
 
         {/* Stats grid */}
