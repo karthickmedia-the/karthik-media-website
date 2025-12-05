@@ -22,6 +22,9 @@ const WhatWeDoSection = () => {
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-foreground mb-4">
             What we <span className="text-primary">do?</span>
           </h2>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            The Karthik Media delivers AI-powered digital marketing services designed to bring high-quality traffic and grow your business 10x faster.
+          </p>
         </motion.div>
 
         {/* Database REST API Component */}
