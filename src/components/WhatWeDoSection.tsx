@@ -17,7 +17,7 @@ const WhatWeDoSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-2 md:mb-4"
+          className="text-center mb-0"
         >
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-foreground mb-4">
             What we <span className="text-primary">do?</span>
