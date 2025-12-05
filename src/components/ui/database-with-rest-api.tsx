@@ -35,7 +35,7 @@ const DatabaseWithRestApi = ({
   return (
     <div
       className={cn(
-        "relative flex h-[350px] w-full max-w-[500px] flex-col items-center",
+        "relative flex w-full flex-col items-center",
         className
       )}
     >
@@ -318,55 +318,55 @@ const DatabaseWithRestApi = ({
         </defs>
       </svg>
       {/* Main Box */}
-      <div className="absolute bottom-10 flex w-full flex-col items-center">
+      <div className="absolute bottom-10 md:bottom-16 flex w-full flex-col items-center px-4">
         {/* bottom shadow */}
-        <div className="absolute -bottom-4 h-[100px] w-[62%] rounded-lg bg-accent/30" />
+        <div className="absolute -bottom-4 h-[150px] md:h-[200px] w-[62%] rounded-xl bg-accent/30" />
         {/* box title */}
-        <div className="absolute -top-3 z-20 flex items-center justify-center rounded-lg border bg-[#101112] px-2 py-1 sm:-top-4 sm:py-1.5">
-          <SparklesIcon className="size-3" />
-          <span className="ml-2 text-[10px]">
+        <div className="absolute -top-4 md:-top-6 z-20 flex items-center justify-center rounded-xl border bg-[#101112] px-4 py-2 md:px-6 md:py-3">
+          <SparklesIcon className="size-4 md:size-5 text-primary" />
+          <span className="ml-2 text-xs md:text-sm lg:text-base font-medium">
             {title ? title : "Data exchange using a customized REST API"}
           </span>
         </div>
         {/* box outter circle */}
-        <div className="absolute -bottom-8 z-30 grid h-[60px] w-[60px] place-items-center rounded-full border-t bg-[#141516] font-semibold text-xs text-center px-1">
+        <div className="absolute -bottom-10 md:-bottom-14 z-30 grid h-[80px] w-[80px] md:h-[100px] md:w-[100px] place-items-center rounded-full border-t border-primary/30 bg-[#141516] font-bold text-sm md:text-base text-center px-2">
           {circleText ? circleText : "SVG"}
         </div>
         {/* box content */}
-        <div className="relative z-10 flex h-[150px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background shadow-md">
+        <div className="relative z-10 flex h-[200px] md:h-[280px] lg:h-[320px] w-full items-center justify-center overflow-hidden rounded-xl border bg-background shadow-md">
           {/* Badges */}
-          <div className="absolute bottom-8 left-12 z-10 h-7 rounded-full bg-[#101112] px-3 text-xs border flex items-center gap-2 ">
-            <HeartHandshakeIcon className="size-4" />
+          <div className="absolute bottom-10 md:bottom-16 left-8 md:left-16 z-10 h-8 md:h-10 rounded-full bg-[#101112] px-4 md:px-6 text-sm md:text-base border flex items-center gap-2">
+            <HeartHandshakeIcon className="size-4 md:size-5 text-primary" />
             <span>{buttonTexts?.first || "LegionDev"}</span>
           </div>
-          <div className="absolute right-16 z-10 hidden h-7 rounded-full bg-[#101112] px-3 text-xs sm:flex border items-center gap-2">
-            <Folder className="size-4" />
+          <div className="absolute bottom-10 md:bottom-16 right-8 md:right-16 z-10 hidden h-8 md:h-10 rounded-full bg-[#101112] px-4 md:px-6 text-sm md:text-base sm:flex border items-center gap-2">
+            <Folder className="size-4 md:size-5 text-primary" />
             <span>{buttonTexts?.second || "v2_updates"}</span>
           </div>
           {/* Circles */}
           <motion.div
-            className="absolute -bottom-14 h-[100px] w-[100px] rounded-full border-t bg-accent/5"
+            className="absolute -bottom-16 md:-bottom-20 h-[120px] md:h-[160px] w-[120px] md:w-[160px] rounded-full border-t border-primary/20 bg-accent/5"
             animate={{
               scale: [0.98, 1.02, 0.98, 1, 1, 1, 1, 1, 1],
             }}
             transition={{ duration: 2, repeat: Infinity }}
           />
           <motion.div
-            className="absolute -bottom-20 h-[145px] w-[145px] rounded-full border-t bg-accent/5"
+            className="absolute -bottom-24 md:-bottom-32 h-[180px] md:h-[240px] w-[180px] md:w-[240px] rounded-full border-t border-primary/15 bg-accent/5"
             animate={{
               scale: [1, 1, 1, 0.98, 1.02, 0.98, 1, 1, 1],
             }}
             transition={{ duration: 2, repeat: Infinity }}
           />
           <motion.div
-            className="absolute -bottom-[100px] h-[190px] w-[190px] rounded-full border-t bg-accent/5"
+            className="absolute -bottom-[130px] md:-bottom-[180px] h-[250px] md:h-[340px] w-[250px] md:w-[340px] rounded-full border-t border-primary/10 bg-accent/5"
             animate={{
               scale: [1, 1, 1, 1, 1, 0.98, 1.02, 0.98, 1, 1],
             }}
             transition={{ duration: 2, repeat: Infinity }}
           />
           <motion.div
-            className="absolute -bottom-[120px] h-[235px] w-[235px] rounded-full border-t bg-accent/5"
+            className="absolute -bottom-[160px] md:-bottom-[220px] h-[320px] md:h-[440px] w-[320px] md:w-[440px] rounded-full border-t border-primary/5 bg-accent/5"
             animate={{
               scale: [1, 1, 1, 1, 1, 1, 0.98, 1.02, 0.98, 1],
             }}
