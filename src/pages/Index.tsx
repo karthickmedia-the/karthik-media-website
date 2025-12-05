@@ -9,7 +9,7 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <WhoWeHelpSection />
-      <WhatWeDoSection className="border-0" />
+      <WhatWeDoSection />
       <CreativesShowcase />
       <Footer />
     </div>;

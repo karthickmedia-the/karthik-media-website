@@ -34,7 +34,7 @@ const DatabaseWithRestApi = ({
       {/* SVG Paths  */}
       <svg width="100%" height="100%" viewBox="0 0 260 100" className="h-full sm:w-full text-muted px-0 py-0 border-0">
         <g stroke="currentColor" fill="none" strokeWidth="0.4" strokeDasharray="100 100" pathLength="100">
-          <path d="M 22 10 v 15 q 0 5 5 5 h 103 q 5 0 5 5 v 10" />
+          <path d="M 22 10 v 15 q 0 5 5 5 h 98 q 5 0 5 5 v 10" />
           <path d="M 62 10 v 10 q 0 5 5 5 h 58 q 5 0 5 5 v 10" />
           <path d="M 105 10 v 10 q 0 5 5 5 h 15 q 5 0 5 5 v 10" />
           <path d="M 155 10 v 10 q 0 5 -5 5 h -15 q -5 0 -5 5 v 10" />
@@ -116,7 +116,7 @@ const DatabaseWithRestApi = ({
         <defs>
           {/* 1 */}
           <mask id="db-mask-1">
-            <path d="M 22 10 v 15 q 0 5 5 5 h 103 q 5 0 5 5 v 10" strokeWidth="0.5" stroke="white" />
+            <path d="M 22 10 v 15 q 0 5 5 5 h 98 q 5 0 5 5 v 10" strokeWidth="0.5" stroke="white" />
           </mask>
           {/* 2 */}
           <mask id="db-mask-2">
