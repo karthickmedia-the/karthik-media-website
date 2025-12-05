@@ -4,18 +4,14 @@ import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import WhatWeDoSection from "@/components/WhatWeDoSection";
 import CreativesShowcase from "@/components/CreativesShowcase";
 import Footer from "@/components/Footer";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navigation />
       <HeroSection />
       <WhoWeHelpSection />
-      <WhatWeDoSection />
+      <WhatWeDoSection className="border-0" />
       <CreativesShowcase />
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
