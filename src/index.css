@@ -280,3 +280,46 @@ All colors MUST be HSL.
     opacity: 0;
   }
 }
+
+/* Database REST API Animation */
+.database {
+  offset-anchor: 10px 0px;
+  animation: database-animation-path;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+.db-light-1 {
+  offset-path: path("M 22 10 v 15 q 0 5 5 5 h 103 q 5 0 5 5 v 25");
+}
+
+.db-light-2 {
+  offset-path: path("M 62 10 v 10 q 0 5 5 5 h 58 q 5 0 5 5 v 25");
+}
+
+.db-light-3 {
+  offset-path: path("M 105 10 v 10 q 0 5 5 5 h 15 q 5 0 5 5 v 25");
+}
+
+.db-light-4 {
+  offset-path: path("M 155 10 v 10 q 0 5 -5 5 h -15 q -5 0 -5 5 v 25");
+}
+
+.db-light-5 {
+  offset-path: path("M 198 10 v 10 q 0 5 -5 5 h -58 q -5 0 -5 5 v 25");
+}
+
+.db-light-6 {
+  offset-path: path("M 238 10 v 15 q 0 5 -5 5 h -98 q -5 0 -5 5 v 25");
+}
+
+@keyframes database-animation-path {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
