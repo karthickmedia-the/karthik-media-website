@@ -68,11 +68,12 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-black text-foreground mb-4">SERVICES</h3>
             <ul className="space-y-3">
-              <li className="text-muted-foreground">Paid Advertising</li>
-              <li className="text-muted-foreground">SEO & Growth</li>
-              <li className="text-muted-foreground">Social Media</li>
+              <li className="text-muted-foreground">Web Design Services</li>
+              <li className="text-muted-foreground">SEO Services</li>
+              <li className="text-muted-foreground">Meta Ad Services</li>
+              <li className="text-muted-foreground">Google Ad Services</li>
               <li className="text-muted-foreground">Content Creation</li>
-              <li className="text-muted-foreground">Email Marketing</li>
+              <li className="text-muted-foreground">Funnels & Automation</li>
             </ul>
           </div>
 
