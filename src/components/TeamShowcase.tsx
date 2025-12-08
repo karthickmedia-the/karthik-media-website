@@ -55,6 +55,38 @@ const TeamCard = ({ member, index }: { member: typeof teamMembers[0]; index: num
       whileHover={{ y: -10 }}
       className="group relative flex-shrink-0 cursor-pointer"
     >
+      {/* HUD-style animated lines - Top */}
+      <svg className="absolute -top-6 left-1/2 -translate-x-1/2 w-24 h-6 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <line x1="50%" y1="100%" x2="50%" y2="0" stroke="#C8F200" strokeWidth="2" strokeDasharray="4 4">
+          <animate attributeName="stroke-dashoffset" from="8" to="0" dur="0.5s" repeatCount="indefinite" />
+        </line>
+        <circle cx="50%" cy="2" r="2" fill="#C8F200" className="animate-pulse" />
+      </svg>
+
+      {/* HUD-style animated lines - Left */}
+      <svg className="absolute top-1/2 -left-6 -translate-y-1/2 w-6 h-24 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <line x1="100%" y1="50%" x2="0" y2="50%" stroke="#C8F200" strokeWidth="2" strokeDasharray="4 4">
+          <animate attributeName="stroke-dashoffset" from="8" to="0" dur="0.5s" repeatCount="indefinite" />
+        </line>
+        <circle cx="2" cy="50%" r="2" fill="#C8F200" className="animate-pulse" />
+      </svg>
+
+      {/* HUD-style animated lines - Right */}
+      <svg className="absolute top-1/2 -right-6 -translate-y-1/2 w-6 h-24 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#C8F200" strokeWidth="2" strokeDasharray="4 4">
+          <animate attributeName="stroke-dashoffset" from="0" to="8" dur="0.5s" repeatCount="indefinite" />
+        </line>
+        <circle cx="22" cy="50%" r="2" fill="#C8F200" className="animate-pulse" />
+      </svg>
+
+      {/* HUD-style animated lines - Bottom */}
+      <svg className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-24 h-6 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#C8F200" strokeWidth="2" strokeDasharray="4 4">
+          <animate attributeName="stroke-dashoffset" from="0" to="8" dur="0.5s" repeatCount="indefinite" />
+        </line>
+        <circle cx="50%" cy="22" r="2" fill="#C8F200" className="animate-pulse" />
+      </svg>
+
       {/* Glow effect behind card */}
       <div className="absolute -inset-2 bg-[#C8F200]/0 group-hover:bg-[#C8F200]/20 rounded-3xl blur-xl transition-all duration-500 ease-out" />
       
@@ -62,7 +94,7 @@ const TeamCard = ({ member, index }: { member: typeof teamMembers[0]; index: num
       <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-[#C8F200]/0 via-[#C8F200]/0 to-[#C8F200]/0 group-hover:from-[#C8F200] group-hover:via-[#C8F200]/50 group-hover:to-[#C8F200] transition-all duration-500 opacity-0 group-hover:opacity-100" />
 
       {/* Card */}
-      <div className="relative w-40 h-52 md:w-44 md:h-60 lg:w-48 lg:h-64 rounded-2xl overflow-hidden bg-zinc-900 border border-white/10 group-hover:border-transparent transition-all duration-500">
+      <div className="relative w-40 h-52 md:w-44 md:h-60 lg:w-48 lg:h-64 rounded-2xl overflow-hidden bg-zinc-900 border border-white/10 group-hover:border-[#C8F200]/50 group-hover:shadow-[0_0_30px_rgba(200,242,0,0.3)] transition-all duration-500">
         {/* Image container */}
         <div className="absolute inset-0 overflow-hidden">
           <img 
@@ -80,11 +112,11 @@ const TeamCard = ({ member, index }: { member: typeof teamMembers[0]; index: num
           <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out" />
         </div>
 
-        {/* Corner accents */}
-        <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-[#C8F200]/0 group-hover:border-[#C8F200] rounded-tl-2xl transition-all duration-500" />
-        <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-[#C8F200]/0 group-hover:border-[#C8F200] rounded-tr-2xl transition-all duration-500" />
-        <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-[#C8F200]/0 group-hover:border-[#C8F200] rounded-bl-2xl transition-all duration-500" />
-        <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-[#C8F200]/0 group-hover:border-[#C8F200] rounded-br-2xl transition-all duration-500" />
+        {/* Corner accents with HUD brackets */}
+        <div className="absolute top-0 left-0 w-10 h-10 border-l-2 border-t-2 border-[#C8F200]/0 group-hover:border-[#C8F200] rounded-tl-lg transition-all duration-500" />
+        <div className="absolute top-0 right-0 w-10 h-10 border-r-2 border-t-2 border-[#C8F200]/0 group-hover:border-[#C8F200] rounded-tr-lg transition-all duration-500" />
+        <div className="absolute bottom-0 left-0 w-10 h-10 border-l-2 border-b-2 border-[#C8F200]/0 group-hover:border-[#C8F200] rounded-bl-lg transition-all duration-500" />
+        <div className="absolute bottom-0 right-0 w-10 h-10 border-r-2 border-b-2 border-[#C8F200]/0 group-hover:border-[#C8F200] rounded-br-lg transition-all duration-500" />
 
         {/* Content */}
         <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
