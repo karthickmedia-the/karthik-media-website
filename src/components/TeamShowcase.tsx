@@ -62,19 +62,19 @@ const DockIcon = ({
     return val - bounds.x - bounds.width / 2;
   });
 
-  const widthSync = useTransform(distance, [-200, 0, 200], [90, 150, 90]);
+  const widthSync = useTransform(distance, [-250, 0, 250], [120, 200, 120]);
   const width = useSpring(widthSync, { mass: 0.1, stiffness: 150, damping: 12 });
 
-  const scaleSync = useTransform(distance, [-200, 0, 200], [1, 1.5, 1]);
+  const scaleSync = useTransform(distance, [-250, 0, 250], [1, 1.4, 1]);
   const scale = useSpring(scaleSync, { mass: 0.1, stiffness: 150, damping: 12 });
 
-  const ySync = useTransform(distance, [-200, 0, 200], [0, -30, 0]);
+  const ySync = useTransform(distance, [-250, 0, 250], [0, -40, 0]);
   const y = useSpring(ySync, { mass: 0.1, stiffness: 150, damping: 12 });
 
-  const opacitySync = useTransform(distance, [-150, 0, 150], [0, 1, 0]);
+  const opacitySync = useTransform(distance, [-180, 0, 180], [0, 1, 0]);
   const tooltipOpacity = useSpring(opacitySync, { mass: 0.1, stiffness: 150, damping: 12 });
 
-  const glowOpacitySync = useTransform(distance, [-200, 0, 200], [0.2, 0.8, 0.2]);
+  const glowOpacitySync = useTransform(distance, [-250, 0, 250], [0.1, 0.6, 0.1]);
   const glowOpacity = useSpring(glowOpacitySync, { mass: 0.1, stiffness: 150, damping: 12 });
 
   return (
@@ -104,14 +104,14 @@ const DockIcon = ({
         style={{ scale, y }}
         className="relative cursor-pointer"
       >
-        {/* Glow effect */}
+        {/* Subtle glow effect on hover only */}
         <motion.div
           style={{ opacity: glowOpacity }}
-          className="absolute -inset-3 bg-white/30 rounded-3xl blur-2xl"
+          className="absolute -inset-2 bg-white/20 rounded-3xl blur-xl"
         />
         
         {/* Main icon */}
-        <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900 shadow-2xl border border-white/10">
+        <div className="relative w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900 shadow-2xl border border-white/10">
           <img 
             src={member.image} 
             alt={member.name}
@@ -119,14 +119,13 @@ const DockIcon = ({
           />
           
           {/* Glass shine overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-transparent pointer-events-none" />
         </div>
 
         {/* Reflection */}
         <motion.div 
           style={{ opacity: glowOpacity }}
-          className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-16 h-4 bg-white/20 rounded-full blur-md"
+          className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-20 h-5 bg-white/15 rounded-full blur-lg"
         />
       </motion.div>
 
@@ -145,11 +144,7 @@ const TeamShowcase = () => {
   const mouseX = useMotionValue(Infinity);
 
   return (
-    <section className="bg-black py-20 md:py-32 px-4 relative overflow-hidden">
-      {/* Subtle ambient background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-white/[0.02] rounded-full blur-3xl" />
-      </div>
+    <section className="bg-black py-28 md:py-40 px-4 relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
@@ -182,11 +177,8 @@ const TeamShowcase = () => {
         <motion.div
           onMouseMove={(e) => mouseX.set(e.pageX)}
           onMouseLeave={() => mouseX.set(Infinity)}
-          className="flex items-end justify-center gap-4 md:gap-6 pb-8 mx-auto"
+          className="flex items-end justify-center gap-6 md:gap-10 pb-12 mx-auto"
         >
-          {/* Dock bar background */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-28 w-full max-w-4xl bg-gradient-to-t from-white/[0.03] to-transparent rounded-t-3xl backdrop-blur-sm" />
-          
           {teamMembers.map((member, index) => (
             <DockIcon 
               key={member.id} 
@@ -197,9 +189,9 @@ const TeamShowcase = () => {
           ))}
         </motion.div>
 
-        {/* Dock shelf reflection line */}
-        <div className="flex justify-center mt-4">
-          <div className="w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        {/* Dock shelf line */}
+        <div className="flex justify-center mt-6">
+          <div className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         </div>
       </div>
     </section>
