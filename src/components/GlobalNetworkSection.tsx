@@ -19,7 +19,7 @@ const GlobalNetworkSection = () => {
       }} transition={{
         duration: 0.6
       }}>
-          <h2 className="font-bold text-3xl md:text-5xl text-white mb-4">Our Worldwide Clientele Network<span className="text-[#C8F200]">Network</span>
+          <h2 className="font-bold text-3xl md:text-5xl text-white mb-4">Our Worldwide Clientele <span className="text-[#C8F200]">Network</span>
           </h2>
           <p className="text-base md:text-lg text-neutral-400 max-w-2xl mx-auto">
             A diverse network of brands worldwide who trust us to scale their digital presence with precision and performance.
