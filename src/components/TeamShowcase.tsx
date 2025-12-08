@@ -3,6 +3,7 @@ import { useState } from "react";
 import karthikImage from "@/assets/karthik-team.png";
 import kaushikaImage from "@/assets/kaushika-team.png";
 import sivaneshImage from "@/assets/sivanesh-team.png";
+import gayathriImage from "@/assets/gayathri-team.png";
 
 const teamMembers = [
   {
@@ -39,6 +40,7 @@ const teamMembers = [
     company: "The Karthik Media",
     initials: "GA",
     color: "from-pink-500 to-pink-700",
+    image: gayathriImage,
   },
   {
     id: 5,
