@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import karthikImage from "@/assets/karthik-team.png";
 
 const teamMembers = [
   {
@@ -9,6 +10,7 @@ const teamMembers = [
     company: "The Karthik Media",
     initials: "KS",
     color: "from-[#C8F200] to-[#9BC700]",
+    image: karthikImage,
   },
   {
     id: 2,
@@ -84,7 +86,7 @@ const TeamMemberCard = ({ member, index }: { member: typeof teamMembers[0]; inde
       <motion.div
         whileHover={{ scale: 1.15, y: -5 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className={`relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br ${member.color} flex items-center justify-center cursor-pointer shadow-lg`}
+        className={`relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br ${member.color} flex items-center justify-center cursor-pointer shadow-lg overflow-hidden`}
       >
         {/* Glow effect on hover */}
         <motion.div
@@ -94,12 +96,20 @@ const TeamMemberCard = ({ member, index }: { member: typeof teamMembers[0]; inde
         />
         
         {/* Border ring */}
-        <div className="absolute inset-0 rounded-full border-2 border-white/20 group-hover:border-white/40 transition-colors" />
+        <div className="absolute inset-0 rounded-full border-2 border-white/20 group-hover:border-white/40 transition-colors z-20" />
         
-        {/* Initials */}
-        <span className="text-white font-bold text-xl md:text-2xl relative z-10">
-          {member.initials}
-        </span>
+        {/* Image or Initials */}
+        {member.image ? (
+          <img 
+            src={member.image} 
+            alt={member.name} 
+            className="w-full h-full object-cover relative z-10"
+          />
+        ) : (
+          <span className="text-white font-bold text-xl md:text-2xl relative z-10">
+            {member.initials}
+          </span>
+        )}
       </motion.div>
 
       {/* Name below avatar (mobile) */}
