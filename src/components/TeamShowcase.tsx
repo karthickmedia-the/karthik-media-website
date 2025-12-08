@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { useRef } from "react";
 import karthikImage from "@/assets/karthik-team.png";
 import kaushikaImage from "@/assets/kaushika-team.png";
 import sivaneshImage from "@/assets/sivanesh-team.png";
@@ -46,156 +46,110 @@ const teamMembers = [
   },
 ];
 
-const TeamMemberCard = ({ member, index }: { member: typeof teamMembers[0]; index: number }) => {
-  const [isHovered, setIsHovered] = useState(false);
+const DockIcon = ({ 
+  member, 
+  mouseX,
+  index
+}: { 
+  member: typeof teamMembers[0]; 
+  mouseX: any;
+  index: number;
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const distance = useTransform(mouseX, (val: number) => {
+    const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
+    return val - bounds.x - bounds.width / 2;
+  });
+
+  const widthSync = useTransform(distance, [-200, 0, 200], [90, 150, 90]);
+  const width = useSpring(widthSync, { mass: 0.1, stiffness: 150, damping: 12 });
+
+  const scaleSync = useTransform(distance, [-200, 0, 200], [1, 1.5, 1]);
+  const scale = useSpring(scaleSync, { mass: 0.1, stiffness: 150, damping: 12 });
+
+  const ySync = useTransform(distance, [-200, 0, 200], [0, -30, 0]);
+  const y = useSpring(ySync, { mass: 0.1, stiffness: 150, damping: 12 });
+
+  const opacitySync = useTransform(distance, [-150, 0, 150], [0, 1, 0]);
+  const tooltipOpacity = useSpring(opacitySync, { mass: 0.1, stiffness: 150, damping: 12 });
+
+  const glowOpacitySync = useTransform(distance, [-200, 0, 200], [0.2, 0.8, 0.2]);
+  const glowOpacity = useSpring(glowOpacitySync, { mass: 0.1, stiffness: 150, damping: 12 });
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: -50 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ 
-        duration: 0.6, 
-        delay: index * 0.1,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }}
-      className="relative group"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      transition={{ delay: index * 0.1, duration: 0.5 }}
+      className="relative flex flex-col items-center"
+      style={{ width }}
     >
-      {/* Glass card container */}
+      {/* Tooltip */}
       <motion.div
-        animate={{ 
-          x: isHovered ? 8 : 0,
-          y: isHovered ? -4 : 0
-        }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        style={{ opacity: tooltipOpacity, y: -10 }}
+        className="absolute -top-20 left-1/2 -translate-x-1/2 z-50 pointer-events-none"
+      >
+        <div className="bg-zinc-900/95 backdrop-blur-xl border border-white/10 rounded-xl px-4 py-2.5 shadow-2xl whitespace-nowrap">
+          <p className="text-white font-semibold text-sm">{member.name}</p>
+          <p className="text-[#C8F200] text-xs mt-0.5">{member.designation}</p>
+          <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-zinc-900/95 border-r border-b border-white/10 rotate-45" />
+        </div>
+      </motion.div>
+
+      {/* Icon container */}
+      <motion.div 
+        style={{ scale, y }}
         className="relative cursor-pointer"
       >
-        {/* White glow effect */}
+        {/* Glow effect */}
         <motion.div
-          animate={{ 
-            opacity: isHovered ? 0.4 : 0,
-            scale: isHovered ? 1.05 : 1
-          }}
-          transition={{ duration: 0.4 }}
-          className="absolute -inset-4 bg-white/20 rounded-2xl blur-2xl"
+          style={{ opacity: glowOpacity }}
+          className="absolute -inset-3 bg-white/30 rounded-3xl blur-2xl"
         />
-
-        {/* Cinematic light sweep */}
-        <motion.div
-          animate={{ 
-            x: isHovered ? "200%" : "-100%",
-            opacity: isHovered ? 1 : 0
-          }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="absolute inset-0 w-1/3 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 z-20 pointer-events-none rounded-2xl overflow-hidden"
-        />
-
-        {/* Main glass card */}
-        <div className="relative overflow-hidden rounded-2xl backdrop-blur-xl bg-white/[0.08] border border-white/[0.15] shadow-2xl">
-          {/* Top glass reflection */}
-          <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/[0.12] to-transparent pointer-events-none" />
+        
+        {/* Main icon */}
+        <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900 shadow-2xl border border-white/10">
+          <img 
+            src={member.image} 
+            alt={member.name}
+            className="w-full h-full object-cover"
+          />
           
-          {/* Image container - Square */}
-          <div className="relative w-40 h-48 md:w-48 md:h-56 lg:w-52 lg:h-60 overflow-hidden">
-            <motion.img 
-              src={member.image} 
-              alt={member.name}
-              animate={{ 
-                scale: isHovered ? 1.08 : 1,
-                filter: isHovered ? "brightness(1.1)" : "brightness(1)"
-              }}
-              transition={{ duration: 0.5 }}
-              className="w-full h-full object-cover"
-            />
-            
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-            
-            {/* Bottom glass info panel */}
-            <motion.div
-              animate={{ y: isHovered ? 0 : 10, opacity: isHovered ? 1 : 0.9 }}
-              transition={{ duration: 0.3 }}
-              className="absolute bottom-0 left-0 right-0 p-4 backdrop-blur-md bg-white/[0.05]"
-            >
-              <motion.h3 
-                animate={{ x: isHovered ? 4 : 0 }}
-                transition={{ duration: 0.3 }}
-                className="text-white font-semibold text-base md:text-lg leading-tight"
-              >
-                {member.name}
-              </motion.h3>
-              <motion.p 
-                animate={{ x: isHovered ? 4 : 0 }}
-                transition={{ duration: 0.3, delay: 0.05 }}
-                className="text-white/60 text-xs md:text-sm mt-1"
-              >
-                {member.designation}
-              </motion.p>
-            </motion.div>
-          </div>
-
-          {/* Corner accents */}
-          <motion.div
-            animate={{ opacity: isHovered ? 1 : 0 }}
-            className="absolute top-2 left-2 w-4 h-4 border-l-2 border-t-2 border-white/40 rounded-tl"
-          />
-          <motion.div
-            animate={{ opacity: isHovered ? 1 : 0 }}
-            className="absolute top-2 right-2 w-4 h-4 border-r-2 border-t-2 border-white/40 rounded-tr"
-          />
-          <motion.div
-            animate={{ opacity: isHovered ? 1 : 0 }}
-            className="absolute bottom-2 left-2 w-4 h-4 border-l-2 border-b-2 border-white/40 rounded-bl"
-          />
-          <motion.div
-            animate={{ opacity: isHovered ? 1 : 0 }}
-            className="absolute bottom-2 right-2 w-4 h-4 border-r-2 border-b-2 border-white/40 rounded-br"
-          />
+          {/* Glass shine overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
         </div>
 
-        {/* Subtle shadow */}
-        <motion.div
-          animate={{ 
-            opacity: isHovered ? 0.3 : 0.1,
-            y: isHovered ? 8 : 4
-          }}
-          className="absolute inset-x-4 bottom-0 h-8 bg-white/20 blur-xl rounded-full -z-10"
+        {/* Reflection */}
+        <motion.div 
+          style={{ opacity: glowOpacity }}
+          className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-16 h-4 bg-white/20 rounded-full blur-md"
         />
       </motion.div>
+
+      {/* Name below */}
+      <motion.p 
+        style={{ opacity: tooltipOpacity }}
+        className="mt-4 text-white text-xs font-medium text-center whitespace-nowrap"
+      >
+        {member.name.split(' ')[0]}
+      </motion.p>
     </motion.div>
   );
 };
 
 const TeamShowcase = () => {
+  const mouseX = useMotionValue(Infinity);
+
   return (
     <section className="bg-black py-20 md:py-32 px-4 relative overflow-hidden">
-      {/* Cinematic background */}
+      {/* Subtle ambient background */}
       <div className="absolute inset-0">
-        {/* Subtle grid */}
-        <div 
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px)
-            `,
-            backgroundSize: '60px 60px'
-          }}
-        />
-        
-        {/* Ambient light spots */}
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-white/[0.02] rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-white/[0.015] rounded-full blur-3xl" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-white/[0.02] rounded-full blur-3xl" />
       </div>
-
-      {/* Slow moving film grain effect */}
-      <motion.div
-        animate={{ opacity: [0.02, 0.04, 0.02] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E')] opacity-[0.03]"
-      />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
@@ -205,40 +159,47 @@ const TeamShowcase = () => {
           viewport={{ once: true }}
           className="text-center mb-16 md:mb-24"
         >
-          {/* Section badge - glass style */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-full backdrop-blur-xl bg-white/[0.08] border border-white/[0.15] mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.05] border border-white/10 mb-8"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-            <span className="text-white/80 text-sm font-medium uppercase tracking-widest">Our Team</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C8F200] animate-pulse" />
+            <span className="text-white/70 text-sm font-medium uppercase tracking-widest">Our Team</span>
           </motion.div>
 
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
             Meet The <span className="text-[#C8F200]">Experts</span>
           </h2>
           
-          <p className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto font-light">
+          <p className="text-white/40 text-lg md:text-xl max-w-2xl mx-auto font-light">
             The brilliant minds powering The Karthik Media's digital excellence
           </p>
-
-          {/* Decorative line */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="w-24 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent mx-auto mt-10"
-          />
         </motion.div>
 
-        {/* Team grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 justify-items-center">
+        {/* Mac Dock style container */}
+        <motion.div
+          onMouseMove={(e) => mouseX.set(e.pageX)}
+          onMouseLeave={() => mouseX.set(Infinity)}
+          className="flex items-end justify-center gap-4 md:gap-6 pb-8 mx-auto"
+        >
+          {/* Dock bar background */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-28 w-full max-w-4xl bg-gradient-to-t from-white/[0.03] to-transparent rounded-t-3xl backdrop-blur-sm" />
+          
           {teamMembers.map((member, index) => (
-            <TeamMemberCard key={member.id} member={member} index={index} />
+            <DockIcon 
+              key={member.id} 
+              member={member} 
+              mouseX={mouseX}
+              index={index}
+            />
           ))}
+        </motion.div>
+
+        {/* Dock shelf reflection line */}
+        <div className="flex justify-center mt-4">
+          <div className="w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         </div>
       </div>
     </section>
