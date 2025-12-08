@@ -92,7 +92,7 @@ const TeamCard = ({
         />
         
         {/* Main Card */}
-        <div className="relative w-40 h-56 md:w-48 md:h-64 lg:w-52 lg:h-72 rounded-xl overflow-hidden bg-gradient-to-b from-zinc-800 to-zinc-900">
+        <div className="relative w-36 h-48 md:w-40 md:h-56 lg:w-44 lg:h-60 rounded-xl overflow-hidden bg-gradient-to-b from-zinc-800 to-zinc-900">
           {/* Image */}
           <img 
             src={member.image} 
@@ -201,16 +201,18 @@ const TeamShowcase = () => {
         </motion.div>
 
         {/* Netflix-style horizontal cards */}
-        <div className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10 pb-8">
-          {teamMembers.map((member, index) => (
-            <TeamCard 
-              key={member.id} 
-              member={member} 
-              index={index}
-              hoveredIndex={hoveredIndex}
-              setHoveredIndex={setHoveredIndex}
-            />
-          ))}
+        <div className="overflow-x-auto pb-8 scrollbar-hide">
+          <div className="flex justify-center gap-4 md:gap-6 lg:gap-8 min-w-max px-4">
+            {teamMembers.map((member, index) => (
+              <TeamCard 
+                key={member.id} 
+                member={member} 
+                index={index}
+                hoveredIndex={hoveredIndex}
+                setHoveredIndex={setHoveredIndex}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Bottom decorative line */}
