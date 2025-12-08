@@ -327,60 +327,46 @@ const ProcessSection = () => {
 
 const testimonials = [
   {
-    name: "Rajesh Kumar",
-    role: "Founder, TechStartup India",
+    name: "Giftson Paul",
+    role: "Founder – Destiny Decoder",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    review: "Karthik Media transformed our outdated website into a stunning digital experience. Our bounce rate dropped by 60% and conversions doubled within the first month!",
+    review: "Working with The Karthik Media for our website was a smooth and insightful journey. They understood our brand's purpose deeply and converted it into a design that truly reflects what Destiny Decoder stands for. The communication was clear, the process was structured, and the final output exceeded our expectations. I highly recommend them for anyone looking to build a meaningful digital presence.",
     rating: 5,
   },
   {
-    name: "Priya Sharma",
-    role: "CEO, Fashion Boutique",
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=150&h=150&fit=crop&crop=face",
-    review: "The team understood our brand vision perfectly. The website they delivered exceeded all expectations with beautiful animations and seamless user experience.",
-    rating: 5,
-  },
-  {
-    name: "Amit Patel",
-    role: "Director, Real Estate Group",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
-    review: "Professional team with exceptional design skills. They delivered our property listing website on time with all the advanced features we needed.",
-    rating: 5,
-  },
-  {
-    name: "Sneha Reddy",
-    role: "Owner, Organic Foods",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
-    review: "Our e-commerce site now loads in under 2 seconds! The mobile experience is fantastic and our online sales have increased by 150%.",
-    rating: 4,
-  },
-  {
-    name: "Vikram Singh",
-    role: "Managing Director, Logistics Co",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-    review: "The dashboard they built for our operations is intuitive and powerful. Our team productivity improved significantly after the implementation.",
-    rating: 5,
-  },
-  {
-    name: "Ananya Iyer",
-    role: "Founder, Wellness Studio",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
-    review: "Beautiful, calming design that perfectly captures our brand essence. The booking system integration works flawlessly. Highly recommended!",
-    rating: 5,
-  },
-  {
-    name: "Rohan Mehta",
-    role: "Tech Lead, SaaS Company",
+    name: "Karthick",
+    role: "Founder – Black Caps",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
-    review: "As a developer myself, I appreciate the clean code and modern tech stack they used. The website is fast, secure, and easy to maintain.",
+    review: "The Karthik Media team handled our website development with great professionalism. They took the time to understand Black Caps' vision and delivered a clean, powerful, and high-performing website. Everything from design to responsiveness was handled with care. It honestly felt like working with a team that genuinely wants your brand to grow.",
     rating: 5,
   },
   {
-    name: "Kavitha Nair",
-    role: "Owner, Restaurant Chain",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
-    review: "Our online ordering system is a game-changer! The design attracts customers and the UX makes ordering so simple. Best investment we made.",
-    rating: 4,
+    name: "Dr. R. Kanmani",
+    role: "Correspondent & Senior Principal – Dolphin Group of Schools",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
+    review: "Our experience with The Karthik Media team was truly impressive. They captured the essence of Dolphin Group of Schools and presented it beautifully on the website. The structure, student-friendly layout, and clear communication throughout the development process made the journey very reassuring. We are extremely satisfied with the result and appreciate the team's dedication.",
+    rating: 5,
+  },
+  {
+    name: "Mr. Wahab",
+    role: "Founder – Waioz Consulting Services",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
+    review: "The Karthik Media team delivered exactly what we were looking for. The website they built for us is modern, fast, and professional—truly matching the standards of a consulting brand. The development process was transparent and timely. Their approach to understanding our needs made the entire experience effortless. Happy to have partnered with them.",
+    rating: 5,
+  },
+  {
+    name: "Mr. Anbu",
+    role: "Marketing Team – Solid Pro",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+    review: "The Karthik Media team made our website development journey simple and efficient. They understood Solid Pro's market positioning and developed a website that aligns perfectly with our brand identity. Their updates were consistent, the process was smooth, and the final design was spot on. A reliable team to work with.",
+    rating: 5,
+  },
+  {
+    name: "Mr. Abi Sangeeth",
+    role: "Founder – Blenforge Technology",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face",
+    review: "As a tech-focused brand, we needed a website that looked premium and performed flawlessly. The Karthik Media delivered exactly that. Their team was patient, detail-oriented, and very easy to collaborate with. The entire development process was quick, professional, and well-executed. I genuinely appreciate their work and recommend them without hesitation.",
+    rating: 5,
   },
 ];
 
@@ -457,10 +443,10 @@ const TestimonialsSection = () => {
           <div className="overflow-hidden mb-6">
             <motion.div
               className="flex gap-6"
-              animate={{ x: [0, -1800] }}
+              animate={{ x: [0, -2136] }}
               transition={{
                 x: {
-                  duration: 30,
+                  duration: 25,
                   repeat: Infinity,
                   ease: "linear",
                 },
@@ -476,16 +462,16 @@ const TestimonialsSection = () => {
           <div className="overflow-hidden">
             <motion.div
               className="flex gap-6"
-              animate={{ x: [-1800, 0] }}
+              animate={{ x: [-2136, 0] }}
               transition={{
                 x: {
-                  duration: 30,
+                  duration: 25,
                   repeat: Infinity,
                   ease: "linear",
                 },
               }}
             >
-              {[...testimonials.slice(4), ...testimonials.slice(0, 4), ...testimonials.slice(4), ...testimonials.slice(0, 4)].map((testimonial, index) => (
+              {[...testimonials.slice(3), ...testimonials.slice(0, 3), ...testimonials.slice(3), ...testimonials.slice(0, 3)].map((testimonial, index) => (
                 <TestimonialCard key={index} testimonial={testimonial} index={index % testimonials.length} />
               ))}
             </motion.div>
