@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import karthikImage from "@/assets/karthik-team.png";
 import kaushikaImage from "@/assets/kaushika-team.png";
+import sivaneshImage from "@/assets/sivanesh-team.png";
 
 const teamMembers = [
   {
@@ -29,6 +30,7 @@ const teamMembers = [
     company: "The Karthik Media",
     initials: "SN",
     color: "from-blue-500 to-blue-700",
+    image: sivaneshImage,
   },
   {
     id: 4,
