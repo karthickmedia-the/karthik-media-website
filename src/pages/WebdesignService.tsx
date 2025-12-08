@@ -325,6 +325,177 @@ const ProcessSection = () => {
   );
 };
 
+const testimonials = [
+  {
+    name: "Rajesh Kumar",
+    role: "Founder, TechStartup India",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    review: "Karthik Media transformed our outdated website into a stunning digital experience. Our bounce rate dropped by 60% and conversions doubled within the first month!",
+    rating: 5,
+  },
+  {
+    name: "Priya Sharma",
+    role: "CEO, Fashion Boutique",
+    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=150&h=150&fit=crop&crop=face",
+    review: "The team understood our brand vision perfectly. The website they delivered exceeded all expectations with beautiful animations and seamless user experience.",
+    rating: 5,
+  },
+  {
+    name: "Amit Patel",
+    role: "Director, Real Estate Group",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
+    review: "Professional team with exceptional design skills. They delivered our property listing website on time with all the advanced features we needed.",
+    rating: 5,
+  },
+  {
+    name: "Sneha Reddy",
+    role: "Owner, Organic Foods",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
+    review: "Our e-commerce site now loads in under 2 seconds! The mobile experience is fantastic and our online sales have increased by 150%.",
+    rating: 4,
+  },
+  {
+    name: "Vikram Singh",
+    role: "Managing Director, Logistics Co",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+    review: "The dashboard they built for our operations is intuitive and powerful. Our team productivity improved significantly after the implementation.",
+    rating: 5,
+  },
+  {
+    name: "Ananya Iyer",
+    role: "Founder, Wellness Studio",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
+    review: "Beautiful, calming design that perfectly captures our brand essence. The booking system integration works flawlessly. Highly recommended!",
+    rating: 5,
+  },
+  {
+    name: "Rohan Mehta",
+    role: "Tech Lead, SaaS Company",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+    review: "As a developer myself, I appreciate the clean code and modern tech stack they used. The website is fast, secure, and easy to maintain.",
+    rating: 5,
+  },
+  {
+    name: "Kavitha Nair",
+    role: "Owner, Restaurant Chain",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+    review: "Our online ordering system is a game-changer! The design attracts customers and the UX makes ordering so simple. Best investment we made.",
+    rating: 4,
+  },
+];
+
+const StarRating = ({ rating }: { rating: number }) => (
+  <div className="flex gap-1">
+    {[...Array(5)].map((_, i) => (
+      <svg
+        key={i}
+        className={`w-4 h-4 ${i < rating ? "text-primary fill-primary" : "text-muted-foreground/30"}`}
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+      </svg>
+    ))}
+  </div>
+);
+
+const TestimonialCard = ({ testimonial, index }: { testimonial: typeof testimonials[0]; index: number }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: index * 0.1 }}
+    className="flex-shrink-0 w-[350px] p-6 bg-card/50 border border-primary/10 rounded-2xl hover:border-primary/30 transition-all duration-300 group"
+  >
+    <div className="flex items-start gap-4 mb-4">
+      <img
+        src={testimonial.image}
+        alt={testimonial.name}
+        className="w-14 h-14 rounded-full object-cover border-2 border-primary/30 group-hover:border-primary transition-colors"
+      />
+      <div>
+        <h4 className="text-foreground font-semibold">{testimonial.name}</h4>
+        <p className="text-muted-foreground text-sm">{testimonial.role}</p>
+        <StarRating rating={testimonial.rating} />
+      </div>
+    </div>
+    <p className="text-muted-foreground text-sm leading-relaxed">"{testimonial.review}"</p>
+  </motion.div>
+);
+
+const TestimonialsSection = () => {
+  return (
+    <section className="relative bg-background py-24 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-6xl font-black text-foreground mb-4">
+            Client <span className="text-primary">Success Stories</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            See what our clients have to say about their experience working with us.
+          </p>
+        </motion.div>
+
+        {/* Auto-scrolling testimonials */}
+        <div className="relative">
+          {/* Gradient masks */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
+          
+          {/* First row - scroll left */}
+          <div className="overflow-hidden mb-6">
+            <motion.div
+              className="flex gap-6"
+              animate={{ x: [0, -1800] }}
+              transition={{
+                x: {
+                  duration: 30,
+                  repeat: Infinity,
+                  ease: "linear",
+                },
+              }}
+            >
+              {[...testimonials, ...testimonials].map((testimonial, index) => (
+                <TestimonialCard key={index} testimonial={testimonial} index={index % testimonials.length} />
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Second row - scroll right */}
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex gap-6"
+              animate={{ x: [-1800, 0] }}
+              transition={{
+                x: {
+                  duration: 30,
+                  repeat: Infinity,
+                  ease: "linear",
+                },
+              }}
+            >
+              {[...testimonials.slice(4), ...testimonials.slice(0, 4), ...testimonials.slice(4), ...testimonials.slice(0, 4)].map((testimonial, index) => (
+                <TestimonialCard key={index} testimonial={testimonial} index={index % testimonials.length} />
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const CTASection = () => {
   return (
     <section className="relative bg-background py-24 overflow-hidden">
@@ -382,6 +553,7 @@ const WebdesignService = () => {
       <HeroSection />
       <FeaturesSection />
       <ProcessSection />
+      <TestimonialsSection />
       <CTASection />
       <Footer />
     </div>
