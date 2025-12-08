@@ -140,7 +140,7 @@ const TeamCard = ({ member, index }: { member: typeof teamMembers[0]; index: num
 
 const TeamShowcase = () => {
   return (
-    <section className="bg-black py-16 md:py-24 px-4 relative overflow-hidden">
+    <section className="bg-black py-16 md:py-24 px-4 relative">
       {/* Subtle background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#C8F200]/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -173,8 +173,8 @@ const TeamShowcase = () => {
           </p>
         </motion.div>
 
-        {/* Team Grid */}
-        <div className="flex flex-wrap justify-center gap-5 md:gap-6 lg:gap-8">
+        {/* Team Grid - Added padding for HUD lines */}
+        <div className="flex flex-wrap justify-center gap-8 md:gap-10 lg:gap-12 py-8 px-8">
           {teamMembers.map((member, index) => (
             <TeamCard key={member.id} member={member} index={index} />
           ))}
