@@ -144,7 +144,7 @@ const TeamShowcase = () => {
   const mouseX = useMotionValue(Infinity);
 
   return (
-    <section className="bg-black py-28 md:py-40 px-4 relative overflow-hidden">
+    <section className="bg-black py-12 md:py-16 px-4 relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
