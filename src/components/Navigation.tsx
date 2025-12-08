@@ -7,7 +7,7 @@ const Navigation = () => {
     { name: 'Services', url: '#services', icon: Briefcase },
     { name: 'Blog', url: '#blog', icon: BookOpen },
     { name: 'Case Studies', url: '#case-studies', icon: FolderKanban },
-    { name: 'Careers', url: '#careers', icon: Award },
+    { name: 'Careers', url: '/careers', icon: Award },
     { name: 'Contact', url: '#contact', icon: Phone },
   ];
 
