@@ -4,6 +4,7 @@ import karthikImage from "@/assets/karthik-team.png";
 import kaushikaImage from "@/assets/kaushika-team.png";
 import sivaneshImage from "@/assets/sivanesh-team.png";
 import gayathriImage from "@/assets/gayathri-team.png";
+import manojImage from "@/assets/manoj-team.png";
 
 const teamMembers = [
   {
@@ -49,6 +50,7 @@ const teamMembers = [
     company: "The Karthik Media",
     initials: "MK",
     color: "from-orange-500 to-orange-700",
+    image: manojImage,
   },
   {
     id: 6,
