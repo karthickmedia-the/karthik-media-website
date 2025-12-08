@@ -62,7 +62,7 @@ const TeamCard = ({ member, index }: { member: typeof teamMembers[0]; index: num
       <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-[#C8F200]/0 via-[#C8F200]/0 to-[#C8F200]/0 group-hover:from-[#C8F200] group-hover:via-[#C8F200]/50 group-hover:to-[#C8F200] transition-all duration-500 opacity-0 group-hover:opacity-100" />
 
       {/* Card */}
-      <div className="relative w-36 h-48 md:w-40 md:h-56 lg:w-44 lg:h-60 rounded-2xl overflow-hidden bg-zinc-900 border border-white/10 group-hover:border-transparent transition-all duration-500 group-hover:scale-110">
+      <div className="relative w-40 h-52 md:w-44 md:h-60 lg:w-48 lg:h-64 rounded-2xl overflow-hidden bg-zinc-900 border border-white/10 group-hover:border-transparent transition-all duration-500">
         {/* Image container */}
         <div className="absolute inset-0 overflow-hidden">
           <img 
@@ -141,8 +141,8 @@ const TeamShowcase = () => {
           </p>
         </motion.div>
 
-        {/* Team Grid - Single Row */}
-        <div className="flex justify-center gap-4 md:gap-6 lg:gap-8 overflow-x-auto pb-4 px-4 scrollbar-hide">
+        {/* Team Grid */}
+        <div className="flex flex-wrap justify-center gap-5 md:gap-6 lg:gap-8">
           {teamMembers.map((member, index) => (
             <TeamCard key={member.id} member={member} index={index} />
           ))}
