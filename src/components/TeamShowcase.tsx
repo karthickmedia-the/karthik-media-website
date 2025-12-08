@@ -104,14 +104,12 @@ const DockIcon = ({
         style={{ scale, y }}
         className="relative cursor-pointer"
       >
-        {/* Subtle glow effect on hover only */}
-        <motion.div
-          style={{ opacity: glowOpacity }}
-          className="absolute -inset-2 bg-white/20 rounded-3xl blur-xl"
-        />
+        {/* Glowing border effect */}
+        <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#C8F200] via-[#C8F200]/50 to-[#C8F200] opacity-75 blur-md animate-pulse" />
+        <div className="absolute -inset-0.5 rounded-2xl bg-[#C8F200]/30" />
         
         {/* Main icon */}
-        <div className="relative w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900 shadow-2xl border border-white/10">
+        <div className="relative w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900 shadow-2xl border-2 border-[#C8F200]/50">
           <img 
             src={member.image} 
             alt={member.name}
@@ -122,10 +120,10 @@ const DockIcon = ({
           <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-transparent pointer-events-none" />
         </div>
 
-        {/* Reflection */}
+        {/* Reflection with green glow */}
         <motion.div 
           style={{ opacity: glowOpacity }}
-          className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-20 h-5 bg-white/15 rounded-full blur-lg"
+          className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-20 h-5 bg-[#C8F200]/20 rounded-full blur-lg"
         />
       </motion.div>
 
@@ -177,7 +175,7 @@ const TeamShowcase = () => {
         <motion.div
           onMouseMove={(e) => mouseX.set(e.pageX)}
           onMouseLeave={() => mouseX.set(Infinity)}
-          className="flex items-end justify-center gap-6 md:gap-10 pb-12 mx-auto"
+          className="flex items-end justify-center gap-8 md:gap-14 lg:gap-16 pb-12 mx-auto"
         >
           {teamMembers.map((member, index) => (
             <DockIcon 
