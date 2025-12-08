@@ -323,3 +323,12 @@ All colors MUST be HSL.
     offset-distance: 100%;
   }
 }
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
