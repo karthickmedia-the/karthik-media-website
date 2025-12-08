@@ -52,56 +52,108 @@ const TeamCard = ({ member, index }: { member: typeof teamMembers[0]; index: num
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
-      whileHover={{ y: -10 }}
-      className="group relative flex-shrink-0 cursor-pointer"
+      whileHover={{ 
+        y: -10,
+        transition: { duration: 0.3, ease: "easeOut" }
+      }}
+      className="relative cursor-pointer isolate"
+      style={{ zIndex: 1 }}
     >
       {/* Glow effect behind card */}
-      <div className="absolute -inset-2 bg-[#C8F200]/0 group-hover:bg-[#C8F200]/20 rounded-3xl blur-xl transition-all duration-500 ease-out" />
-      
-      {/* Animated border */}
-      <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-[#C8F200]/0 via-[#C8F200]/0 to-[#C8F200]/0 group-hover:from-[#C8F200] group-hover:via-[#C8F200]/50 group-hover:to-[#C8F200] transition-all duration-500 opacity-0 group-hover:opacity-100" />
+      <motion.div 
+        className="absolute -inset-3 bg-[#C8F200]/0 rounded-3xl blur-xl -z-10"
+        initial={{ opacity: 0 }}
+        whileHover={{ opacity: 1, backgroundColor: "rgba(200, 242, 0, 0.25)" }}
+        transition={{ duration: 0.4 }}
+      />
 
-      {/* Card */}
-      <div className="relative w-40 h-52 md:w-44 md:h-60 lg:w-48 lg:h-64 rounded-2xl overflow-hidden bg-zinc-900 border border-white/10 group-hover:border-transparent transition-all duration-500">
-        {/* Image container */}
-        <div className="absolute inset-0 overflow-hidden">
-          <img 
-            src={member.image} 
-            alt={member.name}
-            className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110"
-          />
-        </div>
+      {/* Card wrapper for hover effects */}
+      <motion.div 
+        className="relative w-40 h-52 md:w-44 md:h-60 lg:w-48 lg:h-64 rounded-2xl overflow-hidden bg-zinc-900"
+        whileHover={{ 
+          boxShadow: "0 0 30px rgba(200, 242, 0, 0.3)",
+          borderColor: "rgba(200, 242, 0, 0.6)"
+        }}
+        style={{ border: "1px solid rgba(255,255,255,0.1)" }}
+        transition={{ duration: 0.4 }}
+      >
+        {/* Image with zoom */}
+        <motion.img 
+          src={member.image} 
+          alt={member.name}
+          className="w-full h-full object-cover"
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        />
         
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none" />
         
-        {/* Shine effect on hover */}
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out" />
-        </div>
+        {/* Shine effect */}
+        <motion.div 
+          className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent pointer-events-none"
+          initial={{ x: "-100%", opacity: 0 }}
+          whileHover={{ x: "100%", opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        />
 
         {/* Corner accents */}
-        <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-[#C8F200]/0 group-hover:border-[#C8F200] rounded-tl-2xl transition-all duration-500" />
-        <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-[#C8F200]/0 group-hover:border-[#C8F200] rounded-tr-2xl transition-all duration-500" />
-        <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-[#C8F200]/0 group-hover:border-[#C8F200] rounded-bl-2xl transition-all duration-500" />
-        <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-[#C8F200]/0 group-hover:border-[#C8F200] rounded-br-2xl transition-all duration-500" />
+        <motion.div 
+          className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-transparent rounded-tl-2xl pointer-events-none"
+          whileHover={{ borderColor: "#C8F200" }}
+          transition={{ duration: 0.3 }}
+        />
+        <motion.div 
+          className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-transparent rounded-tr-2xl pointer-events-none"
+          whileHover={{ borderColor: "#C8F200" }}
+          transition={{ duration: 0.3 }}
+        />
+        <motion.div 
+          className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-transparent rounded-bl-2xl pointer-events-none"
+          whileHover={{ borderColor: "#C8F200" }}
+          transition={{ duration: 0.3 }}
+        />
+        <motion.div 
+          className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-transparent rounded-br-2xl pointer-events-none"
+          whileHover={{ borderColor: "#C8F200" }}
+          transition={{ duration: 0.3 }}
+        />
 
         {/* Content */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-          <h3 className="text-white font-semibold text-sm md:text-base leading-tight group-hover:text-[#C8F200] transition-colors duration-300">
+        <motion.div 
+          className="absolute bottom-0 left-0 right-0 p-4 pointer-events-none"
+          initial={{ y: 5 }}
+          whileHover={{ y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <motion.h3 
+            className="text-white font-semibold text-sm md:text-base leading-tight"
+            whileHover={{ color: "#C8F200" }}
+            transition={{ duration: 0.3 }}
+          >
             {member.name}
-          </h3>
-          <p className="text-white/60 text-xs md:text-sm mt-1 group-hover:text-white/90 transition-colors duration-300">
+          </motion.h3>
+          <p className="text-white/60 text-xs md:text-sm mt-1">
             {member.designation}
           </p>
           
-          {/* Underline animation */}
-          <div className="h-0.5 w-0 group-hover:w-full bg-[#C8F200] mt-2 transition-all duration-500 ease-out" />
-        </div>
+          {/* Underline */}
+          <motion.div 
+            className="h-0.5 bg-[#C8F200] mt-2"
+            initial={{ width: 0 }}
+            whileHover={{ width: "100%" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          />
+        </motion.div>
 
         {/* Top line accent */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-1/2 h-0.5 bg-[#C8F200] transition-all duration-500 ease-out" />
-      </div>
+        <motion.div 
+          className="absolute top-0 left-1/2 -translate-x-1/2 h-0.5 bg-[#C8F200] pointer-events-none"
+          initial={{ width: 0 }}
+          whileHover={{ width: "50%" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+        />
+      </motion.div>
     </motion.div>
   );
 };
@@ -142,7 +194,7 @@ const TeamShowcase = () => {
         </motion.div>
 
         {/* Team Grid */}
-        <div className="flex flex-wrap justify-center gap-5 md:gap-6 lg:gap-8">
+        <div className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10">
           {teamMembers.map((member, index) => (
             <TeamCard key={member.id} member={member} index={index} />
           ))}
