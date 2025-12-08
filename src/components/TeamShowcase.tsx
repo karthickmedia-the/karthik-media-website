@@ -1,65 +1,144 @@
-import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
-import teamMember1 from "@/assets/team-member-1.png";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
-const people = [
+const teamMembers = [
   {
     id: 1,
-    name: "John Doe",
-    designation: "Software Engineer",
-    image: teamMember1,
+    name: "Karthik Shanmugam",
+    designation: "Founder & CEO",
+    company: "The Karthik Media",
+    initials: "KS",
+    color: "from-[#C8F200] to-[#9BC700]",
   },
   {
     id: 2,
-    name: "Robert Johnson",
-    designation: "Product Manager",
-    image:
-      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    name: "Kaushika Stalin Kumar",
+    designation: "Co-Founder",
+    company: "The Karthik Media",
+    initials: "KK",
+    color: "from-purple-500 to-purple-700",
   },
   {
     id: 3,
-    name: "Jane Smith",
-    designation: "Data Scientist",
-    image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    name: "Sivanesh",
+    designation: "CTO",
+    company: "The Karthik Media",
+    initials: "SN",
+    color: "from-blue-500 to-blue-700",
   },
   {
     id: 4,
-    name: "Emily Davis",
-    designation: "UX Designer",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    name: "Gayathri",
+    designation: "Digital Marketing Head",
+    company: "The Karthik Media",
+    initials: "GA",
+    color: "from-pink-500 to-pink-700",
   },
   {
     id: 5,
-    name: "Tyler Durden",
-    designation: "Soap Developer",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+    name: "Manoj Kumar",
+    designation: "Video Editor",
+    company: "The Karthik Media",
+    initials: "MK",
+    color: "from-orange-500 to-orange-700",
   },
   {
     id: 6,
-    name: "Dora",
-    designation: "The Explorer",
-    image:
-      "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
+    name: "Vijaykumar",
+    designation: "Sales Head",
+    company: "The Karthik Media",
+    initials: "VK",
+    color: "from-cyan-500 to-cyan-700",
   },
 ];
 
+const TeamMemberCard = ({ member, index }: { member: typeof teamMembers[0]; index: number }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="relative group"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Tooltip */}
+      <motion.div
+        initial={{ opacity: 0, y: 10, scale: 0.9 }}
+        animate={isHovered ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 10, scale: 0.9 }}
+        transition={{ duration: 0.2 }}
+        className="absolute -top-24 left-1/2 -translate-x-1/2 z-50 pointer-events-none"
+      >
+        <div className="bg-gradient-to-br from-zinc-800 to-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 shadow-2xl min-w-[180px]">
+          <p className="text-white font-semibold text-sm text-center">{member.name}</p>
+          <p className="text-[#C8F200] text-xs text-center mt-1">{member.designation}</p>
+          <p className="text-gray-400 text-xs text-center">{member.company}</p>
+          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-zinc-900 border-r border-b border-zinc-700 rotate-45" />
+        </div>
+      </motion.div>
+
+      {/* Avatar */}
+      <motion.div
+        whileHover={{ scale: 1.15, y: -5 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        className={`relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br ${member.color} flex items-center justify-center cursor-pointer shadow-lg`}
+      >
+        {/* Glow effect on hover */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isHovered ? { opacity: 1 } : { opacity: 0 }}
+          className={`absolute inset-0 rounded-full bg-gradient-to-br ${member.color} blur-xl opacity-50`}
+        />
+        
+        {/* Border ring */}
+        <div className="absolute inset-0 rounded-full border-2 border-white/20 group-hover:border-white/40 transition-colors" />
+        
+        {/* Initials */}
+        <span className="text-white font-bold text-xl md:text-2xl relative z-10">
+          {member.initials}
+        </span>
+      </motion.div>
+
+      {/* Name below avatar (mobile) */}
+      <p className="text-white text-xs text-center mt-2 md:hidden">{member.name.split(' ')[0]}</p>
+    </motion.div>
+  );
+};
+
 const TeamShowcase = () => {
   return (
-    <div className="bg-black py-16 md:py-24 px-4">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-bold text-center text-white mb-4">
-          Meet Our Team
-        </h2>
-        <p className="text-center text-gray-400 mb-12 md:mb-16 text-sm md:text-base">
-          Hover over the avatars to learn more about each team member
-        </p>
-        <div className="flex flex-row items-center justify-center w-full">
-          <AnimatedTooltip items={people} />
+    <section className="bg-black py-16 md:py-24 px-4 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#C8F200]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12 md:mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            Meet Our <span className="text-[#C8F200]">Team</span>
+          </h2>
+          <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto">
+            The talented individuals behind The Karthik Media's success
+          </p>
+        </motion.div>
+
+        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+          {teamMembers.map((member, index) => (
+            <TeamMemberCard key={member.id} member={member} index={index} />
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
