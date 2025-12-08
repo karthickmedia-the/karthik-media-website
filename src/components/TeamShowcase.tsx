@@ -52,49 +52,49 @@ const TeamCard = ({ member, index }: { member: typeof teamMembers[0]; index: num
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
-      whileHover={{ y: -10 }}
-      className="group relative flex-shrink-0 cursor-pointer"
+      whileHover={{ y: -10, zIndex: 50 }}
+      className="group relative flex-shrink-0 cursor-pointer z-10 hover:z-50"
     >
       {/* HUD-style animated lines - Top */}
-      <svg className="absolute -top-6 left-1/2 -translate-x-1/2 w-24 h-6 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <svg className="absolute -top-8 left-1/2 -translate-x-1/2 w-32 h-8 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
         <line x1="50%" y1="100%" x2="50%" y2="0" stroke="#C8F200" strokeWidth="2" strokeDasharray="4 4">
           <animate attributeName="stroke-dashoffset" from="8" to="0" dur="0.5s" repeatCount="indefinite" />
         </line>
-        <circle cx="50%" cy="2" r="2" fill="#C8F200" className="animate-pulse" />
+        <circle cx="50%" cy="3" r="3" fill="#C8F200" className="animate-pulse" />
       </svg>
 
       {/* HUD-style animated lines - Left */}
-      <svg className="absolute top-1/2 -left-6 -translate-y-1/2 w-6 h-24 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <svg className="absolute top-1/2 -left-8 -translate-y-1/2 w-8 h-32 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
         <line x1="100%" y1="50%" x2="0" y2="50%" stroke="#C8F200" strokeWidth="2" strokeDasharray="4 4">
           <animate attributeName="stroke-dashoffset" from="8" to="0" dur="0.5s" repeatCount="indefinite" />
         </line>
-        <circle cx="2" cy="50%" r="2" fill="#C8F200" className="animate-pulse" />
+        <circle cx="3" cy="50%" r="3" fill="#C8F200" className="animate-pulse" />
       </svg>
 
       {/* HUD-style animated lines - Right */}
-      <svg className="absolute top-1/2 -right-6 -translate-y-1/2 w-6 h-24 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <svg className="absolute top-1/2 -right-8 -translate-y-1/2 w-8 h-32 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
         <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#C8F200" strokeWidth="2" strokeDasharray="4 4">
           <animate attributeName="stroke-dashoffset" from="0" to="8" dur="0.5s" repeatCount="indefinite" />
         </line>
-        <circle cx="22" cy="50%" r="2" fill="#C8F200" className="animate-pulse" />
+        <circle cx="29" cy="50%" r="3" fill="#C8F200" className="animate-pulse" />
       </svg>
 
       {/* HUD-style animated lines - Bottom */}
-      <svg className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-24 h-6 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <svg className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-32 h-8 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
         <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#C8F200" strokeWidth="2" strokeDasharray="4 4">
           <animate attributeName="stroke-dashoffset" from="0" to="8" dur="0.5s" repeatCount="indefinite" />
         </line>
-        <circle cx="50%" cy="22" r="2" fill="#C8F200" className="animate-pulse" />
+        <circle cx="50%" cy="29" r="3" fill="#C8F200" className="animate-pulse" />
       </svg>
 
       {/* Glow effect behind card */}
-      <div className="absolute -inset-2 bg-[#C8F200]/0 group-hover:bg-[#C8F200]/20 rounded-3xl blur-xl transition-all duration-500 ease-out" />
+      <div className="absolute -inset-4 bg-[#C8F200]/0 group-hover:bg-[#C8F200]/20 rounded-3xl blur-xl transition-all duration-500 ease-out z-0" />
       
       {/* Animated border */}
-      <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-[#C8F200]/0 via-[#C8F200]/0 to-[#C8F200]/0 group-hover:from-[#C8F200] group-hover:via-[#C8F200]/50 group-hover:to-[#C8F200] transition-all duration-500 opacity-0 group-hover:opacity-100" />
+      <div className="absolute -inset-[2px] rounded-2xl bg-gradient-to-r from-[#C8F200]/0 via-[#C8F200]/0 to-[#C8F200]/0 group-hover:from-[#C8F200] group-hover:via-[#C8F200]/50 group-hover:to-[#C8F200] transition-all duration-500 opacity-0 group-hover:opacity-100 z-10" />
 
       {/* Card */}
-      <div className="relative w-40 h-52 md:w-44 md:h-60 lg:w-48 lg:h-64 rounded-2xl overflow-hidden bg-zinc-900 border border-white/10 group-hover:border-[#C8F200]/50 group-hover:shadow-[0_0_30px_rgba(200,242,0,0.3)] transition-all duration-500">
+      <div className="relative w-40 h-52 md:w-44 md:h-60 lg:w-48 lg:h-64 rounded-2xl overflow-hidden bg-zinc-900 border-2 border-white/10 group-hover:border-[#C8F200] group-hover:shadow-[0_0_40px_rgba(200,242,0,0.4)] transition-all duration-500 z-20">
         {/* Image container */}
         <div className="absolute inset-0 overflow-hidden">
           <img 
