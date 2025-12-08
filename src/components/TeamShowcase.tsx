@@ -52,32 +52,55 @@ const TeamCard = ({ member, index }: { member: typeof teamMembers[0]; index: num
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
-      className="group relative flex-shrink-0"
+      whileHover={{ y: -10 }}
+      className="group relative flex-shrink-0 cursor-pointer"
     >
+      {/* Glow effect behind card */}
+      <div className="absolute -inset-2 bg-[#C8F200]/0 group-hover:bg-[#C8F200]/20 rounded-3xl blur-xl transition-all duration-500 ease-out" />
+      
+      {/* Animated border */}
+      <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-[#C8F200]/0 via-[#C8F200]/0 to-[#C8F200]/0 group-hover:from-[#C8F200] group-hover:via-[#C8F200]/50 group-hover:to-[#C8F200] transition-all duration-500 opacity-0 group-hover:opacity-100" />
+
       {/* Card */}
-      <div className="relative w-40 h-52 md:w-44 md:h-60 lg:w-48 lg:h-64 rounded-2xl overflow-hidden bg-zinc-900 border border-white/10 transition-all duration-500 ease-out group-hover:border-[#C8F200]/50 group-hover:shadow-[0_0_30px_rgba(200,242,0,0.2)]">
-        {/* Image */}
-        <img 
-          src={member.image} 
-          alt={member.name}
-          className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
-        />
+      <div className="relative w-40 h-52 md:w-44 md:h-60 lg:w-48 lg:h-64 rounded-2xl overflow-hidden bg-zinc-900 border border-white/10 group-hover:border-transparent transition-all duration-500">
+        {/* Image container */}
+        <div className="absolute inset-0 overflow-hidden">
+          <img 
+            src={member.image} 
+            alt={member.name}
+            className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110"
+          />
+        </div>
         
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
         
-        {/* Content */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 transform transition-transform duration-500 ease-out group-hover:translate-y-0">
-          <h3 className="text-white font-semibold text-sm md:text-base leading-tight">
-            {member.name}
-          </h3>
-          <p className="text-[#C8F200] text-xs md:text-sm mt-1 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-            {member.designation}
-          </p>
+        {/* Shine effect on hover */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out" />
         </div>
 
-        {/* Top highlight */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        {/* Corner accents */}
+        <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-[#C8F200]/0 group-hover:border-[#C8F200] rounded-tl-2xl transition-all duration-500" />
+        <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-[#C8F200]/0 group-hover:border-[#C8F200] rounded-tr-2xl transition-all duration-500" />
+        <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-[#C8F200]/0 group-hover:border-[#C8F200] rounded-bl-2xl transition-all duration-500" />
+        <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-[#C8F200]/0 group-hover:border-[#C8F200] rounded-br-2xl transition-all duration-500" />
+
+        {/* Content */}
+        <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+          <h3 className="text-white font-semibold text-sm md:text-base leading-tight group-hover:text-[#C8F200] transition-colors duration-300">
+            {member.name}
+          </h3>
+          <p className="text-white/60 text-xs md:text-sm mt-1 group-hover:text-white/90 transition-colors duration-300">
+            {member.designation}
+          </p>
+          
+          {/* Underline animation */}
+          <div className="h-0.5 w-0 group-hover:w-full bg-[#C8F200] mt-2 transition-all duration-500 ease-out" />
+        </div>
+
+        {/* Top line accent */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-1/2 h-0.5 bg-[#C8F200] transition-all duration-500 ease-out" />
       </div>
     </motion.div>
   );
