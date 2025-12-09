@@ -95,7 +95,9 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <span className="text-muted-foreground">Funnels & Automation</span>
+                <Link to="/services/funnels-automation" className="text-muted-foreground hover:text-primary transition-colors">
+                  Funnels & Automation
+                </Link>
               </li>
             </ul>
           </div>
