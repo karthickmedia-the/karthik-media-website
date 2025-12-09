@@ -8,6 +8,7 @@ import WebdesignService from "./pages/WebdesignService";
 import SeoService from "./pages/SeoService";
 import MetaAdsService from "./pages/MetaAdsService";
 import ContentCreationService from "./pages/ContentCreationService";
+import GoogleAdsService from "./pages/GoogleAdsService";
 import Careers from "./pages/Careers";
 import NotFound from "./pages/NotFound";
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/services/seo" element={<SeoService />} />
           <Route path="/services/meta-ads" element={<MetaAdsService />} />
           <Route path="/services/content-creation" element={<ContentCreationService />} />
+          <Route path="/services/google-ads" element={<GoogleAdsService />} />
           <Route path="/careers" element={<Careers />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

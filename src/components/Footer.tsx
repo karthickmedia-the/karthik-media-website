@@ -85,7 +85,9 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <span className="text-muted-foreground">Google Ad Services</span>
+                <Link to="/services/google-ads" className="text-muted-foreground hover:text-primary transition-colors">
+                  Google Ad Services
+                </Link>
               </li>
               <li>
                 <Link to="/services/content-creation" className="text-muted-foreground hover:text-primary transition-colors">
