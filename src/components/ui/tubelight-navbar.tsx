@@ -1,14 +1,21 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
-import { motion } from "framer-motion"
-import { LucideIcon } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+import { LucideIcon, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { Link } from "react-router-dom"
+
+interface SubItem {
+  name: string
+  url: string
+}
 
 interface NavItem {
   name: string
   url: string
   icon: LucideIcon
+  subItems?: SubItem[]
 }
 
 interface NavBarProps {
@@ -19,6 +26,7 @@ interface NavBarProps {
 export function NavBar({ items, className }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
   const [isMobile, setIsMobile] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,6 +37,14 @@ export function NavBar({ items, className }: NavBarProps) {
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
+
+  const handleMouseEnter = (name: string) => {
+    setOpenDropdown(name)
+  }
+
+  const handleMouseLeave = () => {
+    setOpenDropdown(null)
+  }
 
   return (
     <div
@@ -41,22 +57,62 @@ export function NavBar({ items, className }: NavBarProps) {
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
+          const hasSubItems = item.subItems && item.subItems.length > 0
 
           return (
-            <a
+            <div
               key={item.name}
-              href={item.url}
-              onClick={() => setActiveTab(item.name)}
-              className={cn(
-                "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
-                "text-foreground/80 hover:text-primary",
-                isActive && "bg-muted text-primary",
-              )}
+              className="relative"
+              onMouseEnter={() => hasSubItems && handleMouseEnter(item.name)}
+              onMouseLeave={handleMouseLeave}
             >
-              <span className="hidden md:inline">{item.name}</span>
-              <span className="md:hidden">
-                <Icon size={18} strokeWidth={2.5} />
-              </span>
+              {hasSubItems ? (
+                <button
+                  onClick={() => setOpenDropdown(openDropdown === item.name ? null : item.name)}
+                  className={cn(
+                    "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors flex items-center gap-1",
+                    "text-foreground/80 hover:text-primary",
+                    isActive && "bg-muted text-primary",
+                  )}
+                >
+                  <span className="hidden md:inline">{item.name}</span>
+                  <span className="md:hidden">
+                    <Icon size={18} strokeWidth={2.5} />
+                  </span>
+                  <ChevronDown size={14} className={cn("hidden md:inline transition-transform", openDropdown === item.name && "rotate-180")} />
+                </button>
+              ) : item.url.startsWith('/') ? (
+                <Link
+                  to={item.url}
+                  onClick={() => setActiveTab(item.name)}
+                  className={cn(
+                    "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors block",
+                    "text-foreground/80 hover:text-primary",
+                    isActive && "bg-muted text-primary",
+                  )}
+                >
+                  <span className="hidden md:inline">{item.name}</span>
+                  <span className="md:hidden">
+                    <Icon size={18} strokeWidth={2.5} />
+                  </span>
+                </Link>
+              ) : (
+                <a
+                  href={item.url}
+                  onClick={() => setActiveTab(item.name)}
+                  className={cn(
+                    "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors block",
+                    "text-foreground/80 hover:text-primary",
+                    isActive && "bg-muted text-primary",
+                  )}
+                >
+                  <span className="hidden md:inline">{item.name}</span>
+                  <span className="md:hidden">
+                    <Icon size={18} strokeWidth={2.5} />
+                  </span>
+                </a>
+              )}
+              
               {isActive && (
                 <motion.div
                   layoutId="lamp"
@@ -75,7 +131,34 @@ export function NavBar({ items, className }: NavBarProps) {
                   </div>
                 </motion.div>
               )}
-            </a>
+
+              {/* Dropdown Menu */}
+              <AnimatePresence>
+                {hasSubItems && openDropdown === item.name && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 py-2 px-1 bg-background border border-border rounded-xl shadow-2xl min-w-[200px] z-50"
+                  >
+                    {item.subItems?.map((subItem) => (
+                      <Link
+                        key={subItem.name}
+                        to={subItem.url}
+                        onClick={() => {
+                          setOpenDropdown(null)
+                          setActiveTab(item.name)
+                        }}
+                        className="block px-4 py-2 text-sm text-foreground/80 hover:text-primary hover:bg-primary/10 rounded-lg transition-colors whitespace-nowrap"
+                      >
+                        {subItem.name}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           )
         })}
       </div>
