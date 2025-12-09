@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -68,12 +69,32 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-black text-foreground mb-4">SERVICES</h3>
             <ul className="space-y-3">
-              <li className="text-muted-foreground">Web Design Services</li>
-              <li className="text-muted-foreground">SEO Services</li>
-              <li className="text-muted-foreground">Meta Ad Services</li>
-              <li className="text-muted-foreground">Google Ad Services</li>
-              <li className="text-muted-foreground">Content Creation</li>
-              <li className="text-muted-foreground">Funnels & Automation</li>
+              <li>
+                <Link to="/services/webdesign" className="text-muted-foreground hover:text-primary transition-colors">
+                  Web Design Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/seo" className="text-muted-foreground hover:text-primary transition-colors">
+                  SEO Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/meta-ads" className="text-muted-foreground hover:text-primary transition-colors">
+                  Meta Ad Services
+                </Link>
+              </li>
+              <li>
+                <span className="text-muted-foreground">Google Ad Services</span>
+              </li>
+              <li>
+                <Link to="/services/content-creation" className="text-muted-foreground hover:text-primary transition-colors">
+                  Content Creation
+                </Link>
+              </li>
+              <li>
+                <span className="text-muted-foreground">Funnels & Automation</span>
+              </li>
             </ul>
           </div>
 
