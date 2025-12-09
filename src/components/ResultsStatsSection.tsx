@@ -2,7 +2,7 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const stats = [
-  { value: 500, suffix: "+", label: "Projects Delivered", description: "Successful campaigns launched" },
+  { value: 116, suffix: "+", label: "Projects Delivered", description: "Successful campaigns launched" },
   { value: 12, suffix: "+", label: "Years Experience", description: "Industry expertise" },
   { value: 10, suffix: "X", label: "Average ROI", description: "Return on ad spend" },
   { value: 98, suffix: "%", label: "Client Retention", description: "Long-term partnerships" },
