@@ -52,25 +52,25 @@ const GlossyTeamCard = ({ member, index }: { member: typeof teamMembers[0]; inde
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
-      className="group relative cursor-pointer"
+      className="group/card relative cursor-pointer isolate"
     >
       {/* Outer glow on hover */}
-      <div className="absolute -inset-3 bg-[#C8F200]/0 group-hover:bg-[#C8F200]/20 rounded-3xl blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
+      <div className="absolute -inset-3 bg-[#C8F200]/0 group-hover/card:bg-[#C8F200]/20 rounded-3xl blur-2xl transition-all duration-500 opacity-0 group-hover/card:opacity-100" />
       
       {/* HUD Corner Brackets - CSS only for reliable hover */}
-      <div className="absolute -inset-2 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div className="absolute -inset-2 pointer-events-none opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
         {/* Top Left */}
-        <div className="absolute top-0 left-0 w-0 h-0 border-l-2 border-t-2 border-[#C8F200] transition-all duration-300 ease-out group-hover:w-5 group-hover:h-5" />
+        <div className="absolute top-0 left-0 w-0 h-0 border-l-2 border-t-2 border-[#C8F200] transition-all duration-300 ease-out group-hover/card:w-5 group-hover/card:h-5" />
         {/* Top Right */}
-        <div className="absolute top-0 right-0 w-0 h-0 border-r-2 border-t-2 border-[#C8F200] transition-all duration-300 ease-out group-hover:w-5 group-hover:h-5" />
+        <div className="absolute top-0 right-0 w-0 h-0 border-r-2 border-t-2 border-[#C8F200] transition-all duration-300 ease-out group-hover/card:w-5 group-hover/card:h-5" />
         {/* Bottom Left */}
-        <div className="absolute bottom-0 left-0 w-0 h-0 border-l-2 border-b-2 border-[#C8F200] transition-all duration-300 ease-out group-hover:w-5 group-hover:h-5" />
+        <div className="absolute bottom-0 left-0 w-0 h-0 border-l-2 border-b-2 border-[#C8F200] transition-all duration-300 ease-out group-hover/card:w-5 group-hover/card:h-5" />
         {/* Bottom Right */}
-        <div className="absolute bottom-0 right-0 w-0 h-0 border-r-2 border-b-2 border-[#C8F200] transition-all duration-300 ease-out group-hover:w-5 group-hover:h-5" />
+        <div className="absolute bottom-0 right-0 w-0 h-0 border-r-2 border-b-2 border-[#C8F200] transition-all duration-300 ease-out group-hover/card:w-5 group-hover/card:h-5" />
       </div>
 
       {/* Animated HUD lines - Top */}
-      <svg className="absolute -top-4 left-1/2 -translate-x-1/2 w-16 h-4 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <svg className="absolute -top-4 left-1/2 -translate-x-1/2 w-16 h-4 pointer-events-none opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
         <line x1="50%" y1="100%" x2="50%" y2="0" stroke="#C8F200" strokeWidth="1.5" strokeDasharray="3 3">
           <animate attributeName="stroke-dashoffset" from="6" to="0" dur="0.4s" repeatCount="indefinite" />
         </line>
@@ -78,7 +78,7 @@ const GlossyTeamCard = ({ member, index }: { member: typeof teamMembers[0]; inde
       </svg>
       
       {/* Animated HUD lines - Bottom */}
-      <svg className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 h-4 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <svg className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 h-4 pointer-events-none opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
         <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#C8F200" strokeWidth="1.5" strokeDasharray="3 3">
           <animate attributeName="stroke-dashoffset" from="0" to="6" dur="0.4s" repeatCount="indefinite" />
         </line>
@@ -86,51 +86,51 @@ const GlossyTeamCard = ({ member, index }: { member: typeof teamMembers[0]; inde
       </svg>
 
       {/* Main Card - Glossy Glass Effect */}
-      <div className="relative w-36 h-48 sm:w-40 sm:h-52 md:w-44 md:h-56 lg:w-48 lg:h-64 rounded-2xl overflow-hidden transition-all duration-500 group-hover:shadow-[0_0_50px_rgba(200,242,0,0.3)] group-hover:-translate-y-3 group-hover:scale-[1.02]">
+      <div className="relative w-36 h-48 sm:w-40 sm:h-52 md:w-44 md:h-56 lg:w-48 lg:h-64 rounded-2xl overflow-hidden transition-all duration-500 group-hover/card:shadow-[0_0_50px_rgba(200,242,0,0.3)] group-hover/card:-translate-y-3 group-hover/card:scale-[1.02]">
         {/* Glass border */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/30 via-white/10 to-white/5 p-[1px] group-hover:from-[#C8F200]/60 group-hover:via-[#C8F200]/30 group-hover:to-[#C8F200]/10 transition-all duration-500">
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/30 via-white/10 to-white/5 p-[1px] group-hover/card:from-[#C8F200]/60 group-hover/card:via-[#C8F200]/30 group-hover/card:to-[#C8F200]/10 transition-all duration-500">
           <div className="w-full h-full rounded-2xl overflow-hidden bg-zinc-900/90 backdrop-blur-xl">
             {/* Image */}
             <div className="absolute inset-0">
               <img 
                 src={member.image} 
                 alt={member.name}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110"
               />
             </div>
             
             {/* Glossy overlay - top shine */}
-            <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/20 via-white/5 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+            <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/20 via-white/5 to-transparent opacity-60 group-hover/card:opacity-80 transition-opacity duration-500" />
             
             {/* Bottom gradient for text */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-70 group-hover:opacity-85 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-70 group-hover/card:opacity-85 transition-opacity duration-500" />
             
             {/* Moving shine effect */}
             <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/card:translate-x-full transition-transform duration-1000 ease-out" />
             </div>
 
             {/* Scan line effect on hover */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none">
+            <div className="absolute inset-0 opacity-0 group-hover/card:opacity-30 transition-opacity duration-500 pointer-events-none">
               <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(200,242,0,0.03)_2px,rgba(200,242,0,0.03)_4px)]" />
             </div>
 
             {/* Content */}
             <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
-              <h3 className="text-white font-semibold text-xs sm:text-sm md:text-base leading-tight group-hover:text-[#C8F200] transition-colors duration-300 drop-shadow-lg">
+              <h3 className="text-white font-semibold text-xs sm:text-sm md:text-base leading-tight group-hover/card:text-[#C8F200] transition-colors duration-300 drop-shadow-lg">
                 {member.name}
               </h3>
-              <p className="text-white/60 text-[10px] sm:text-xs md:text-sm mt-0.5 group-hover:text-white/90 transition-colors duration-300">
+              <p className="text-white/60 text-[10px] sm:text-xs md:text-sm mt-0.5 group-hover/card:text-white/90 transition-colors duration-300">
                 {member.designation}
               </p>
               
               {/* Animated underline */}
-              <div className="h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-[#C8F200] to-[#C8F200]/50 mt-2 transition-all duration-500 ease-out rounded-full" />
+              <div className="h-0.5 w-0 group-hover/card:w-full bg-gradient-to-r from-[#C8F200] to-[#C8F200]/50 mt-2 transition-all duration-500 ease-out rounded-full" />
             </div>
 
             {/* Corner dots */}
-            <div className="absolute top-2 left-2 w-1.5 h-1.5 rounded-full bg-transparent group-hover:bg-[#C8F200] transition-all duration-300 group-hover:shadow-[0_0_8px_rgba(200,242,0,0.8)]" />
-            <div className="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-transparent group-hover:bg-[#C8F200] transition-all duration-300 group-hover:shadow-[0_0_8px_rgba(200,242,0,0.8)]" />
+            <div className="absolute top-2 left-2 w-1.5 h-1.5 rounded-full bg-transparent group-hover/card:bg-[#C8F200] transition-all duration-300 group-hover/card:shadow-[0_0_8px_rgba(200,242,0,0.8)]" />
+            <div className="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-transparent group-hover/card:bg-[#C8F200] transition-all duration-300 group-hover/card:shadow-[0_0_8px_rgba(200,242,0,0.8)]" />
           </div>
         </div>
       </div>
