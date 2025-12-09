@@ -50,31 +50,26 @@ const GlossyTeamCard = ({ member, index }: { member: typeof teamMembers[0]; inde
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.3 }}
       transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
-      whileHover={{ y: -12, scale: 1.02 }}
-      className="group relative cursor-pointer flex-shrink-0"
+      className="group relative cursor-pointer"
     >
       {/* Outer glow on hover */}
       <div className="absolute -inset-3 bg-[#C8F200]/0 group-hover:bg-[#C8F200]/20 rounded-3xl blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
       
-      {/* HUD Corner Brackets - Animated on hover */}
-      <div className="absolute -inset-2 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-500">
+      {/* HUD Corner Brackets - CSS only for reliable hover */}
+      <div className="absolute -inset-2 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         {/* Top Left */}
-        <motion.div 
-          initial={{ width: 0, height: 0 }}
-          whileHover={{ width: 20, height: 20 }}
-          className="absolute top-0 left-0 border-l-2 border-t-2 border-[#C8F200] transition-all duration-300 group-hover:w-5 group-hover:h-5"
-        />
+        <div className="absolute top-0 left-0 w-0 h-0 border-l-2 border-t-2 border-[#C8F200] transition-all duration-300 ease-out group-hover:w-5 group-hover:h-5" />
         {/* Top Right */}
-        <div className="absolute top-0 right-0 w-0 h-0 border-r-2 border-t-2 border-[#C8F200] transition-all duration-300 group-hover:w-5 group-hover:h-5" />
+        <div className="absolute top-0 right-0 w-0 h-0 border-r-2 border-t-2 border-[#C8F200] transition-all duration-300 ease-out group-hover:w-5 group-hover:h-5" />
         {/* Bottom Left */}
-        <div className="absolute bottom-0 left-0 w-0 h-0 border-l-2 border-b-2 border-[#C8F200] transition-all duration-300 group-hover:w-5 group-hover:h-5" />
+        <div className="absolute bottom-0 left-0 w-0 h-0 border-l-2 border-b-2 border-[#C8F200] transition-all duration-300 ease-out group-hover:w-5 group-hover:h-5" />
         {/* Bottom Right */}
-        <div className="absolute bottom-0 right-0 w-0 h-0 border-r-2 border-b-2 border-[#C8F200] transition-all duration-300 group-hover:w-5 group-hover:h-5" />
+        <div className="absolute bottom-0 right-0 w-0 h-0 border-r-2 border-b-2 border-[#C8F200] transition-all duration-300 ease-out group-hover:w-5 group-hover:h-5" />
       </div>
 
-      {/* Animated HUD lines */}
+      {/* Animated HUD lines - Top */}
       <svg className="absolute -top-4 left-1/2 -translate-x-1/2 w-16 h-4 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <line x1="50%" y1="100%" x2="50%" y2="0" stroke="#C8F200" strokeWidth="1.5" strokeDasharray="3 3">
           <animate attributeName="stroke-dashoffset" from="6" to="0" dur="0.4s" repeatCount="indefinite" />
@@ -82,6 +77,7 @@ const GlossyTeamCard = ({ member, index }: { member: typeof teamMembers[0]; inde
         <circle cx="50%" cy="2" r="2" fill="#C8F200" className="animate-pulse" />
       </svg>
       
+      {/* Animated HUD lines - Bottom */}
       <svg className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 h-4 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#C8F200" strokeWidth="1.5" strokeDasharray="3 3">
           <animate attributeName="stroke-dashoffset" from="0" to="6" dur="0.4s" repeatCount="indefinite" />
@@ -90,7 +86,7 @@ const GlossyTeamCard = ({ member, index }: { member: typeof teamMembers[0]; inde
       </svg>
 
       {/* Main Card - Glossy Glass Effect */}
-      <div className="relative w-32 h-44 sm:w-36 sm:h-48 md:w-40 md:h-56 lg:w-44 lg:h-60 rounded-2xl overflow-hidden transition-all duration-500 group-hover:shadow-[0_0_50px_rgba(200,242,0,0.3)]">
+      <div className="relative w-36 h-48 sm:w-40 sm:h-52 md:w-44 md:h-56 lg:w-48 lg:h-64 rounded-2xl overflow-hidden transition-all duration-500 group-hover:shadow-[0_0_50px_rgba(200,242,0,0.3)] group-hover:-translate-y-3 group-hover:scale-[1.02]">
         {/* Glass border */}
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/30 via-white/10 to-white/5 p-[1px] group-hover:from-[#C8F200]/60 group-hover:via-[#C8F200]/30 group-hover:to-[#C8F200]/10 transition-all duration-500">
           <div className="w-full h-full rounded-2xl overflow-hidden bg-zinc-900/90 backdrop-blur-xl">
@@ -99,7 +95,7 @@ const GlossyTeamCard = ({ member, index }: { member: typeof teamMembers[0]; inde
               <img 
                 src={member.image} 
                 alt={member.name}
-                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
             </div>
             
@@ -110,7 +106,7 @@ const GlossyTeamCard = ({ member, index }: { member: typeof teamMembers[0]; inde
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-70 group-hover:opacity-85 transition-opacity duration-500" />
             
             {/* Moving shine effect */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
             </div>
 
@@ -133,8 +129,8 @@ const GlossyTeamCard = ({ member, index }: { member: typeof teamMembers[0]; inde
             </div>
 
             {/* Corner dots */}
-            <div className="absolute top-2 left-2 w-1.5 h-1.5 rounded-full bg-[#C8F200]/0 group-hover:bg-[#C8F200] transition-all duration-300 group-hover:shadow-[0_0_8px_rgba(200,242,0,0.8)]" />
-            <div className="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-[#C8F200]/0 group-hover:bg-[#C8F200] transition-all duration-300 group-hover:shadow-[0_0_8px_rgba(200,242,0,0.8)]" />
+            <div className="absolute top-2 left-2 w-1.5 h-1.5 rounded-full bg-transparent group-hover:bg-[#C8F200] transition-all duration-300 group-hover:shadow-[0_0_8px_rgba(200,242,0,0.8)]" />
+            <div className="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-transparent group-hover:bg-[#C8F200] transition-all duration-300 group-hover:shadow-[0_0_8px_rgba(200,242,0,0.8)]" />
           </div>
         </div>
       </div>
@@ -180,12 +176,21 @@ const TeamSection = () => {
           </p>
         </motion.div>
 
-        {/* Team Row - All 6 in same line */}
-        <div className="flex justify-center items-center gap-4 sm:gap-5 md:gap-6 lg:gap-8 overflow-x-auto pb-6 px-4 scrollbar-hide">
+        {/* Team Grid - All 6 in same line with proper centering */}
+        <div className="flex flex-wrap justify-center items-start gap-6 md:gap-8 lg:gap-10 py-8">
           {teamMembers.map((member, index) => (
             <GlossyTeamCard key={member.id} member={member} index={index} />
           ))}
         </div>
+
+        {/* Top accent line */}
+        <motion.div 
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="absolute top-10 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-[#C8F200]/30 to-transparent"
+        />
 
         {/* Bottom decorative line */}
         <motion.div 
