@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import WebdesignService from "./pages/WebdesignService";
 import SeoService from "./pages/SeoService";
+import MetaAdsService from "./pages/MetaAdsService";
 import Careers from "./pages/Careers";
 import NotFound from "./pages/NotFound";
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/services/webdesign" element={<WebdesignService />} />
           <Route path="/services/seo" element={<SeoService />} />
+          <Route path="/services/meta-ads" element={<MetaAdsService />} />
           <Route path="/careers" element={<Careers />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
