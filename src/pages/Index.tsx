@@ -8,7 +8,6 @@ import GlobalNetworkSection from "@/components/GlobalNetworkSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
-import TeamShowcase from "@/components/TeamShowcase";
 
 const Index = () => {
   return (
@@ -18,7 +17,6 @@ const Index = () => {
       <ResultsStatsSection />
       <WhoWeHelpSection />
       <WhatWeDoSection />
-      <TeamShowcase />
       <WhyChooseUsSection />
       <GlobalNetworkSection />
       <TestimonialsSection />
