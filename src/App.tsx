@@ -11,6 +11,7 @@ import ContentCreationService from "./pages/ContentCreationService";
 import GoogleAdsService from "./pages/GoogleAdsService";
 import FunnelsAutomationService from "./pages/FunnelsAutomationService";
 import Careers from "./pages/Careers";
+import CaseStudies from "./pages/CaseStudies";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/services/google-ads" element={<GoogleAdsService />} />
           <Route path="/services/funnels-automation" element={<FunnelsAutomationService />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
