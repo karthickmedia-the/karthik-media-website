@@ -146,41 +146,15 @@ const ContentCreationService = () => {
               </div>
             </motion.div>
 
-            {/* Right Visual Grid */}
+            {/* Right - Floating Stats */}
             <motion.div 
-              className="relative"
+              className="relative flex items-center justify-center"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=300&h=400&fit=crop",
-                  "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=300&h=300&fit=crop",
-                  "https://images.unsplash.com/photo-1493711662062-fa541f7f2f60?w=300&h=300&fit=crop",
-                  "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=300&h=400&fit=crop",
-                ].map((img, i) => (
-                  <motion.div
-                    key={i}
-                    className={`relative overflow-hidden rounded-2xl ${i % 2 === 0 ? 'row-span-2' : ''}`}
-                    whileHover={{ scale: 1.05, zIndex: 10 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <img 
-                      src={img} 
-                      alt={`Creative sample ${i + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
-                      <Play className="w-10 h-10 text-white" />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Floating Stats */}
               <motion.div 
-                className="absolute -bottom-4 -left-4 bg-black/80 backdrop-blur-xl border border-[#C8F200]/30 rounded-xl p-4"
+                className="bg-black/80 backdrop-blur-xl border border-[#C8F200]/30 rounded-xl p-6"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
