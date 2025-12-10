@@ -21,7 +21,7 @@ const helpCategories = [{
 const WhoWeHelpSection = () => {
   return <section className="py-20 md:py-32 bg-background relative overflow-hidden">
       {/* Background texture */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute inset-0" style={{
         backgroundImage: `radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.1) 0%, transparent 50%),
                             radial-gradient(circle at 80% 50%, hsl(var(--primary) / 0.05) 0%, transparent 50%)`

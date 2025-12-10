@@ -44,23 +44,23 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  return <section ref={sectionRef} className="relative min-h-screen pb-12 bg-background overflow-hidden pt-16">
+    return <section ref={sectionRef} className="relative min-h-screen pb-12 bg-background overflow-hidden pt-16">
       {/* Futuristic Background Layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-zinc-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-zinc-900 pointer-events-none" />
       
       {/* Animated Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(200,242,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(200,242,0,0.03)_1px,transparent_1px)] bg-[length:50px_50px] animate-[slideGrid_20s_linear_infinite]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(200,242,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(200,242,0,0.03)_1px,transparent_1px)] bg-[length:50px_50px] animate-[slideGrid_20s_linear_infinite] pointer-events-none" />
       
       {/* Pulsing Radial Gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(200,242,0,0.05),transparent_60%)] animate-pulse" style={{
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(200,242,0,0.05),transparent_60%)] animate-pulse pointer-events-none" style={{
       animationDuration: '3s'
     }} />
       
       {/* Scanning Lines Effect */}
-      <div className="absolute inset-0 bg-[linear-gradient(0deg,transparent_0%,rgba(200,242,0,0.03)_50%,transparent_100%)] bg-[length:100%_4px] animate-[scan_8s_linear_infinite]" />
+      <div className="absolute inset-0 bg-[linear-gradient(0deg,transparent_0%,rgba(200,242,0,0.03)_50%,transparent_100%)] bg-[length:100%_4px] animate-[scan_8s_linear_infinite] pointer-events-none" />
       
       {/* Diagonal Moving Stripes */}
-      <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(200,242,0,0.02)_50%,transparent_52%)] bg-[length:30px_30px] animate-[slideStripes_15s_linear_infinite]" />
+      <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(200,242,0,0.02)_50%,transparent_52%)] bg-[length:30px_30px] animate-[slideStripes_15s_linear_infinite] pointer-events-none" />
       
       {/* Cursor Glow Effect */}
       <div 
@@ -89,8 +89,8 @@ const HeroSection = () => {
       ))}
       
       {/* Floating Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-[float_10s_ease-in-out_infinite]" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl animate-[float_15s_ease-in-out_infinite_reverse]" />
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-[float_10s_ease-in-out_infinite] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl animate-[float_15s_ease-in-out_infinite_reverse] pointer-events-none" />
       
       {/* Interactive Futuristic HUD System */}
       <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
@@ -199,9 +199,9 @@ const HeroSection = () => {
       </div>
       
       {/* Vignette Effects */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-      <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)] opacity-40" />
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent opacity-60 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)] opacity-40 pointer-events-none" />
       
       <div className="container mx-auto px-4 py-6 relative z-10">
         {/* Top Headline */}
@@ -217,9 +217,9 @@ const HeroSection = () => {
         </div>
 
         {/* Main Content Area - 10X + Person Image Overlapped */}
-        <div className="relative flex justify-center items-center min-h-[400px] sm:min-h-[450px] md:min-h-[550px] lg:min-h-[600px] mt-8 md:mt-12 lg:mt-16">
+        <div className="relative flex justify-center items-center min-h-[400px] sm:min-h-[450px] md:min-h-[550px] lg:min-h-[600px] mt-8 md:mt-12 lg:mt-16 pointer-events-none">
           {/* 10X Text - Positioned to overlap with person */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
             <h2 className="relative text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-black leading-none text-primary animate-[quickShake_4s_ease-in-out_infinite] before:content-['10X'] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:text-black before:animate-[blackGlitchLeft_3s_steps(2)_infinite] before:opacity-0 after:content-['10X'] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:text-black after:animate-[blackGlitchRight_3.5s_steps(2)_infinite] after:opacity-0">
               10X
             </h2>
@@ -229,9 +229,9 @@ const HeroSection = () => {
           </div>
 
           {/* Person Image - Centered, overlapping 10X */}
-          <div className="relative flex justify-center items-center w-full px-4 sm:px-0">
+          <div className="relative flex justify-center items-center w-full px-4 sm:px-0 pointer-events-none">
             {/* Person Image - Responsive Sizing */}
-            <img alt="Digital Marketing Expert" src="/lovable-uploads/018ff520-50b9-4ad3-8314-5e8b6390a523.png" className="relative z-30 w-full max-w-[300px] sm:max-w-[350px] md:max-w-[450px] lg:max-w-[500px] h-auto object-contain border-slate-50 border rounded-3xl opacity-100" />
+            <img alt="Digital Marketing Expert" src="/lovable-uploads/018ff520-50b9-4ad3-8314-5e8b6390a523.png" className="relative z-30 w-full max-w-[300px] sm:max-w-[350px] md:max-w-[450px] lg:max-w-[500px] h-auto object-contain border-slate-50 border rounded-3xl opacity-100 pointer-events-none" />
           </div>
         </div>
 

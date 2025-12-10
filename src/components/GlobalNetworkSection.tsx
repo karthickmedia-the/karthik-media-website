@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const GlobalNetworkSection = () => {
   return <section className="pt-8 pb-20 md:pt-12 md:pb-32 bg-black w-full relative overflow-hidden">
       {/* Background texture */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#C8F200]/10 via-transparent to-transparent" />
       </div>
 
