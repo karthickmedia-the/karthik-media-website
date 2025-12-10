@@ -54,7 +54,9 @@ const Footer = () => {
 
   return (
     <footer className="bg-background/10 relative h-fit rounded-3xl overflow-hidden m-4 md:m-8 border border-primary/10">
-      <div className="max-w-7xl mx-auto p-8 md:p-14 z-40 relative">
+      <FooterBackgroundGradient />
+      
+      <div className="max-w-7xl mx-auto p-8 md:p-14 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 lg:gap-16 pb-12">
           {/* Brand section */}
           <div className="flex flex-col space-y-4">
@@ -77,22 +79,20 @@ const Footer = () => {
               </h4>
               <ul className="space-y-3">
                 {section.links.map((link) => (
-                  <li key={link.label} className="relative">
+                  <li key={link.label}>
                     {link.href.startsWith("/") ? (
                       <Link
                         to={link.href}
-                        className="text-muted-foreground hover:text-primary transition-colors relative group"
+                        className="inline-block text-muted-foreground hover:text-primary transition-all duration-300 cursor-pointer relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left hover:translate-x-1"
                       >
                         {link.label}
-                        <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
                       </Link>
                     ) : (
                       <a
                         href={link.href}
-                        className="text-muted-foreground hover:text-primary transition-colors relative group"
+                        className="inline-block text-muted-foreground hover:text-primary transition-all duration-300 cursor-pointer relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left hover:translate-x-1"
                       >
                         {link.label}
-                        <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
                       </a>
                     )}
                   </li>
@@ -112,7 +112,7 @@ const Footer = () => {
                   {item.icon}
                   <a
                     href={item.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary transition-all duration-300 cursor-pointer hover:translate-x-1"
                   >
                     {item.text}
                   </a>
@@ -133,7 +133,7 @@ const Footer = () => {
                 key={label}
                 href={href}
                 aria-label={label}
-                className="hover:text-primary transition-colors"
+                className="hover:text-primary transition-all duration-300 hover:scale-110 cursor-pointer"
               >
                 {icon}
               </a>
@@ -148,11 +148,9 @@ const Footer = () => {
       </div>
 
       {/* Text hover effect */}
-      <div className="lg:flex hidden h-[30rem] -mt-52 -mb-36">
+      <div className="lg:flex hidden h-[30rem] -mt-52 -mb-36 pointer-events-none">
         <TextHoverEffect text="KARTHIK" className="z-50" />
       </div>
-
-      <FooterBackgroundGradient />
     </footer>
   );
 };
