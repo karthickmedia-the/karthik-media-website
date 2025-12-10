@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Target, Zap, Users, TrendingUp, Shield, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const reasons = [
   {
@@ -88,14 +89,17 @@ const WhyChooseUsSection = () => {
               >
                 Start Your Growth
               </motion.a>
-              <motion.a
-                href="#"
+              <motion.div
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center px-6 py-3 border border-zinc-700 text-white font-semibold rounded-lg transition-all hover:border-[#C8F200]/50 hover:text-[#C8F200]"
               >
-                View Case Studies
-              </motion.a>
+                <Link
+                  to="/case-studies"
+                  className="inline-flex items-center justify-center px-6 py-3 border border-zinc-700 text-white font-semibold rounded-lg transition-all hover:border-[#C8F200]/50 hover:text-[#C8F200]"
+                >
+                  View Case Studies
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
 
