@@ -18,7 +18,6 @@ import {
   Users
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const seoFeatures = [
@@ -658,7 +657,6 @@ const CTASection = () => {
 const SeoService = () => {
   return (
     <main className="min-h-screen bg-background">
-      <Navigation />
       <HeroSection />
       <StatsSection />
       <FeaturesSection />
