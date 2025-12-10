@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, TrendingUp, Users, Eye, Target, ChevronRight, Sparkles, BarChart3, Zap } from "lucide-react";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const caseStudies = [
@@ -127,7 +128,7 @@ const CaseStudies = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      
+      <Navbar />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden">
         {/* Animated Background */}
