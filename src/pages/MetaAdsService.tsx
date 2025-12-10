@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const metaFeatures = [
   {
@@ -775,6 +776,7 @@ const MetaAdsService = () => {
       <AdFormatsSection />
       <TestimonialsSection />
       <CTASection />
+      <Footer />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { 
   Zap, ArrowRight, Bot, Workflow, Mail, MessageSquare,
@@ -752,6 +753,8 @@ const FunnelsAutomationService = () => {
           </motion.div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

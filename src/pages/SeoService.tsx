@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const seoFeatures = [
   {
@@ -664,6 +665,7 @@ const SeoService = () => {
       <ProcessSection />
       <TestimonialsSection />
       <CTASection />
+      <Footer />
     </main>
   );
 };

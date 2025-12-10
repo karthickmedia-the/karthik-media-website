@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, TrendingUp, Users, Eye, Target, ChevronRight, Sparkles, BarChart3, Zap } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const caseStudies = [
   {
@@ -465,6 +466,8 @@ const CaseStudies = () => {
           </motion.div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
