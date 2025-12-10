@@ -292,26 +292,20 @@ const FunnelsAutomationService = () => {
             </motion.p>
 
             <motion.div 
-              className="flex flex-wrap justify-center gap-4 mb-16"
+              className="flex justify-center mb-16"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <Button 
-                size="xl" 
-                className="bg-[#C8F200] text-black hover:bg-[#C8F200]/90 font-bold group"
-              >
-                Get Automation Audit
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button 
-                size="xl" 
-                variant="outline" 
-                className="border-white/30 text-white hover:bg-white/10"
-              >
-                <Play className="w-5 h-5 mr-2" />
-                Watch Demo
-              </Button>
+              <a href="https://topmate.io/karthik_media/1790830" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  size="xl" 
+                  className="bg-[#C8F200] text-black hover:bg-[#C8F200]/90 font-bold group"
+                >
+                  Start Your Project
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
             </motion.div>
 
             {/* Stats */}

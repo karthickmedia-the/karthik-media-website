@@ -262,18 +262,17 @@ const HeroSection = () => {
         </motion.p>
 
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex justify-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <Button variant="hero-primary" size="lg" className="text-lg px-8">
-            Get Free SEO Audit
-            <ChevronRight className="w-5 h-5 ml-2" />
-          </Button>
-          <Button variant="outline" size="lg" className="text-lg px-8 border-primary/30 text-foreground hover:bg-primary/10">
-            View Case Studies
-          </Button>
+          <a href="https://topmate.io/karthik_media/1790830" target="_blank" rel="noopener noreferrer">
+            <Button variant="hero-primary" size="lg" className="text-lg px-8">
+              Start Your Project
+              <ChevronRight className="w-5 h-5 ml-2" />
+            </Button>
+          </a>
         </motion.div>
       </motion.div>
 
