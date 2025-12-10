@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { 
   Search, TrendingUp, Target, BarChart3, Zap, Shield, 
@@ -704,8 +703,6 @@ const GoogleAdsService = () => {
           </motion.div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

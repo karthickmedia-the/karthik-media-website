@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Briefcase, MapPin, Clock, Mail, Phone, Video, Search, Code, Users, ChevronDown, Sparkles } from "lucide-react";
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 
 interface JobPosition {
   id: number;
@@ -388,8 +387,6 @@ const Careers = () => {
           </motion.div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };
