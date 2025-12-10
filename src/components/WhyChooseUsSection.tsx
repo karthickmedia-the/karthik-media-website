@@ -82,7 +82,9 @@ const WhyChooseUsSection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.a
-                href="#"
+                href="https://topmate.io/karthik_media/1790830"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center justify-center px-6 py-3 bg-[#C8F200] text-black font-semibold rounded-lg transition-all hover:shadow-[0_0_30px_rgba(200,242,0,0.4)]"

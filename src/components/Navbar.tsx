@@ -129,12 +129,14 @@ const Navbar = () => {
             ))}
 
             {/* CTA Button */}
-            <Link
-              to="/#contact"
+            <a
+              href="https://topmate.io/karthik_media/1790830"
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-4 px-6 py-2.5 bg-[#C8F200] text-black font-bold text-sm rounded-full hover:bg-[#C8F200]/90 hover:shadow-lg hover:shadow-[#C8F200]/20 transition-all"
             >
               Book a Call
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -210,12 +212,14 @@ const Navbar = () => {
                 ))}
 
                 <div className="px-4 pt-2">
-                  <Link
-                    to="/#contact"
+                  <a
+                    href="https://topmate.io/karthik_media/1790830"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block w-full px-6 py-3 bg-[#C8F200] text-black font-bold text-sm rounded-full text-center hover:bg-[#C8F200]/90 transition-all"
                   >
                     Book a Call
-                  </Link>
+                  </a>
                 </div>
               </div>
             </motion.div>
