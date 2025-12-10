@@ -8,7 +8,6 @@ import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import GlobalNetworkSection from "@/components/GlobalNetworkSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
-import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -23,7 +22,6 @@ const Index = () => {
       <GlobalNetworkSection />
       <TestimonialsSection />
       <FAQSection />
-      <Footer />
     </div>
   );
 };
