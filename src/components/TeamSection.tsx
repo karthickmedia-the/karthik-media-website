@@ -55,7 +55,7 @@ const GlossyTeamCard = ({ member, index }: { member: typeof teamMembers[0]; inde
       className="group/card relative cursor-pointer isolate"
     >
       {/* Outer glow on hover */}
-      <div className="absolute -inset-3 bg-[#C8F200]/0 group-hover/card:bg-[#C8F200]/20 rounded-3xl blur-2xl transition-all duration-500 opacity-0 group-hover/card:opacity-100" />
+      <div className="absolute -inset-3 bg-[#C8F200]/0 group-hover/card:bg-[#C8F200]/20 rounded-3xl blur-2xl transition-all duration-500 opacity-0 group-hover/card:opacity-100 pointer-events-none" />
       
       {/* HUD Corner Brackets - CSS only for reliable hover */}
       <div className="absolute -inset-2 pointer-events-none opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
