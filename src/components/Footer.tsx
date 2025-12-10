@@ -6,6 +6,7 @@ import {
   Instagram,
   Linkedin,
   Youtube,
+  MapPin,
 } from "lucide-react";
 import { FooterBackgroundGradient, TextHoverEffect } from "@/components/ui/hover-footer";
 
@@ -43,6 +44,11 @@ const Footer = () => {
       icon: <Phone size={18} className="text-primary" />,
       text: "+91 9842041665",
       href: "tel:+919842041665",
+    },
+    {
+      icon: <MapPin size={18} className="text-primary" />,
+      text: "46/6, HMS Colony 1st St, Madurai 625016",
+      href: "https://maps.google.com/?q=HMS+Colony,+Madurai,+Tamil+Nadu,+India",
     },
   ];
 
