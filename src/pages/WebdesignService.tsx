@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Code, Palette, Zap, Layers, Monitor, Smartphone, Globe, Sparkles, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const features = [
@@ -534,6 +535,7 @@ const CTASection = () => {
 const WebdesignService = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Navbar />
       <HeroSection />
       <FeaturesSection />
       <ProcessSection />

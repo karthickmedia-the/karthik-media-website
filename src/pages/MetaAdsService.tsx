@@ -23,6 +23,7 @@ import {
   Globe
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const metaFeatures = [
@@ -767,6 +768,7 @@ const CTASection = () => {
 const MetaAdsService = () => {
   return (
     <div className="min-h-screen bg-black">
+      <Navbar />
       <HeroSection />
       <StatsSection />
       <AndromedaSection />
