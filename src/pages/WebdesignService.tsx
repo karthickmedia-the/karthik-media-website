@@ -329,43 +329,37 @@ const testimonials = [
   {
     name: "Giftson Paul",
     role: "Founder – Destiny Decoder",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    review: "Working with The Karthik Media for our website was a smooth and insightful journey. They understood our brand's purpose deeply and converted it into a design that truly reflects what Destiny Decoder stands for. The communication was clear, the process was structured, and the final output exceeded our expectations. I highly recommend them for anyone looking to build a meaningful digital presence.",
+    review: "They understood our brand's purpose deeply and converted it into a design that truly reflects what Destiny Decoder stands for. The final output exceeded our expectations.",
     rating: 5,
   },
   {
     name: "Karthick",
     role: "Founder – Black Caps",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
-    review: "The Karthik Media team handled our website development with great professionalism. They took the time to understand Black Caps' vision and delivered a clean, powerful, and high-performing website. Everything from design to responsiveness was handled with care. It honestly felt like working with a team that genuinely wants your brand to grow.",
+    review: "They took the time to understand Black Caps' vision and delivered a clean, powerful, and high-performing website. It felt like working with a team that genuinely wants your brand to grow.",
     rating: 5,
   },
   {
     name: "Dr. R. Kanmani",
     role: "Correspondent & Senior Principal – Dolphin Group of Schools",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
-    review: "Our experience with The Karthik Media team was truly impressive. They captured the essence of Dolphin Group of Schools and presented it beautifully on the website. The structure, student-friendly layout, and clear communication throughout the development process made the journey very reassuring. We are extremely satisfied with the result and appreciate the team's dedication.",
+    review: "They captured the essence of Dolphin Group of Schools and presented it beautifully on the website. We are extremely satisfied with the result.",
     rating: 5,
   },
   {
     name: "Mr. Wahab",
     role: "Founder – Waioz Consulting Services",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
-    review: "The Karthik Media team delivered exactly what we were looking for. The website they built for us is modern, fast, and professional—truly matching the standards of a consulting brand. The development process was transparent and timely. Their approach to understanding our needs made the entire experience effortless. Happy to have partnered with them.",
+    review: "The website they built for us is modern, fast, and professional—truly matching the standards of a consulting brand. Happy to have partnered with them.",
     rating: 5,
   },
   {
     name: "Mr. Anbu",
     role: "Marketing Team – Solid Pro",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-    review: "The Karthik Media team made our website development journey simple and efficient. They understood Solid Pro's market positioning and developed a website that aligns perfectly with our brand identity. Their updates were consistent, the process was smooth, and the final design was spot on. A reliable team to work with.",
+    review: "They understood Solid Pro's market positioning and developed a website that aligns perfectly with our brand identity. A reliable team to work with.",
     rating: 5,
   },
   {
     name: "Mr. Abi Sangeeth",
     role: "Founder – Blenforge Technology",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face",
-    review: "As a tech-focused brand, we needed a website that looked premium and performed flawlessly. The Karthik Media delivered exactly that. Their team was patient, detail-oriented, and very easy to collaborate with. The entire development process was quick, professional, and well-executed. I genuinely appreciate their work and recommend them without hesitation.",
+    review: "Their team was patient, detail-oriented, and very easy to collaborate with. The entire development process was quick, professional, and well-executed.",
     rating: 5,
   },
 ];
@@ -394,11 +388,9 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: typeof testimoni
     className="flex-shrink-0 w-[350px] p-6 bg-card/50 border border-primary/10 rounded-2xl hover:border-primary/30 transition-all duration-300 group"
   >
     <div className="flex items-start gap-4 mb-4">
-      <img
-        src={testimonial.image}
-        alt={testimonial.name}
-        className="w-14 h-14 rounded-full object-cover border-2 border-primary/30 group-hover:border-primary transition-colors"
-      />
+      <div className="w-12 h-12 rounded-full bg-primary/20 border-2 border-primary/30 group-hover:border-primary transition-colors flex items-center justify-center flex-shrink-0">
+        <span className="text-primary font-bold text-lg">{testimonial.name.charAt(0)}</span>
+      </div>
       <div>
         <h4 className="text-foreground font-semibold">{testimonial.name}</h4>
         <p className="text-muted-foreground text-sm">{testimonial.role}</p>
