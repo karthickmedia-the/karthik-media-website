@@ -217,7 +217,7 @@ const HeroSection = () => {
         </div>
 
         {/* Main Content Area - 10X + Person Image Overlapped */}
-        <div className="relative flex justify-center items-center min-h-[400px] sm:min-h-[450px] md:min-h-[550px] lg:min-h-[600px] mt-8 md:mt-12 lg:mt-16 pointer-events-none">
+        <div className="relative flex justify-center items-center min-h-[400px] sm:min-h-[450px] md:min-h-[550px] lg:min-h-[600px] mt-8 md:mt-12 lg:mt-16">
           {/* 10X Text - Positioned to overlap with person */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
             <h2 className="relative text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-black leading-none text-primary animate-[quickShake_4s_ease-in-out_infinite] before:content-['10X'] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:text-black before:animate-[blackGlitchLeft_3s_steps(2)_infinite] before:opacity-0 after:content-['10X'] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:text-black after:animate-[blackGlitchRight_3.5s_steps(2)_infinite] after:opacity-0">

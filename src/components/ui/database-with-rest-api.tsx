@@ -30,9 +30,9 @@ const DatabaseWithRestApi = ({
   title,
   lightColor
 }: DatabaseWithRestApiProps) => {
-  return <div className={cn("relative flex w-full flex-col items-center", className)}>
+  return <div className={cn("relative flex w-full flex-col items-center pointer-events-none", className)}>
       {/* SVG Paths  */}
-      <svg width="100%" height="100%" viewBox="0 0 260 100" className="h-full sm:w-full text-muted px-0 py-0 border-0">
+      <svg width="100%" height="100%" viewBox="0 0 260 100" className="h-full sm:w-full text-muted px-0 py-0 border-0 pointer-events-none">
         <g stroke="currentColor" fill="none" strokeWidth="0.4" strokeDasharray="100 100" pathLength="100">
           <path d="M 22 10 v 10 q 0 5 5 5 h 98 q 5 0 5 5 v 10" />
           <path d="M 62 10 v 10 q 0 5 5 5 h 58 q 5 0 5 5 v 10" />
@@ -146,9 +146,9 @@ const DatabaseWithRestApi = ({
         </defs>
       </svg>
       {/* Main Box */}
-      <div className="absolute bottom-10 md:bottom-16 flex w-full flex-col items-center px-4">
+      <div className="absolute bottom-10 md:bottom-16 flex w-full flex-col items-center px-4 pointer-events-none">
         {/* bottom shadow */}
-        <div className="absolute -bottom-4 h-[150px] md:h-[200px] w-[62%] rounded-xl bg-accent/30" />
+        <div className="absolute -bottom-4 h-[150px] md:h-[200px] w-[62%] rounded-xl bg-accent/30 pointer-events-none" />
         {/* box title */}
         <div className="absolute -top-4 md:-top-6 z-20 flex items-center justify-center rounded-xl border bg-[#101112] px-4 py-2 md:px-6 md:py-3">
           <SparklesIcon className="size-4 md:size-5 text-primary" />

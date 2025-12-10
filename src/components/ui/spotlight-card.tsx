@@ -174,7 +174,7 @@ const GlowCard: React.FC<GlowCardProps> = ({
           ${className}
         `}
       >
-        <div ref={innerRef} data-glow></div>
+        <div ref={innerRef} data-glow className="pointer-events-none"></div>
         {children}
       </div>
     </>
