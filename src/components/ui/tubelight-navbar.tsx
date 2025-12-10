@@ -53,7 +53,26 @@ export function NavBar({ items, className }: NavBarProps) {
         className,
       )}
     >
-      <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+      <div className="relative flex items-center gap-3 py-2 px-3 rounded-full shadow-2xl border border-white/10 overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 50%, rgba(0,0,0,0.2) 100%)',
+          backdropFilter: 'blur(20px) saturate(180%)',
+          WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+          boxShadow: '0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.2)',
+        }}
+      >
+        {/* Glossy shine overlay */}
+        <div className="absolute inset-0 rounded-full pointer-events-none"
+          style={{
+            background: 'linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(0,0,0,0.1) 100%)',
+          }}
+        />
+        {/* Inner glow */}
+        <div className="absolute inset-0 rounded-full pointer-events-none"
+          style={{
+            boxShadow: 'inset 0 0 20px rgba(200,242,0,0.05)',
+          }}
+        />
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
