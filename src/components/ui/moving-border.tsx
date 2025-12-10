@@ -41,7 +41,7 @@ export function MovingBorderButton({
       {...otherProps}
     >
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events-none"
         style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
       >
         <MovingBorder duration={duration} rx="30%" ry="30%">
@@ -109,7 +109,7 @@ export const MovingBorder = ({
       <svg
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="none"
-        className="absolute h-full w-full"
+        className="absolute h-full w-full pointer-events-none"
         width="100%"
         height="100%"
         {...otherProps}
@@ -124,6 +124,7 @@ export const MovingBorder = ({
         />
       </svg>
       <motion.div
+        className="pointer-events-none"
         style={{
           position: "absolute",
           top: 0,

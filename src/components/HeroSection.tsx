@@ -217,9 +217,9 @@ const HeroSection = () => {
         </div>
 
         {/* Main Content Area - 10X + Person Image Overlapped */}
-        <div className="relative flex justify-center items-center min-h-[400px] sm:min-h-[450px] md:min-h-[550px] lg:min-h-[600px] mt-8 md:mt-12 lg:mt-16">
+        <div className="relative flex justify-center items-center min-h-[400px] sm:min-h-[450px] md:min-h-[550px] lg:min-h-[600px] mt-8 md:mt-12 lg:mt-16 pointer-events-none">
           {/* 10X Text - Positioned to overlap with person */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
             <h2 className="relative text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-black leading-none text-primary animate-[quickShake_4s_ease-in-out_infinite] before:content-['10X'] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:text-black before:animate-[blackGlitchLeft_3s_steps(2)_infinite] before:opacity-0 after:content-['10X'] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:text-black after:animate-[blackGlitchRight_3.5s_steps(2)_infinite] after:opacity-0">
               10X
             </h2>
@@ -229,14 +229,14 @@ const HeroSection = () => {
           </div>
 
           {/* Person Image - Centered, overlapping 10X */}
-          <div className="relative flex justify-center items-center w-full px-4 sm:px-0 pointer-events-none">
+          <div className="relative flex justify-center items-center w-full px-4 sm:px-0">
             {/* Person Image - Responsive Sizing */}
-            <img alt="Digital Marketing Expert" src="/lovable-uploads/018ff520-50b9-4ad3-8314-5e8b6390a523.png" className="relative z-30 w-full max-w-[300px] sm:max-w-[350px] md:max-w-[450px] lg:max-w-[500px] h-auto object-contain border-slate-50 border rounded-3xl opacity-100 pointer-events-none" />
+            <img alt="Digital Marketing Expert" src="/lovable-uploads/018ff520-50b9-4ad3-8314-5e8b6390a523.png" className="relative z-30 w-full max-w-[300px] sm:max-w-[350px] md:max-w-[450px] lg:max-w-[500px] h-auto object-contain border-slate-50 border rounded-3xl opacity-100" />
           </div>
         </div>
 
         {/* CTA Buttons */}
-        <div className="relative flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-3 md:gap-4 z-30 -mt-6 sm:-mt-8 md:-mt-12 lg:-mt-16 px-4">
+        <div className="relative flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-3 md:gap-4 z-30 -mt-6 sm:-mt-8 md:-mt-12 lg:-mt-16 px-4 pointer-events-auto">
           <MovingBorderButton
             borderRadius="0.75rem"
             containerClassName="w-full sm:w-auto min-w-[200px] md:min-w-[240px] h-12 md:h-14"
@@ -252,7 +252,7 @@ const HeroSection = () => {
         </div>
 
         {/* Founder Info - Left Side with Animated Arrow */}
-        <div className="absolute bottom-[28%] sm:bottom-[25%] left-2 sm:left-4 md:left-8 lg:left-12 flex items-center gap-1 sm:gap-2 z-40">
+        <div className="absolute bottom-[28%] sm:bottom-[25%] left-2 sm:left-4 md:left-8 lg:left-12 flex items-center gap-1 sm:gap-2 z-40 pointer-events-auto">
           {/* Connecting line to image */}
           <svg className="absolute left-full top-1/2 -translate-y-1/2 w-16 sm:w-24 md:w-32 h-1 pointer-events-none z-0" style={{
           left: 'calc(100% - 0.5rem)'
@@ -270,7 +270,7 @@ const HeroSection = () => {
         </div>
 
         {/* Testimonial Card - Bottom Right */}
-        <div className="absolute bottom-[20%] sm:bottom-[18%] right-2 sm:right-4 md:right-8 lg:right-12 bg-background/95 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-xl max-w-[110px] sm:max-w-[140px] md:max-w-[180px] border border-primary/20 z-40">
+        <div className="absolute bottom-[20%] sm:bottom-[18%] right-2 sm:right-4 md:right-8 lg:right-12 bg-background/95 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-xl max-w-[110px] sm:max-w-[140px] md:max-w-[180px] border border-primary/20 z-40 pointer-events-auto">
           {/* Connecting line to image */}
           <svg className="absolute right-full top-1/2 -translate-y-1/2 w-16 sm:w-24 md:w-32 h-1 pointer-events-none z-0" style={{
           right: 'calc(100% - 0.5rem)'
