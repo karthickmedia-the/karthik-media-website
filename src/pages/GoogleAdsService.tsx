@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { 
@@ -184,7 +183,6 @@ const GoogleAdsService = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      <Navigation />
       
       {/* Hero Section */}
       <section className="relative min-h-screen pt-32 pb-20 overflow-hidden">
