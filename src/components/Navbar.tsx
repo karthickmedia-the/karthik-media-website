@@ -23,7 +23,7 @@ const Navbar = () => {
     { name: 'About', url: '/#about' },
     { name: 'Case Studies', url: '/case-studies' },
     { name: 'Careers', url: '/careers' },
-    { name: 'Contact', url: '/#contact' },
+    { name: 'Contact', url: '/contact' },
   ];
 
   useEffect(() => {

@@ -27,8 +27,8 @@ const Footer = () => {
       links: [
         { label: "Case Studies", href: "/case-studies" },
         { label: "Careers", href: "/careers" },
-        { label: "Contact", href: "#contact" },
-        { label: "About Us", href: "#about" },
+        { label: "Contact", href: "/contact" },
+        { label: "About Us", href: "/#about" },
       ],
     },
   ];
