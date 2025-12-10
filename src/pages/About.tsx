@@ -23,11 +23,6 @@ const About = () => {
     { name: "E-commerce", icon: ShoppingCart, color: "#FF6B35" },
   ];
 
-  const majorClients = [
-    { name: "Amazon", logo: "A" },
-    { name: "CTS", logo: "CTS" },
-    { name: "HCL", logo: "HCL" },
-  ];
 
   const services = [
     { 
@@ -290,29 +285,6 @@ const About = () => {
             ))}
           </div>
 
-          {/* Major Clients */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <p className="text-gray-400 mb-8">Managed campaigns for leading companies</p>
-            <div className="flex flex-wrap justify-center gap-8">
-              {majorClients.map((client, index) => (
-                <motion.div
-                  key={client.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="w-32 h-20 bg-white/5 border border-white/20 rounded-xl flex items-center justify-center hover:border-[#C8F200]/50 transition-all"
-                >
-                  <span className="text-2xl font-black text-white/80">{client.logo}</span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </section>
 
