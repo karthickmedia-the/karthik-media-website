@@ -70,33 +70,39 @@ const Footer = () => {
             <h3 className="text-lg font-black text-foreground mb-4">SERVICES</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/services/webdesign" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/services/webdesign" className="text-muted-foreground hover:text-primary transition-colors relative group">
                   Web Design Services
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
                 </Link>
               </li>
               <li>
-                <Link to="/services/seo" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/services/seo" className="text-muted-foreground hover:text-primary transition-colors relative group">
                   SEO Services
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
                 </Link>
               </li>
               <li>
-                <Link to="/services/meta-ads" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/services/meta-ads" className="text-muted-foreground hover:text-primary transition-colors relative group">
                   Meta Ad Services
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
                 </Link>
               </li>
               <li>
-                <Link to="/services/google-ads" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/services/google-ads" className="text-muted-foreground hover:text-primary transition-colors relative group">
                   Google Ad Services
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
                 </Link>
               </li>
               <li>
-                <Link to="/services/content-creation" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/services/content-creation" className="text-muted-foreground hover:text-primary transition-colors relative group">
                   Content Creation
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
                 </Link>
               </li>
               <li>
-                <Link to="/services/funnels-automation" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/services/funnels-automation" className="text-muted-foreground hover:text-primary transition-colors relative group">
                   Funnels & Automation
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
                 </Link>
               </li>
             </ul>
