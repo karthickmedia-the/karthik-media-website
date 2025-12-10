@@ -128,21 +128,16 @@ const ContentCreationService = () => {
                 Stand out in the feed. We create scroll-stopping content that drives organic growth and supercharges your ad performance.
               </p>
 
-              <div className="flex flex-wrap gap-4">
-                <Button 
-                  size="xl" 
-                  className="bg-[#C8F200] text-black hover:bg-[#C8F200]/90 font-bold group"
-                >
-                  View Our Work
-                  <Play className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform" />
-                </Button>
-                <Button 
-                  size="xl" 
-                  variant="outline" 
-                  className="border-white/30 text-white hover:bg-white/10"
-                >
-                  Get a Quote
-                </Button>
+              <div className="flex">
+                <a href="https://topmate.io/karthik_media/1790830" target="_blank" rel="noopener noreferrer">
+                  <Button 
+                    size="xl" 
+                    className="bg-[#C8F200] text-black hover:bg-[#C8F200]/90 font-bold group"
+                  >
+                    Start Your Project
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
               </div>
             </motion.div>
 
