@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { 
   Camera, Video, Palette, TrendingUp, Instagram, Youtube, 
@@ -570,6 +571,8 @@ const ContentCreationService = () => {
           </motion.div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

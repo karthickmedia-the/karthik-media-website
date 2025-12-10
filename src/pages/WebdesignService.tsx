@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Code, Palette, Zap, Layers, Monitor, Smartphone, Globe, Sparkles, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const features = [
   {
@@ -540,6 +541,7 @@ const WebdesignService = () => {
       <ProcessSection />
       <TestimonialsSection />
       <CTASection />
+      <Footer />
     </div>
   );
 };
