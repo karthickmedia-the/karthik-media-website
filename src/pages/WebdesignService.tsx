@@ -511,11 +511,13 @@ const CTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero-primary" size="lg" className="text-lg px-10">
-              Book a Free Consultation
+            <Button variant="hero-primary" size="lg" className="text-lg px-10" asChild>
+              <a href="https://topmate.io/karthik_media/1790830" target="_blank" rel="noopener noreferrer">
+                Book a Free Consultation
+              </a>
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-10 border-primary/30 text-foreground hover:bg-primary/10">
-              View Our Work
+            <Button variant="outline" size="lg" className="text-lg px-10 border-primary/30 text-foreground hover:bg-primary/10" asChild>
+              <Link to="/case-studies">View Our Work</Link>
             </Button>
           </div>
         </motion.div>

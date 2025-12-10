@@ -238,15 +238,17 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="relative flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-3 md:gap-4 z-30 -mt-6 sm:-mt-8 md:-mt-12 lg:-mt-16 px-4 pointer-events-auto">
-          <MovingBorderButton
-            borderRadius="0.75rem"
-            containerClassName="w-full sm:w-auto min-w-[200px] md:min-w-[240px] h-12 md:h-14"
-            className="bg-red-600 text-white font-bold text-sm md:text-base hover:bg-red-500 transition-colors shadow-[0_0_20px_rgba(239,68,68,0.6),0_0_40px_rgba(239,68,68,0.4),0_0_60px_rgba(239,68,68,0.2)]"
-            borderClassName="bg-[radial-gradient(#ef4444_40%,transparent_60%)]"
-            duration={3000}
-          >
-            BOOK 1:1 CALL WITH ME
-          </MovingBorderButton>
+          <a href="https://topmate.io/karthik_media/1790830" target="_blank" rel="noopener noreferrer">
+            <MovingBorderButton
+              borderRadius="0.75rem"
+              containerClassName="w-full sm:w-auto min-w-[200px] md:min-w-[240px] h-12 md:h-14"
+              className="bg-red-600 text-white font-bold text-sm md:text-base hover:bg-red-500 transition-colors shadow-[0_0_20px_rgba(239,68,68,0.6),0_0_40px_rgba(239,68,68,0.4),0_0_60px_rgba(239,68,68,0.2)]"
+              borderClassName="bg-[radial-gradient(#ef4444_40%,transparent_60%)]"
+              duration={3000}
+            >
+              BOOK 1:1 CALL WITH ME
+            </MovingBorderButton>
+          </a>
           <Button variant="hero-secondary" size="lg" className="w-full sm:w-auto min-w-[200px] md:min-w-[240px] text-sm md:text-base" asChild>
             <Link to="/case-studies">CHECK OUR WORKS</Link>
           </Button>
