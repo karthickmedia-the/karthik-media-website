@@ -37,7 +37,7 @@ const FAQSection = () => {
   return (
     <section className="py-20 md:py-32 bg-black w-full relative overflow-hidden">
       {/* Background effects */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#C8F200]/5 via-transparent to-transparent" />
       </div>
 

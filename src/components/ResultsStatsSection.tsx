@@ -37,7 +37,7 @@ const ResultsStatsSection = () => {
   return (
     <section className="py-20 md:py-32 bg-black w-full relative overflow-hidden">
       {/* Background effects */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#C8F200]/5 via-transparent to-transparent" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:60px_60px] opacity-20" />
       </div>

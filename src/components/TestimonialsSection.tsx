@@ -83,7 +83,7 @@ const TestimonialsSection = () => {
   return (
     <section className="py-20 md:py-32 bg-black w-full relative overflow-hidden">
       {/* Animated background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#C8F200]/5 via-transparent to-transparent" />
         <motion.div
           className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#C8F200]/5 rounded-full blur-3xl"

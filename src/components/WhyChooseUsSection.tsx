@@ -38,7 +38,7 @@ const WhyChooseUsSection = () => {
   return (
     <section className="py-20 md:py-32 bg-black w-full relative overflow-hidden">
       {/* Background effects */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <motion.div
           className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#C8F200]/5 rounded-full blur-3xl"
           animate={{
