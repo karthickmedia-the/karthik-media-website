@@ -3,6 +3,7 @@ import { MovingBorderButton } from "@/components/ui/moving-border";
 import { Star, ArrowRight } from "lucide-react";
 import heroPersonImage from "@/assets/hero-person.png";
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -246,8 +247,8 @@ const HeroSection = () => {
           >
             BOOK 1:1 CALL WITH ME
           </MovingBorderButton>
-          <Button variant="hero-secondary" size="lg" className="w-full sm:w-auto min-w-[200px] md:min-w-[240px] text-sm md:text-base">
-            CHECK OUR WORKS
+          <Button variant="hero-secondary" size="lg" className="w-full sm:w-auto min-w-[200px] md:min-w-[240px] text-sm md:text-base" asChild>
+            <Link to="/case-studies">CHECK OUR WORKS</Link>
           </Button>
         </div>
 
