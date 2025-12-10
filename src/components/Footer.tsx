@@ -43,23 +43,27 @@ const Footer = () => {
             <h3 className="text-lg font-black text-foreground mb-4">QUICK LINKS</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/case-studies" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/case-studies" className="text-muted-foreground hover:text-primary transition-colors relative group">
                   Case Studies
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
                 </Link>
               </li>
               <li>
-                <Link to="/careers" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/careers" className="text-muted-foreground hover:text-primary transition-colors relative group">
                   Careers
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
                 </Link>
               </li>
               <li>
-                <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors relative group">
                   Contact
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="#about" className="text-muted-foreground hover:text-primary transition-colors relative group">
                   About Us
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
                 </a>
               </li>
             </ul>
@@ -137,11 +141,13 @@ const Footer = () => {
               © 2024 10X Growth. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors relative group">
                 Privacy Policy
+                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors relative group">
                 Terms of Service
+                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
               </a>
             </div>
           </div>
