@@ -4,32 +4,42 @@ import { Star, ArrowRight } from "lucide-react";
 import heroPersonImage from "@/assets/hero-person.png";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-
 const HeroSection = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [trails, setTrails] = useState<Array<{ x: number; y: number; id: number }>>([]);
+  const [mousePosition, setMousePosition] = useState({
+    x: 0,
+    y: 0
+  });
+  const [trails, setTrails] = useState<Array<{
+    x: number;
+    y: number;
+    id: number;
+  }>>([]);
   const sectionRef = useRef<HTMLElement>(null);
   const trailIdRef = useRef(0);
-
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (sectionRef.current) {
         const rect = sectionRef.current.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        setMousePosition({ x, y });
-        
+        setMousePosition({
+          x,
+          y
+        });
+
         // Add trail particle
         trailIdRef.current += 1;
-        setTrails(prev => [...prev.slice(-15), { x, y, id: trailIdRef.current }]);
+        setTrails(prev => [...prev.slice(-15), {
+          x,
+          y,
+          id: trailIdRef.current
+        }]);
       }
     };
-
     const section = sectionRef.current;
     if (section) {
       section.addEventListener('mousemove', handleMouseMove);
     }
-
     return () => {
       if (section) {
         section.removeEventListener('mousemove', handleMouseMove);
@@ -44,8 +54,7 @@ const HeroSection = () => {
     }, 100);
     return () => clearInterval(interval);
   }, []);
-
-    return <section ref={sectionRef} className="relative min-h-screen pb-12 bg-background overflow-hidden pt-16">
+  return <section ref={sectionRef} className="relative min-h-screen pb-12 bg-background overflow-hidden pt-16">
       {/* Futuristic Background Layers */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-zinc-900 pointer-events-none" />
       
@@ -64,30 +73,21 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(200,242,0,0.02)_50%,transparent_52%)] bg-[length:30px_30px] animate-[slideStripes_15s_linear_infinite] pointer-events-none" />
       
       {/* Cursor Glow Effect */}
-      <div 
-        className="absolute w-64 h-64 rounded-full pointer-events-none transition-all duration-100 ease-out"
-        style={{
-          left: mousePosition.x - 128,
-          top: mousePosition.y - 128,
-          background: 'radial-gradient(circle, rgba(200,242,0,0.15) 0%, rgba(200,242,0,0.05) 40%, transparent 70%)',
-          filter: 'blur(20px)',
-        }}
-      />
+      <div className="absolute w-64 h-64 rounded-full pointer-events-none transition-all duration-100 ease-out" style={{
+      left: mousePosition.x - 128,
+      top: mousePosition.y - 128,
+      background: 'radial-gradient(circle, rgba(200,242,0,0.15) 0%, rgba(200,242,0,0.05) 40%, transparent 70%)',
+      filter: 'blur(20px)'
+    }} />
       
       {/* Cursor Trail Particles */}
-      {trails.map((trail, index) => (
-        <div
-          key={trail.id}
-          className="absolute w-2 h-2 rounded-full pointer-events-none animate-[cursorTrailFade_0.8s_ease-out_forwards]"
-          style={{
-            left: trail.x - 4,
-            top: trail.y - 4,
-            backgroundColor: 'hsl(var(--primary))',
-            opacity: (index + 1) / trails.length * 0.6,
-            transform: `scale(${(index + 1) / trails.length})`,
-          }}
-        />
-      ))}
+      {trails.map((trail, index) => <div key={trail.id} className="absolute w-2 h-2 rounded-full pointer-events-none animate-[cursorTrailFade_0.8s_ease-out_forwards]" style={{
+      left: trail.x - 4,
+      top: trail.y - 4,
+      backgroundColor: 'hsl(var(--primary))',
+      opacity: (index + 1) / trails.length * 0.6,
+      transform: `scale(${(index + 1) / trails.length})`
+    }} />)}
       
       {/* Floating Orbs */}
       <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-[float_10s_ease-in-out_infinite] pointer-events-none" />
@@ -239,18 +239,12 @@ const HeroSection = () => {
         {/* CTA Buttons */}
         <div className="relative flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-3 md:gap-4 z-30 -mt-6 sm:-mt-8 md:-mt-12 lg:-mt-16 px-4 pointer-events-auto">
           <a href="https://topmate.io/karthik_media/1790830" target="_blank" rel="noopener noreferrer">
-            <MovingBorderButton
-              borderRadius="0.75rem"
-              containerClassName="w-full sm:w-auto min-w-[200px] md:min-w-[240px] h-12 md:h-14"
-              className="bg-red-600 text-white font-bold text-sm md:text-base hover:bg-red-500 transition-colors shadow-[0_0_20px_rgba(239,68,68,0.6),0_0_40px_rgba(239,68,68,0.4),0_0_60px_rgba(239,68,68,0.2)]"
-              borderClassName="bg-[radial-gradient(#ef4444_40%,transparent_60%)]"
-              duration={3000}
-            >
+            <MovingBorderButton borderRadius="0.75rem" containerClassName="w-full sm:w-auto min-w-[200px] md:min-w-[240px] h-12 md:h-14" className="bg-red-600 text-white font-bold text-sm md:text-base hover:bg-red-500 transition-colors shadow-[0_0_20px_rgba(239,68,68,0.6),0_0_40px_rgba(239,68,68,0.4),0_0_60px_rgba(239,68,68,0.2)]" borderClassName="bg-[radial-gradient(#ef4444_40%,transparent_60%)]" duration={3000}>
               BOOK 1:1 CALL WITH ME
             </MovingBorderButton>
           </a>
           <Button variant="hero-secondary" size="lg" className="w-full sm:w-auto min-w-[200px] md:min-w-[240px] text-sm md:text-base" asChild>
-            <Link to="/case-studies">Our Portfolio</Link>
+            <Link to="/case-studies">OUR PORTFOLIO   </Link>
           </Button>
         </div>
 
