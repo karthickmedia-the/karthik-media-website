@@ -250,7 +250,7 @@ const HeroSection = () => {
             </MovingBorderButton>
           </a>
           <Button variant="hero-secondary" size="lg" className="w-full sm:w-auto min-w-[200px] md:min-w-[240px] text-sm md:text-base" asChild>
-            <Link to="/case-studies">CHECK OUR WORKS</Link>
+            <Link to="/case-studies">Our Portfolio</Link>
           </Button>
         </div>
 
