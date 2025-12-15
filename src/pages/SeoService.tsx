@@ -12,7 +12,6 @@ import {
   Link2, 
   Gauge, 
   ChevronRight,
-  Star,
   Zap,
   LineChart,
   Users
@@ -88,56 +87,6 @@ const seoProcess = [
   },
 ];
 
-const testimonials = [
-  {
-    name: "Rajesh Kumar",
-    role: "CEO - TechStart Solutions",
-    review: "Our organic traffic increased by 400% within 6 months. The Karthik Media's SEO team truly understands how to rank websites in competitive niches.",
-    rating: 5,
-    initials: "RK",
-    color: "from-blue-500 to-cyan-500",
-  },
-  {
-    name: "Priya Sharma",
-    role: "Marketing Director - EduLearn Academy",
-    review: "From page 5 to position 1 for our main keywords. Their strategic approach to SEO completely transformed our online visibility.",
-    rating: 5,
-    initials: "PS",
-    color: "from-purple-500 to-pink-500",
-  },
-  {
-    name: "Mohammed Farhan",
-    role: "Founder - GreenEarth Organics",
-    review: "The local SEO work they did helped us dominate Google Maps in our city. Our store visits doubled within 3 months!",
-    rating: 5,
-    initials: "MF",
-    color: "from-green-500 to-emerald-500",
-  },
-  {
-    name: "Ananya Reddy",
-    role: "Owner - Reddy's Restaurant Chain",
-    review: "Professional, transparent, and results-driven. They explained everything in simple terms and delivered exactly what they promised.",
-    rating: 5,
-    initials: "AR",
-    color: "from-orange-500 to-red-500",
-  },
-  {
-    name: "Suresh Menon",
-    role: "Director - BuildRight Construction",
-    review: "We were skeptical about SEO, but the leads we get now from organic search have the highest conversion rate of all our channels.",
-    rating: 5,
-    initials: "SM",
-    color: "from-indigo-500 to-violet-500",
-  },
-  {
-    name: "Lakshmi Venkat",
-    role: "Founder - Ayurveda Wellness",
-    review: "Their content strategy combined with technical SEO gave us consistent growth month after month. Highly recommend their services!",
-    rating: 5,
-    initials: "LV",
-    color: "from-teal-500 to-cyan-500",
-  },
-];
 
 const DataStream = ({ delay }: { delay: number }) => (
   <motion.div
@@ -519,93 +468,6 @@ const ProcessSection = () => {
   );
 };
 
-const StarRating = ({ rating }: { rating: number }) => (
-  <div className="flex gap-1">
-    {[...Array(5)].map((_, i) => (
-      <Star
-        key={i}
-        className={`w-4 h-4 ${i < rating ? "text-primary fill-primary" : "text-muted-foreground/30"}`}
-      />
-    ))}
-  </div>
-);
-
-const TestimonialsSection = () => {
-  return (
-    <section className="relative bg-background py-24 overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
-      </div>
-
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-6xl font-black text-foreground mb-4">
-            Client <span className="text-primary">Success Stories</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Real results from real businesses who trusted us with their SEO.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group relative"
-            >
-              <div className="relative p-6 bg-card/50 border border-primary/10 rounded-2xl overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_0_30px_rgba(200,242,0,0.1)]">
-                {/* Faceless Avatar */}
-                <div className="flex items-start gap-4 mb-4">
-                  <motion.div 
-                    className={`w-14 h-14 rounded-xl bg-gradient-to-br ${testimonial.color} flex items-center justify-center flex-shrink-0`}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                  >
-                    <span className="text-white font-bold text-lg">{testimonial.initials}</span>
-                  </motion.div>
-                  <div>
-                    <h4 className="font-bold text-foreground">{testimonial.name}</h4>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                    <div className="mt-1">
-                      <StarRating rating={testimonial.rating} />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Quote */}
-                <div className="relative">
-                  <div className="absolute -top-2 -left-2 text-4xl text-primary/20 font-serif">"</div>
-                  <p className="text-muted-foreground text-sm leading-relaxed pl-4">
-                    {testimonial.review}
-                  </p>
-                </div>
-
-                {/* Decorative Elements */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/5 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity" />
-                <motion.div
-                  className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
-                  animate={{ rotate: [0, 360] }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                >
-                  <Zap className="w-4 h-4 text-primary/30" />
-                </motion.div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
 const CTASection = () => {
   return (
     <section className="relative bg-background py-24 overflow-hidden">
@@ -639,15 +501,12 @@ const CTASection = () => {
             Get a free SEO audit and discover how we can help your business achieve top rankings and drive organic growth.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://topmate.io/karthik_media/1790830" target="_blank" rel="noopener noreferrer">
             <Button variant="hero-primary" size="lg" className="text-lg px-10">
-              Get Free SEO Audit
-              <Search className="w-5 h-5 ml-2" />
+              Start Your Project
+              <ChevronRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-10 border-primary/30 text-foreground hover:bg-primary/10">
-              Schedule a Call
-            </Button>
-          </div>
+          </a>
         </motion.div>
       </div>
     </section>
@@ -662,7 +521,6 @@ const SeoService = () => {
       <StatsSection />
       <FeaturesSection />
       <ProcessSection />
-      <TestimonialsSection />
       <CTASection />
       <Footer />
     </main>
