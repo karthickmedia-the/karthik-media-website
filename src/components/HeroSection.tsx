@@ -243,8 +243,8 @@ const HeroSection = () => {
               BOOK 1:1 CALL WITH ME
             </MovingBorderButton>
           </a>
-          <Button variant="hero-secondary" size="lg" className="w-full sm:w-auto min-w-[200px] md:min-w-[240px] text-sm md:text-base" asChild>
-            <Link to="/case-studies">OUR PORTFOLIO   </Link>
+          <Button variant="hero-secondary" size="lg" className="w-full sm:w-auto min-w-[200px] md:min-w-[240px] h-12 md:h-14 text-sm md:text-base" asChild>
+            <Link to="/case-studies">OUR PORTFOLIO</Link>
           </Button>
         </div>
 
