@@ -63,7 +63,7 @@ const ResultsStatsSection = () => {
             Numbers That <span className="text-[#C8F200]">Speak</span>
           </h2>
           <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
-            Our track record of delivering exceptional results for businesses across industries.
+            Our Successful track record of delivering exceptional results for businesses across industries.
           </p>
         </motion.div>
 
