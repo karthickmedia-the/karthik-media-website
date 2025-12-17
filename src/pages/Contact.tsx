@@ -59,22 +59,19 @@ const Contact = () => {
       icon: Instagram, 
       name: "Instagram", 
       href: "https://instagram.com/thekarthikmedia",
-      color: "from-pink-500 to-purple-500",
-      followers: "10K+"
+      color: "from-pink-500 to-purple-500"
     },
     { 
       icon: Linkedin, 
       name: "LinkedIn", 
       href: "https://linkedin.com/company/thekarthikmedia",
-      color: "from-blue-500 to-blue-600",
-      followers: "5K+"
+      color: "from-blue-500 to-blue-600"
     },
     { 
       icon: Youtube, 
       name: "YouTube", 
       href: "https://youtube.com/@thekarthikmedia",
-      color: "from-red-500 to-red-600",
-      followers: "8K+"
+      color: "from-red-500 to-red-600"
     },
     { 
       icon: MessageCircle, 
@@ -356,7 +353,7 @@ const Contact = () => {
                         </div>
                         <div>
                           <p className="font-bold text-white">{social.name}</p>
-                          <p className="text-sm text-gray-400">{social.followers}</p>
+                          {social.followers && <p className="text-sm text-gray-400">{social.followers}</p>}
                         </div>
                       </div>
                     </motion.a>
