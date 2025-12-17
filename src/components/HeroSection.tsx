@@ -284,7 +284,7 @@ const HeroSection = () => {
           </p>
           <div className="flex items-center gap-1 sm:gap-2">
             <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-primary overflow-hidden flex-shrink-0">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Dr. R. Kanmani" className="w-full h-full object-cover" />
+              <img alt="Dr. R. Kanmani" className="w-full h-full object-cover" src="/lovable-uploads/4ca41282-db8e-4d80-b164-3669398869b0.png" />
             </div>
             <div>
               <p className="text-primary font-bold text-[8px] sm:text-[9px] md:text-[10px]">DR. R. KANMANI</p>
