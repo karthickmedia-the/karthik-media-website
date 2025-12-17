@@ -58,13 +58,13 @@ const Contact = () => {
     { 
       icon: Instagram, 
       name: "Instagram", 
-      href: "https://instagram.com/thekarthikmedia",
+      href: "https://www.instagram.com/karthickmedia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
       color: "from-pink-500 to-purple-500"
     },
     { 
       icon: Linkedin, 
       name: "LinkedIn", 
-      href: "https://linkedin.com/company/thekarthikmedia",
+      href: "https://www.linkedin.com/company/110543036/admin/dashboard/",
       color: "from-blue-500 to-blue-600"
     },
     { 
