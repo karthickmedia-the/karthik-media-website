@@ -1,6 +1,4 @@
-import { useRef, useState, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import DottedMap from "dotted-map";
+import { useRef, useState, useMemo, useEffect } from "react";
 
 interface MapProps {
   dots?: Array<{
@@ -18,27 +16,28 @@ export function WorldMap({
   dots = [], 
   lineColor = "#C8F200",
   showLabels = true,
-  labelClassName = "text-sm",
-  animationDuration = 2,
-  loop = true
 }: MapProps) {
-  const svgRef = useRef<SVGSVGElement>(null);
-  const [hoveredLocation, setHoveredLocation] = useState<string | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const map = useMemo(
-    () => new DottedMap({ height: 100, grid: "diagonal" }),
-    []
-  );
+  // Only render map when visible in viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1, rootMargin: "100px" }
+    );
 
-  const svgMap = useMemo(
-    () => map.getSVG({
-      radius: 0.22,
-      color: "#FFFF7F40",
-      shape: "circle",
-      backgroundColor: "black",
-    }),
-    [map]
-  );
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const projectPoint = (lat: number, lng: number) => {
     const x = (lng + 180) * (800 / 360);
@@ -55,256 +54,107 @@ export function WorldMap({
     return `M ${start.x} ${start.y} Q ${midX} ${midY} ${end.x} ${end.y}`;
   };
 
-  const staggerDelay = 0.3;
-  const totalAnimationTime = dots.length * staggerDelay + animationDuration;
-  const pauseTime = 2;
-  const fullCycleDuration = totalAnimationTime + pauseTime;
+  // Static map SVG - simplified without DottedMap library for better performance
+  const staticMapBackground = useMemo(() => {
+    return (
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: `radial-gradient(circle, ${lineColor}40 1px, transparent 1px)`,
+          backgroundSize: '12px 12px'
+        }}
+      />
+    );
+  }, [lineColor]);
 
   return (
-    <div className="w-full aspect-[2/1] md:aspect-[2.5/1] lg:aspect-[2/1] bg-black rounded-lg relative font-sans overflow-hidden">
-      <img
-        src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
-        className="h-full w-full [mask-image:linear-gradient(to_bottom,transparent,white_10%,white_90%,transparent)] pointer-events-none select-none object-cover"
-        alt="world map"
-        draggable={false}
-      />
-      <svg
-        ref={svgRef}
-        viewBox="0 0 800 400"
-        className="w-full h-full absolute inset-0 pointer-events-none select-none"
-        preserveAspectRatio="xMidYMid meet"
-      >
-        <defs>
-          <linearGradient id="path-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="white" stopOpacity="0" />
-            <stop offset="5%" stopColor={lineColor} stopOpacity="1" />
-            <stop offset="95%" stopColor={lineColor} stopOpacity="1" />
-            <stop offset="100%" stopColor="white" stopOpacity="0" />
-          </linearGradient>
-          
-          <filter id="glow">
-            <feMorphology operator="dilate" radius="0.5" />
-            <feGaussianBlur stdDeviation="1" result="coloredBlur" />
-            <feMerge>
-              <feMergeNode in="coloredBlur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
+    <div 
+      ref={containerRef}
+      className="w-full aspect-[2/1] md:aspect-[2.5/1] lg:aspect-[2/1] bg-black rounded-lg relative font-sans overflow-hidden"
+    >
+      {staticMapBackground}
+      
+      {isVisible && (
+        <svg
+          viewBox="0 0 800 400"
+          className="w-full h-full absolute inset-0 pointer-events-none select-none"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <defs>
+            <linearGradient id="path-gradient-simple" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="white" stopOpacity="0" />
+              <stop offset="5%" stopColor={lineColor} stopOpacity="1" />
+              <stop offset="95%" stopColor={lineColor} stopOpacity="1" />
+              <stop offset="100%" stopColor="white" stopOpacity="0" />
+            </linearGradient>
+          </defs>
 
-        {dots.map((dot, i) => {
-          const startPoint = projectPoint(dot.start.lat, dot.start.lng);
-          const endPoint = projectPoint(dot.end.lat, dot.end.lng);
-          
-          const startTime = (i * staggerDelay) / fullCycleDuration;
-          const endTime = (i * staggerDelay + animationDuration) / fullCycleDuration;
-          const resetTime = totalAnimationTime / fullCycleDuration;
-          
-          return (
-            <g key={`path-group-${i}`}>
-              <motion.path
-                d={createCurvedPath(startPoint, endPoint)}
-                fill="none"
-                stroke="url(#path-gradient)"
-                strokeWidth="1"
-                initial={{ pathLength: 0 }}
-                animate={loop ? {
-                  pathLength: [0, 0, 1, 1, 0],
-                } : {
-                  pathLength: 1
-                }}
-                transition={loop ? {
-                  duration: fullCycleDuration,
-                  times: [0, startTime, endTime, resetTime, 1],
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                  repeatDelay: 0,
-                } : {
-                  duration: animationDuration,
-                  delay: i * staggerDelay,
-                  ease: "easeInOut",
-                }}
-              />
-              
-              {loop && (
-                <motion.circle
+          {dots.map((dot, i) => {
+            const startPoint = projectPoint(dot.start.lat, dot.start.lng);
+            const endPoint = projectPoint(dot.end.lat, dot.end.lng);
+            
+            return (
+              <g key={`path-group-${i}`}>
+                {/* Static path */}
+                <path
+                  d={createCurvedPath(startPoint, endPoint)}
+                  fill="none"
+                  stroke="url(#path-gradient-simple)"
+                  strokeWidth="1.5"
+                  opacity="0.7"
+                />
+                
+                {/* Start point */}
+                <circle
+                  cx={startPoint.x}
+                  cy={startPoint.y}
                   r="4"
                   fill={lineColor}
-                  initial={{ offsetDistance: "0%", opacity: 0 }}
-                  animate={{
-                    offsetDistance: [null, "0%", "100%", "100%", "100%"],
-                    opacity: [0, 0, 1, 0, 0],
-                  }}
-                  transition={{
-                    duration: fullCycleDuration,
-                    times: [0, startTime, endTime, resetTime, 1],
-                    ease: "easeInOut",
-                    repeat: Infinity,
-                    repeatDelay: 0,
-                  }}
-                  style={{
-                    offsetPath: `path('${createCurvedPath(startPoint, endPoint)}')`,
-                  }}
                 />
-              )}
-            </g>
-          );
-        })}
-
-        {dots.map((dot, i) => {
-          const startPoint = projectPoint(dot.start.lat, dot.start.lng);
-          const endPoint = projectPoint(dot.end.lat, dot.end.lng);
-          
-          return (
-            <g key={`points-group-${i}`}>
-              <g key={`start-${i}`}>
-                <motion.g
-                  onHoverStart={() => setHoveredLocation(dot.start.label || `Location ${i}`)}
-                  onHoverEnd={() => setHoveredLocation(null)}
-                  className="cursor-pointer"
-                  whileHover={{ scale: 1.2 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <circle
-                    cx={startPoint.x}
-                    cy={startPoint.y}
-                    r="3"
-                    fill={lineColor}
-                    filter="url(#glow)"
-                    className="drop-shadow-lg"
-                  />
-                  <circle
-                    cx={startPoint.x}
-                    cy={startPoint.y}
-                    r="3"
-                    fill={lineColor}
-                    opacity="0.5"
-                  >
-                    <animate
-                      attributeName="r"
-                      from="3"
-                      to="12"
-                      dur="2s"
-                      begin="0s"
-                      repeatCount="indefinite"
-                    />
-                    <animate
-                      attributeName="opacity"
-                      from="0.6"
-                      to="0"
-                      dur="2s"
-                      begin="0s"
-                      repeatCount="indefinite"
-                    />
-                  </circle>
-                </motion.g>
                 
+                {/* End point */}
+                <circle
+                  cx={endPoint.x}
+                  cy={endPoint.y}
+                  r="4"
+                  fill={lineColor}
+                />
+                
+                {/* Labels */}
                 {showLabels && dot.start.label && (
-                  <motion.g
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 * i + 0.3, duration: 0.5 }}
-                    className="pointer-events-none"
+                  <foreignObject
+                    x={startPoint.x - 50}
+                    y={startPoint.y - 30}
+                    width="100"
+                    height="25"
                   >
-                    <foreignObject
-                      x={startPoint.x - 50}
-                      y={startPoint.y - 35}
-                      width="100"
-                      height="30"
-                      className="block"
-                    >
-                      <div className="flex items-center justify-center h-full">
-                        <span className="text-sm font-medium px-2 py-0.5 rounded-md bg-black/95 text-white border border-gray-700 shadow-sm">
-                          {dot.start.label}
-                        </span>
-                      </div>
-                    </foreignObject>
-                  </motion.g>
+                    <div className="flex items-center justify-center h-full">
+                      <span className="text-xs font-medium px-2 py-0.5 rounded-md bg-black/90 text-white border border-gray-700">
+                        {dot.start.label}
+                      </span>
+                    </div>
+                  </foreignObject>
                 )}
-              </g>
-              
-              <g key={`end-${i}`}>
-                <motion.g
-                  onHoverStart={() => setHoveredLocation(dot.end.label || `Destination ${i}`)}
-                  onHoverEnd={() => setHoveredLocation(null)}
-                  className="cursor-pointer"
-                  whileHover={{ scale: 1.2 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <circle
-                    cx={endPoint.x}
-                    cy={endPoint.y}
-                    r="3"
-                    fill={lineColor}
-                    filter="url(#glow)"
-                    className="drop-shadow-lg"
-                  />
-                  <circle
-                    cx={endPoint.x}
-                    cy={endPoint.y}
-                    r="3"
-                    fill={lineColor}
-                    opacity="0.5"
-                  >
-                    <animate
-                      attributeName="r"
-                      from="3"
-                      to="12"
-                      dur="2s"
-                      begin="0.5s"
-                      repeatCount="indefinite"
-                    />
-                    <animate
-                      attributeName="opacity"
-                      from="0.6"
-                      to="0"
-                      dur="2s"
-                      begin="0.5s"
-                      repeatCount="indefinite"
-                    />
-                  </circle>
-                </motion.g>
                 
                 {showLabels && dot.end.label && (
-                  <motion.g
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 * i + 0.5, duration: 0.5 }}
-                    className="pointer-events-none"
+                  <foreignObject
+                    x={endPoint.x - 50}
+                    y={endPoint.y - 30}
+                    width="100"
+                    height="25"
                   >
-                    <foreignObject
-                      x={endPoint.x - 50}
-                      y={endPoint.y - 35}
-                      width="100"
-                      height="30"
-                      className="block"
-                    >
-                      <div className="flex items-center justify-center h-full">
-                        <span className="text-sm font-medium px-2 py-0.5 rounded-md bg-black/95 text-white border border-gray-700 shadow-sm">
-                          {dot.end.label}
-                        </span>
-                      </div>
-                    </foreignObject>
-                  </motion.g>
+                    <div className="flex items-center justify-center h-full">
+                      <span className="text-xs font-medium px-2 py-0.5 rounded-md bg-black/90 text-white border border-gray-700">
+                        {dot.end.label}
+                      </span>
+                    </div>
+                  </foreignObject>
                 )}
               </g>
-            </g>
-          );
-        })}
-      </svg>
-      
-      <AnimatePresence>
-        {hoveredLocation && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            className="absolute bottom-4 left-4 bg-black/90 text-white px-3 py-2 rounded-lg text-sm font-medium backdrop-blur-sm sm:hidden border border-gray-700"
-          >
-            {hoveredLocation}
-          </motion.div>
-        )}
-      </AnimatePresence>
+            );
+          })}
+        </svg>
+      )}
     </div>
   );
 }
