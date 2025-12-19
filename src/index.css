@@ -54,230 +54,58 @@ All colors MUST be HSL.
   }
 }
 
-@keyframes slide {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 100px 100px;
-  }
-}
-
-@keyframes slideGrid {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 50px 50px;
-  }
-}
-
-@keyframes scan {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 100%;
-  }
-}
-
-@keyframes slideStripes {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 30px 30px;
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(30px, -30px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-}
-
-@keyframes ctaGlow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(200, 242, 0, 0.4), 0 0 40px rgba(200, 242, 0, 0.2);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(200, 242, 0, 0.6), 0 0 60px rgba(200, 242, 0, 0.3), 0 0 80px rgba(200, 242, 0, 0.1);
-    transform: scale(1.02);
-  }
-}
-
-@keyframes ctaShimmer {
-  0% {
-    transform: translateX(-100%) rotate(45deg);
-  }
-  100% {
-    transform: translateX(200%) rotate(45deg);
-  }
-}
-
-@keyframes radar {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes dataStream {
-  0% {
-    transform: translateY(100vh);
+/* Essential animations only - reduced for performance */
+@keyframes fade-in {
+  from {
     opacity: 0;
+    transform: translateY(10px);
   }
-  10% {
+  to {
     opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100%);
-    opacity: 0;
+    transform: translateY(0);
   }
 }
 
-@keyframes rotate {
+/* Database REST API Animation - kept for specific component */
+.database {
+  offset-anchor: 10px 0px;
+  animation: database-animation-path;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+.db-light-1 {
+  offset-path: path("M 22 10 v 15 q 0 5 5 5 h 103 q 5 0 5 5 v 25");
+}
+
+.db-light-2 {
+  offset-path: path("M 62 10 v 10 q 0 5 5 5 h 58 q 5 0 5 5 v 25");
+}
+
+.db-light-3 {
+  offset-path: path("M 105 10 v 10 q 0 5 5 5 h 15 q 5 0 5 5 v 25");
+}
+
+.db-light-4 {
+  offset-path: path("M 155 10 v 10 q 0 5 -5 5 h -15 q -5 0 -5 5 v 25");
+}
+
+.db-light-5 {
+  offset-path: path("M 198 10 v 10 q 0 5 -5 5 h -58 q -5 0 -5 5 v 25");
+}
+
+.db-light-6 {
+  offset-path: path("M 238 10 v 15 q 0 5 -5 5 h -98 q -5 0 -5 5 v 25");
+}
+
+@keyframes database-animation-path {
   0% {
-    transform: rotate(0deg);
+    offset-distance: 0%;
   }
   100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes progressCircle {
-  0%, 100% {
-    stroke-dashoffset: 314;
-  }
-  50% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes drawLine {
-  0% {
-    stroke-dashoffset: 1000;
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  50% {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes hexPulse {
-  0%, 100% {
-    opacity: 0.4;
-    stroke-width: 1;
-  }
-  50% {
-    opacity: 0.8;
-    stroke-width: 1.5;
-  }
-}
-
-@keyframes fillBar {
-  0% {
-    height: 0%;
-  }
-  50% {
-    height: 100%;
-  }
-  100% {
-    height: 100%;
-  }
-}
-
-@keyframes cursorTrailFade {
-  0% {
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0);
-  }
-}
-
-@keyframes quickShake {
-  0%, 94%, 100% {
-    transform: translate(0, 0);
-  }
-  95% {
-    transform: translate(-4px, 2px);
-  }
-  96% {
-    transform: translate(3px, -3px);
-  }
-  97% {
-    transform: translate(-2px, 1px);
-  }
-  98% {
-    transform: translate(2px, -1px);
-  }
-  99% {
-    transform: translate(-1px, 1px);
-  }
-}
-
-@keyframes blackGlitchLeft {
-  0%, 30%, 100% {
-    opacity: 0;
-    transform: translate(0, 0);
-  }
-  31% {
-    opacity: 0.7;
-    transform: translate(-6px, 3px);
-  }
-  32% {
-    opacity: 0;
-  }
-  33% {
-    opacity: 0.5;
-    transform: translate(-4px, 2px);
-  }
-  34% {
-    opacity: 0;
-  }
-}
-
-@keyframes blackGlitchRight {
-  0%, 45%, 100% {
-    opacity: 0;
-    transform: translate(0, 0);
-  }
-  46% {
-    opacity: 0.6;
-    transform: translate(5px, -2px);
-  }
-  47% {
-    opacity: 0;
-  }
-  48% {
-    opacity: 0.4;
-    transform: translate(3px, -3px);
-  }
-  49% {
-    opacity: 0;
+    offset-distance: 100%;
   }
 }
 
