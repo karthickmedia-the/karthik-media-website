@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import SEOHead from "@/components/SEOHead";
 
 // Lazy load below-the-fold components for better initial load performance
 const ResultsStatsSection = lazy(() => import("@/components/ResultsStatsSection"));
@@ -21,6 +22,12 @@ const SectionLoader = () => (
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Karthik Media - Digital Marketing Agency | 10X Growth"
+        description="Only digital marketing agency that drives your business with 10X growth. Expert strategies for content, ads, SEO, and automation."
+        canonicalUrl="/"
+        keywords="digital marketing agency, SEO services, Meta ads, Google ads, web design, content creation, marketing automation"
+      />
       <Navbar />
       <HeroSection />
       <Suspense fallback={<SectionLoader />}>

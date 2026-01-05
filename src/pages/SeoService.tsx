@@ -19,6 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const seoFeatures = [
   {
@@ -516,6 +517,12 @@ const CTASection = () => {
 const SeoService = () => {
   return (
     <main className="min-h-screen bg-background">
+      <SEOHead
+        title="SEO Services - Rank Higher on Google"
+        description="Expert SEO services that drive organic traffic and boost your search rankings. Technical SEO audit, keyword research, link building, and local SEO for measurable ROI."
+        canonicalUrl="/services/seo"
+        keywords="SEO services, search engine optimization, keyword research, link building, local SEO, technical SEO, Google ranking"
+      />
       <Navbar />
       <HeroSection />
       <StatsSection />
