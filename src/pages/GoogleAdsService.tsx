@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { 
   Search, TrendingUp, Target, BarChart3, Zap, Shield, 
@@ -184,6 +185,12 @@ const GoogleAdsService = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <SEOHead
+        title="Google Ads Management Services - PPC Advertising"
+        description="Expert Google Ads management for maximum ROI. Search ads, display ads, YouTube ads, shopping campaigns, and remarketing. Drive targeted traffic and conversions."
+        canonicalUrl="/services/google-ads"
+        keywords="Google Ads, PPC advertising, search ads, display ads, YouTube ads, Google Ads agency, pay per click"
+      />
       <Navbar />
       {/* Hero Section */}
       <section className="relative min-h-screen pt-32 pb-20 overflow-hidden">
