@@ -5,7 +5,6 @@ import { ArrowLeft, Code, Palette, Zap, Layers, Monitor, Smartphone, Globe, Spar
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SEOHead from "@/components/SEOHead";
 
 const features = [
   {
@@ -529,12 +528,6 @@ const CTASection = () => {
 const WebdesignService = () => {
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead
-        title="Web Design & Development Services"
-        description="Premium web design and development services. We create stunning, high-performance websites that transform visitors into customers. UI/UX design, custom development, and speed optimization."
-        canonicalUrl="/services/webdesign"
-        keywords="web design, website development, UI UX design, custom website, responsive design, ecommerce website"
-      />
       <Navbar />
       <HeroSection />
       <FeaturesSection />

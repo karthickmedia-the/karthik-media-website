@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SEOHead from "@/components/SEOHead";
 
 const About = () => {
   const industries = [
@@ -98,12 +97,6 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      <SEOHead
-        title="About Karthik Media - Our Story & Mission"
-        description="Learn about Karthik Media, a digital marketing agency driving 10X growth since 2020. Our journey, expertise, and passion for helping businesses succeed online."
-        canonicalUrl="/about"
-        keywords="about Karthik Media, digital marketing agency story, marketing team, our mission, Madurai marketing company"
-      />
       <Navbar />
 
       {/* Hero Section */}

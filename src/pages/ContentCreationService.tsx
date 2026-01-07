@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { 
   Camera, Video, Palette, TrendingUp, Instagram, Youtube, 
@@ -80,12 +79,6 @@ const ContentCreationService = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      <SEOHead
-        title="Content Creation Services - Video, Photography & Graphics"
-        description="Professional content creation for SMBs. Video production, photography, graphic design, and social media content that captivates audiences and drives engagement."
-        canonicalUrl="/services/content-creation"
-        keywords="content creation, video production, photography, graphic design, social media content, brand content, reels"
-      />
       <Navbar />
       
       {/* Hero Section with Visual Grid */}

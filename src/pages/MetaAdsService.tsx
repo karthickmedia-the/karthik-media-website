@@ -25,7 +25,6 @@ import {
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SEOHead from "@/components/SEOHead";
 
 const metaFeatures = [
   {
@@ -768,12 +767,6 @@ const CTASection = () => {
 const MetaAdsService = () => {
   return (
     <div className="min-h-screen bg-black">
-      <SEOHead
-        title="Meta Ads Services - Facebook & Instagram Advertising"
-        description="AI-powered Meta Ads management for Facebook and Instagram. Advantage+ campaigns, Andromeda AI targeting, Reels ads, and conversion optimization for maximum ROAS."
-        canonicalUrl="/services/meta-ads"
-        keywords="Meta ads, Facebook advertising, Instagram ads, social media marketing, Reels ads, Facebook marketing agency"
-      />
       <Navbar />
       <HeroSection />
       <StatsSection />

@@ -1,8 +1,6 @@
 import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import SEOHead from "@/components/SEOHead";
-import { Gallery6 } from "@/components/ui/gallery6";
 
 // Lazy load below-the-fold components for better initial load performance
 const ResultsStatsSection = lazy(() => import("@/components/ResultsStatsSection"));
@@ -23,55 +21,8 @@ const SectionLoader = () => (
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead
-        title="Karthik Media - Digital Marketing Agency | 10X Growth"
-        description="Only digital marketing agency that drives your business with 10X growth. Expert strategies for content, ads, SEO, and automation."
-        canonicalUrl="/"
-        keywords="digital marketing agency, SEO services, Meta ads, Google ads, web design, content creation, marketing automation"
-      />
       <Navbar />
       <HeroSection />
-      <Gallery6 
-        heading="Featured Projects"
-        demoUrl="https://karthikmedia.in/contact"
-        items={[
-          {
-            id: "item-1",
-            title: "Build Modern UIs",
-            summary: "Create stunning user interfaces with our comprehensive design system.",
-            url: "#",
-            image: "https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg",
-          },
-          {
-            id: "item-2",
-            title: "Design System Components",
-            summary: "Explore our library of customizable components built with shadcn/ui and Tailwind CSS.",
-            url: "#",
-            image: "https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg",
-          },
-          {
-            id: "item-3",
-            title: "Responsive Layouts",
-            summary: "Build websites that look great on any device with our responsive design patterns.",
-            url: "#",
-            image: "https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg",
-          },
-          {
-            id: "item-4",
-            title: "Developer Experience",
-            summary: "Streamline your workflow with our developer-friendly tools and documentation.",
-            url: "#",
-            image: "https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg",
-          },
-          {
-            id: "item-5",
-            title: "Performance First",
-            summary: "Create fast, optimized websites using our performance-focused components.",
-            url: "#",
-            image: "https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg",
-          },
-        ]}
-      />
       <Suspense fallback={<SectionLoader />}>
         <ResultsStatsSection />
       </Suspense>

@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { 
   Zap, ArrowRight, Bot, Workflow, Mail, MessageSquare,
@@ -218,12 +217,6 @@ const FunnelsAutomationService = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      <SEOHead
-        title="Sales Funnels & Marketing Automation Services"
-        description="Build high-converting sales funnels and marketing automation systems. Lead nurturing, email sequences, abandoned cart recovery, and workflow automation for maximum conversions."
-        canonicalUrl="/services/funnels-automation"
-        keywords="sales funnels, marketing automation, lead nurturing, email automation, conversion optimization, CRM automation"
-      />
       <Navbar />
       {/* Hero Section */}
       <section className="relative min-h-screen pt-32 pb-20 overflow-hidden">
