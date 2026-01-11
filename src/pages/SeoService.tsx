@@ -19,6 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const seoFeatures = [
   {
@@ -516,6 +517,11 @@ const CTASection = () => {
 const SeoService = () => {
   return (
     <main className="min-h-screen bg-background">
+      <SEO 
+        title="SEO Services | Rank Higher on Google | Karthik Media"
+        description="Dominate search rankings with data-driven SEO strategies. Technical audits, keyword research, link building, local SEO. 500+ keywords ranked, 10X traffic growth."
+        canonical="/services/seo"
+      />
       <Navbar />
       <HeroSection />
       <StatsSection />

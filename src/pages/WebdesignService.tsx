@@ -5,6 +5,7 @@ import { ArrowLeft, Code, Palette, Zap, Layers, Monitor, Smartphone, Globe, Spar
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const features = [
   {
@@ -528,6 +529,11 @@ const CTASection = () => {
 const WebdesignService = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Web Design & Development Services | Karthik Media"
+        description="Premium web design and development services. We craft stunning, high-performance websites that transform visitors into customers. UI/UX design, custom development, mobile-first."
+        canonical="/services/webdesign"
+      />
       <Navbar />
       <HeroSection />
       <FeaturesSection />

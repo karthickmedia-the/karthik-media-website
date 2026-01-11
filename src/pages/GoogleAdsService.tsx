@@ -9,6 +9,7 @@ import {
   ShoppingBag, Youtube, Globe, Layers, Settings, Users,
   Award, Clock, LineChart, PieChart, Sparkles, ChevronDown
 } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const GoogleAdsService = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -184,6 +185,11 @@ const GoogleAdsService = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <SEO 
+        title="Google Ads Management Services | PPC Advertising | Karthik Media"
+        description="Expert Google Ads management. Search, Display, Shopping, YouTube, Performance Max campaigns. 500% average ROAS, 65% lower CPA, 10M+ ad spend managed."
+        canonical="/services/google-ads"
+      />
       <Navbar />
       {/* Hero Section */}
       <section className="relative min-h-screen pt-32 pb-20 overflow-hidden">

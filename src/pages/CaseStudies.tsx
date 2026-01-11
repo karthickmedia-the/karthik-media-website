@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, TrendingUp, Users, Eye, Target, ChevronRight, Sparkles, BarChart3, Zap } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const caseStudies = [
   {
@@ -128,6 +129,11 @@ const CaseStudies = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <SEO 
+        title="Case Studies - Karthik Media | Real Results & Success Stories"
+        description="Explore our case studies showing real results: 10X growth, ₹10Cr+ revenue generated, 800K+ views, and 400+ leads. See how we drive business growth."
+        canonical="/case-studies"
+      />
       <Navbar />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden">

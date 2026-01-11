@@ -10,6 +10,7 @@ import {
   MousePointer, RefreshCw, Bell, Calendar, Database,
   Filter, Send, TrendingUp, DollarSign, Heart, Star
 } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const FunnelsAutomationService = () => {
   const [activeFunnelStage, setActiveFunnelStage] = useState(0);
@@ -217,6 +218,11 @@ const FunnelsAutomationService = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <SEO 
+        title="Funnels & Marketing Automation | Karthik Media"
+        description="Build intelligent sales funnels and marketing automations. Lead nurturing, cart recovery, onboarding. 300% conversion increase, 4.2X ROI."
+        canonical="/services/funnels-automation"
+      />
       <Navbar />
       {/* Hero Section */}
       <section className="relative min-h-screen pt-32 pb-20 overflow-hidden">
