@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -107,6 +108,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <SEO 
+        title="Contact Us - Karthik Media | Get in Touch for Digital Marketing"
+        description="Contact Karthik Media for digital marketing services. Call +91 9842041665, email info@karthikmedia.in, or visit us at HMS Colony, Madurai 625016."
+        canonical="/contact"
+      />
       <Navbar />
 
       {/* Hero Section */}

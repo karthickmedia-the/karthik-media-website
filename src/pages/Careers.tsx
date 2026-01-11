@@ -3,6 +3,7 @@ import { Briefcase, MapPin, Clock, Mail, Phone, Video, Search, Code, Users, Chev
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 interface JobPosition {
   id: number;
@@ -247,6 +248,11 @@ const JobCard = ({ job, index }: { job: JobPosition; index: number }) => {
 const Careers = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
+      <SEO 
+        title="Careers at Karthik Media | Join Our Digital Marketing Team"
+        description="Join The Karthik Media team in Madurai. Open positions for Video Editor, SEO Specialist, Web Developer, and Client Relationship Executive."
+        canonical="/careers"
+      />
       {/* Animated Background */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background to-background" />

@@ -25,6 +25,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const metaFeatures = [
   {
@@ -767,6 +768,11 @@ const CTASection = () => {
 const MetaAdsService = () => {
   return (
     <div className="min-h-screen bg-black">
+      <SEO 
+        title="Meta Ads Services | Facebook & Instagram Ads | Karthik Media"
+        description="Harness Meta's 3.2B users with AI-driven campaigns. Advantage+ campaigns, Andromeda targeting, Reels ads. 8.4X average ROAS, 65% lower CPA."
+        canonical="/services/meta-ads"
+      />
       <Navbar />
       <HeroSection />
       <StatsSection />

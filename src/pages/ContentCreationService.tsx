@@ -7,6 +7,7 @@ import {
   Facebook, Sparkles, Play, Image, Film, Megaphone, Target,
   BarChart3, Users, Zap, CheckCircle2, ArrowRight
 } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const ContentCreationService = () => {
   const contentTypes = [
@@ -79,6 +80,11 @@ const ContentCreationService = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <SEO 
+        title="Content Creation Services | Video, Photography, Design | Karthik Media"
+        description="Creative content for SMBs. Video production, photography, graphic design, motion graphics. 3X engagement increase, 150% organic reach growth."
+        canonical="/services/content-creation"
+      />
       <Navbar />
       
       {/* Hero Section with Visual Grid */}
