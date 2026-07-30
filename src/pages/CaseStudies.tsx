@@ -130,8 +130,8 @@ const CaseStudies = () => {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <SEO 
-        title="Case Studies - Karthik Media | Real Results & Success Stories"
-        description="Explore our case studies showing real results: 10X growth, ₹10Cr+ revenue generated, 800K+ views, and 400+ leads. See how we drive business growth."
+        title={"Our Work | Digital Marketing Case Studies – Karthik Media"}
+        description={"See real results Karthik Media has delivered for clients through SEO, Google Ads, and social media campaigns — Madurai's proven digital marketing partner."}
         canonical="/case-studies"
       />
       <Navbar />

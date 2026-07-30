@@ -530,8 +530,8 @@ const WebdesignService = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Web Design & Development Services | Karthik Media"
-        description="Premium web design and development services. We craft stunning, high-performance websites that transform visitors into customers. UI/UX design, custom development, mobile-first."
+        title={"Website Design & Development Madurai | Karthik Media"}
+        description={"Get a fast, SEO-friendly, conversion-focused website built by Karthik Media in Madurai. Custom web design that turns visitors into customers."}
         canonical="/services/webdesign"
       />
       <Navbar />

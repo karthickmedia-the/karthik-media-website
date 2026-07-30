@@ -23,8 +23,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO 
-        title="Karthik Media - Digital Marketing Agency | 10X Growth"
-        description="Only digital marketing agency that drives your business with 10X growth. Expert strategies for content, ads, SEO, web design, and automation in Madurai, India."
+        title={"Digital Marketing Agency in Madurai | Karthik Media – 10X Growth"}
+        description={"Karthik Media is a results-driven digital marketing agency in Madurai offering SEO, Google Ads, social media & content strategy. Get a free growth audit today."}
         canonical="/"
       />
       <Navbar />
