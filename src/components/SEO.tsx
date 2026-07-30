@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "@/lib/helmet-compat";
 
 interface SEOProps {
   title: string;
@@ -13,9 +13,9 @@ const SEO = ({
   description, 
   canonical, 
   type = "website",
-  image = "https://karthikmedia.in/lovable-uploads/018ff520-50b9-4ad3-8314-5e8b6390a523.png"
+  image = "https://karthik-media.lovable.app/lovable-uploads/018ff520-50b9-4ad3-8314-5e8b6390a523.png"
 }: SEOProps) => {
-  const siteUrl = "https://karthikmedia.in";
+  const siteUrl = "https://karthik-media.lovable.app";
   const fullUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
   
   return (
