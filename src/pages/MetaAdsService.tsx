@@ -769,8 +769,8 @@ const MetaAdsService = () => {
   return (
     <div className="min-h-screen bg-black">
       <SEO 
-        title="Meta Ads Services | Facebook & Instagram Ads | Karthik Media"
-        description="Harness Meta's 3.2B users with AI-driven campaigns. Advantage+ campaigns, Andromeda targeting, Reels ads. 8.4X average ROAS, 65% lower CPA."
+        title={"Social Media Marketing Agency in Madurai | Karthik Media"}
+        description={"Grow your brand on Instagram, Facebook & LinkedIn with Karthik Media's social media marketing services in Madurai — strategy, content & paid campaigns."}
         canonical="/services/meta-ads"
       />
       <Navbar />

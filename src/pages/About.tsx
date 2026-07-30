@@ -99,8 +99,8 @@ const About = () => {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <SEO 
-        title="About Us - Karthik Media | Digital Marketing Experts Since 2012"
-        description="Learn about The Karthik Media - 12+ years of experience helping 116+ businesses grow with result-driven digital marketing across 8+ industries."
+        title={"About Karthik Media | Digital Marketing Experts in Madurai"}
+        description={"Meet the team behind Karthik Media — a Madurai-based digital marketing agency helping brands scale with data-driven SEO, ads, and content strategies since 2012."}
         canonical="/about"
       />
       <Navbar />

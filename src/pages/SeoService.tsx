@@ -518,8 +518,8 @@ const SeoService = () => {
   return (
     <main className="min-h-screen bg-background">
       <SEO 
-        title="SEO Services | Rank Higher on Google | Karthik Media"
-        description="Dominate search rankings with data-driven SEO strategies. Technical audits, keyword research, link building, local SEO. 500+ keywords ranked, 10X traffic growth."
+        title={"SEO Company in Madurai | Rank Higher on Google | Karthik Media"}
+        description={"Boost your organic traffic with Madurai's trusted SEO experts. On-page, technical & local SEO strategies that get real, measurable ranking results."}
         canonical="/services/seo"
       />
       <Navbar />

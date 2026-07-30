@@ -5,9 +5,9 @@ import { seoHead } from "@/lib/seo-head";
 export const Route = createFileRoute("/services/webdesign")({
   head: () =>
     seoHead({
-      title: "Web Design & Development Services | Karthik Media",
+      title: "Website Design & Development Madurai | Karthik Media",
       description:
-        "Premium web design and development services. We craft stunning, high-performance websites that transform visitors into customers. UI/UX design, custom development, mobile-first.",
+        "Get a fast, SEO-friendly, conversion-focused website built by Karthik Media in Madurai. Custom web design that turns visitors into customers.",
       path: "/services/webdesign",
     }),
   component: WebdesignService,

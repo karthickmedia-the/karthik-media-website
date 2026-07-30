@@ -109,8 +109,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <SEO 
-        title="Contact Us - Karthik Media | Get in Touch for Digital Marketing"
-        description="Contact Karthik Media for digital marketing services. Call +91 9842041665, email info@karthikmedia.in, or visit us at HMS Colony, Madurai 625016."
+        title={"Contact Karthik Media | Digital Marketing Agency in Madurai"}
+        description={"Ready to grow your business online? Contact Karthik Media, Madurai's digital marketing agency, for a free consultation and custom growth strategy."}
         canonical="/contact"
       />
       <Navbar />

@@ -186,8 +186,8 @@ const GoogleAdsService = () => {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <SEO 
-        title="Google Ads Management Services | PPC Advertising | Karthik Media"
-        description="Expert Google Ads management. Search, Display, Shopping, YouTube, Performance Max campaigns. 500% average ROAS, 65% lower CPA, 10M+ ad spend managed."
+        title={"Google Ads Management Madurai | PPC Experts – Karthik Media"}
+        description={"Get more leads with expertly managed Google Ads campaigns. Karthik Media's Madurai-based PPC team maximizes ROI while cutting wasted ad spend."}
         canonical="/services/google-ads"
       />
       <Navbar />

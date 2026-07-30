@@ -81,8 +81,8 @@ const ContentCreationService = () => {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <SEO 
-        title="Content Creation Services | Video, Photography, Design | Karthik Media"
-        description="Creative content for SMBs. Video production, photography, graphic design, motion graphics. 3X engagement increase, 150% organic reach growth."
+        title={"Content Marketing Services Madurai | Karthik Media"}
+        description={"Attract and convert your audience with strategic content marketing from Karthik Media — blogs, copywriting & content strategy built to rank and convert."}
         canonical="/services/content-creation"
       />
       <Navbar />

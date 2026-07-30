@@ -5,9 +5,9 @@ import { seoHead } from "@/lib/seo-head";
 export const Route = createFileRoute("/services/seo")({
   head: () =>
     seoHead({
-      title: "SEO Services | Rank Higher on Google | Karthik Media",
+      title: "SEO Company in Madurai | Rank Higher on Google | Karthik Media",
       description:
-        "Dominate search rankings with data-driven SEO strategies. Technical audits, keyword research, link building, local SEO. 500+ keywords ranked, 10X traffic growth.",
+        "Boost your organic traffic with Madurai's trusted SEO experts. On-page, technical & local SEO strategies that get real, measurable ranking results.",
       path: "/services/seo",
     }),
   component: SeoService,

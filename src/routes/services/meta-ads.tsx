@@ -5,9 +5,9 @@ import { seoHead } from "@/lib/seo-head";
 export const Route = createFileRoute("/services/meta-ads")({
   head: () =>
     seoHead({
-      title: "Meta Ads Services | Facebook & Instagram Ads | Karthik Media",
+      title: "Social Media Marketing Agency in Madurai | Karthik Media",
       description:
-        "Harness Meta's 3.2B users with AI-driven campaigns. Advantage+ campaigns, Andromeda targeting, Reels ads. 8.4X average ROAS, 65% lower CPA.",
+        "Grow your brand on Instagram, Facebook & LinkedIn with Karthik Media's social media marketing services in Madurai — strategy, content & paid campaigns.",
       path: "/services/meta-ads",
     }),
   component: MetaAdsService,
