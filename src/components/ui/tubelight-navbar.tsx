@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { LucideIcon, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Link } from "react-router-dom"
+import { Link } from "@/lib/router-compat"
 
 interface SubItem {
   name: string

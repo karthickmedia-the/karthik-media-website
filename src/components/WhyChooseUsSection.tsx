@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Target, Zap, Users, TrendingUp, Shield, Clock } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 const reasons = [{
   icon: Target,
   title: "Data-Driven Strategy",

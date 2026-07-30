@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MovingBorderButton } from "@/components/ui/moving-border";
 import { Star, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 
 const HeroSection = () => {
   return (
