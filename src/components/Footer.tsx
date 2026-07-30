@@ -21,6 +21,7 @@ const Footer = () => {
         { label: "Google Ads Services", href: "/services/google-ads" },
         { label: "Content Creation", href: "/services/content-creation" },
         { label: "Funnels & Automation", href: "/services/funnels-automation" },
+        { label: "All Services", href: "/services" },
       ],
     },
     {
@@ -28,6 +29,8 @@ const Footer = () => {
       links: [
         { label: "About Us", href: "/about" },
         { label: "Case Studies", href: "/case-studies" },
+        { label: "Training", href: "/training" },
+        { label: "Blog", href: "/blog" },
         { label: "Careers", href: "/careers" },
         { label: "Contact", href: "/contact" },
       ],
