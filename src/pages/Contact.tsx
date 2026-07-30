@@ -218,7 +218,7 @@ const Contact = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#C8F200]/10 to-transparent rounded-3xl blur-2xl" />
               
-              <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-10">
+              <div className="relative bg-white/5 backdrop-blur-xs border border-white/10 rounded-3xl p-8 md:p-10">
                 <h2 className="text-3xl font-bold mb-2">Send us a Message</h2>
                 <p className="text-gray-400 mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
 

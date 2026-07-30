@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import { 
   ArrowLeft, 
   Search, 
@@ -233,7 +233,7 @@ const HeroSection = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 1 }}
       >
-        <div className="relative w-48 h-32 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl p-4">
+        <div className="relative w-48 h-32 bg-card/50 backdrop-blur-xs border border-primary/20 rounded-xl p-4">
           <div className="text-xs text-muted-foreground mb-2">Ranking Progress</div>
           <div className="flex items-end gap-1 h-16">
             {[40, 55, 45, 70, 65, 85, 95].map((height, i) => (

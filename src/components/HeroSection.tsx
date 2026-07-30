@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MovingBorderButton } from "@/components/ui/moving-border";
 import { Star, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 
 const HeroSection = () => {
   return (
@@ -80,7 +80,7 @@ const HeroSection = () => {
         {/* Founder Info - Left Side */}
         <div className="absolute bottom-[28%] sm:bottom-[25%] left-2 sm:left-4 md:left-8 lg:left-12 flex items-center gap-1 sm:gap-2 z-40 pointer-events-auto">
           <ArrowRight className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 text-primary" />
-          <div className="bg-background/95 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-lg border-2 border-primary/20 relative">
+          <div className="bg-background/95 backdrop-blur-xs p-2 sm:p-3 md:p-4 rounded-lg border-2 border-primary/20 relative">
             <p className="text-foreground font-bold text-[10px] sm:text-xs md:text-sm">Karthik Shanmugam</p>
             <p className="text-primary text-[8px] sm:text-[10px] md:text-xs">Founder & CEO of</p>
             <p className="text-primary text-[8px] sm:text-[10px] md:text-xs font-semibold">THE KARTHIK MEDIA</p>
@@ -88,7 +88,7 @@ const HeroSection = () => {
         </div>
 
         {/* Testimonial Card - Bottom Right */}
-        <div className="absolute bottom-[20%] sm:bottom-[18%] right-2 sm:right-4 md:right-8 lg:right-12 bg-background/95 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-xl max-w-[110px] sm:max-w-[140px] md:max-w-[180px] border border-primary/20 z-40 pointer-events-auto">
+        <div className="absolute bottom-[20%] sm:bottom-[18%] right-2 sm:right-4 md:right-8 lg:right-12 bg-background/95 backdrop-blur-xs p-2 sm:p-3 md:p-4 rounded-xl max-w-[110px] sm:max-w-[140px] md:max-w-[180px] border border-primary/20 z-40 pointer-events-auto">
           <div className="flex gap-0.5 mb-1 sm:mb-2">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 fill-primary text-primary" />

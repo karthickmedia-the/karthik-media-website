@@ -1,0 +1,32 @@
+{
+  "customizations": [
+    { "token": "--background (0 0% 0% pure black)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--foreground", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--card", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--card-foreground", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--popover", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--popover-foreground", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--primary (73 100% 60% lime)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--primary-foreground", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--secondary", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--secondary-foreground", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--muted", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--muted-foreground", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--accent", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--accent-foreground", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--destructive", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--destructive-foreground", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--border", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--input", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--ring", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--radius (1rem)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--hero-accent", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--hero-glow", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "color-hero-accent / color-hero-glow utility mapping (tailwind.config.ts hero colors)", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "container config (center, 2rem padding, 1400px)", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "accordion-down/up keyframes + animations", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "Montserrat body font-family", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "fade-in keyframes", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": ".database / .db-light-1..6 offset-path animation block", "source": "src/index.css", "reappliedIn": "src/styles.css" }
+  ]
+}

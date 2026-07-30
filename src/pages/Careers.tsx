@@ -135,7 +135,7 @@ const JobCard = ({ job, index }: { job: JobPosition; index: number }) => {
     >
       <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
-      <div className="relative bg-background/50 backdrop-blur-sm border border-primary/20 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300">
+      <div className="relative bg-background/50 backdrop-blur-xs border border-primary/20 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300">
         {/* Header */}
         <div 
           className="p-6 cursor-pointer"
@@ -320,7 +320,7 @@ const Careers = () => {
               { value: "4", label: "Open Positions" },
               { value: "100%", label: "Growth Focus" },
             ].map((stat, i) => (
-              <div key={i} className="text-center p-6 bg-background/50 backdrop-blur-sm border border-primary/20 rounded-2xl">
+              <div key={i} className="text-center p-6 bg-background/50 backdrop-blur-xs border border-primary/20 rounded-2xl">
                 <div className="text-3xl font-black text-primary mb-1">{stat.value}</div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
               </div>

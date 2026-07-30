@@ -47,7 +47,7 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: typeof testimoni
     viewport={{ once: true }}
     className="relative group"
   >
-    <div className="bg-gradient-to-br from-zinc-900/80 to-zinc-950/80 backdrop-blur-sm border border-zinc-800/50 rounded-2xl p-6 h-full transition-all duration-500 hover:border-[#C8F200]/40 hover:shadow-[0_0_30px_rgba(200,242,0,0.1)]">
+    <div className="bg-gradient-to-br from-zinc-900/80 to-zinc-950/80 backdrop-blur-xs border border-zinc-800/50 rounded-2xl p-6 h-full transition-all duration-500 hover:border-[#C8F200]/40 hover:shadow-[0_0_30px_rgba(200,242,0,0.1)]">
       {/* Star rating */}
       <div className="flex items-center gap-1 mb-4">
         {[...Array(5)].map((_, i) => (

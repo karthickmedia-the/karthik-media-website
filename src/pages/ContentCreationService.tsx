@@ -370,7 +370,7 @@ const ContentCreationService = () => {
             {results.map((result, index) => (
               <motion.div
                 key={index}
-                className="text-center p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl"
+                className="text-center p-8 bg-white/5 backdrop-blur-xs border border-white/10 rounded-2xl"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}

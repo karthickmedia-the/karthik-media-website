@@ -72,7 +72,7 @@ const FAQSection = () => {
         once: true
       }}>
           <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => <AccordionItem key={index} value={`item-${index}`} className="bg-gradient-to-br from-zinc-900/80 to-zinc-950/80 backdrop-blur-sm border border-zinc-800/50 rounded-xl px-6 data-[state=open]:border-[#C8F200]/30 transition-all duration-300">
+            {faqs.map((faq, index) => <AccordionItem key={index} value={`item-${index}`} className="bg-gradient-to-br from-zinc-900/80 to-zinc-950/80 backdrop-blur-xs border border-zinc-800/50 rounded-xl px-6 data-[state=open]:border-[#C8F200]/30 transition-all duration-300">
                 <AccordionTrigger className="text-white text-left hover:text-[#C8F200] hover:no-underline py-5 text-base md:text-lg font-medium">
                   {faq.question}
                 </AccordionTrigger>
