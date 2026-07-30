@@ -147,7 +147,7 @@ const DatabaseWithRestApi = ({
       </svg>
       {/* Main Box */}
       <div className="absolute bottom-10 md:bottom-16 flex w-full flex-col items-center px-4 pointer-events-none">
-        {/* bottom shadow */}
+        {/* bottom shadow-sm */}
         <div className="absolute -bottom-4 h-[150px] md:h-[200px] w-[62%] rounded-xl bg-accent/30 pointer-events-none" />
         {/* box title */}
         <div className="absolute -top-4 md:-top-6 z-20 flex items-center justify-center rounded-xl border bg-[#101112] px-4 py-2 md:px-6 md:py-3">

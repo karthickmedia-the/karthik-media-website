@@ -324,7 +324,7 @@ const FunnelsAutomationService = () => {
               {stats.map((stat, index) => (
                 <div 
                   key={index}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center"
+                  className="bg-white/5 backdrop-blur-xs border border-white/10 rounded-2xl p-6 text-center"
                 >
                   <p className="text-3xl md:text-4xl font-black text-[#C8F200] mb-1">{stat.value}</p>
                   <p className="text-gray-400 text-sm">{stat.label}</p>

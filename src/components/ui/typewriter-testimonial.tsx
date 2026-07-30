@@ -118,7 +118,7 @@ export const TypewriterTestimonial: React.FC<ComponentProps> = ({ testimonials }
                 animate={{ opacity: 1, scale: 1, y: -20 }}
                 exit={{ opacity: 0, scale: 0.8, y: -10 }}
                 transition={{ duration: 0.4 }}
-                className="absolute bottom-20 bg-black/95 text-white text-sm px-4 py-3 rounded-lg shadow-2xl max-w-xs w-56 border border-[#C8F200]/30 backdrop-blur-sm z-50"
+                className="absolute bottom-20 bg-black/95 text-white text-sm px-4 py-3 rounded-lg shadow-2xl max-w-xs w-56 border border-[#C8F200]/30 backdrop-blur-xs z-50"
               >
                 <div className="h-24 overflow-hidden whitespace-pre-wrap text-gray-300">
                   {typedText}

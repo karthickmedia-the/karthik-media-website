@@ -287,7 +287,7 @@ const GoogleAdsService = () => {
               {stats.map((stat, index) => (
                 <div 
                   key={index}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center"
+                  className="bg-white/5 backdrop-blur-xs border border-white/10 rounded-2xl p-6 text-center"
                 >
                   <stat.icon className="w-8 h-8 text-[#C8F200] mx-auto mb-3" />
                   <p className="text-3xl md:text-4xl font-black text-white mb-1">{stat.value}</p>
@@ -345,7 +345,7 @@ const GoogleAdsService = () => {
                   {/* Mock Search Result */}
                   <div className="bg-white rounded-xl p-4">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded">Ad</span>
+                      <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-sm">Ad</span>
                       <span className="text-green-600 text-sm">www.yourbusiness.com</span>
                     </div>
                     <h4 className="text-blue-600 text-lg font-medium mb-1 hover:underline cursor-pointer">

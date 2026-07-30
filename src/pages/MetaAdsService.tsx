@@ -302,7 +302,7 @@ const HeroSection = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 1 }}
       >
-        <div className="relative w-56 h-36 bg-zinc-900/80 backdrop-blur-sm border border-[#C8F200]/20 rounded-xl p-4">
+        <div className="relative w-56 h-36 bg-zinc-900/80 backdrop-blur-xs border border-[#C8F200]/20 rounded-xl p-4">
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs text-white/50">Live Campaign</span>
             <span className="flex items-center gap-1">

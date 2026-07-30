@@ -76,7 +76,7 @@ const ResultsStatsSection = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="relative group">
-              <div className="bg-gradient-to-br from-zinc-900/80 to-zinc-950/80 backdrop-blur-sm border border-zinc-800/50 rounded-2xl p-6 md:p-8 text-center transition-all duration-300 hover:border-[#C8F200]/40 hover:shadow-[0_0_30px_rgba(200,242,0,0.1)]">
+              <div className="bg-gradient-to-br from-zinc-900/80 to-zinc-950/80 backdrop-blur-xs border border-zinc-800/50 rounded-2xl p-6 md:p-8 text-center transition-all duration-300 hover:border-[#C8F200]/40 hover:shadow-[0_0_30px_rgba(200,242,0,0.1)]">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 <p className="text-white font-semibold text-lg mt-4">{stat.label}</p>
                 <p className="text-gray-500 text-sm mt-1">{stat.description}</p>

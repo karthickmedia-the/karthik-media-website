@@ -428,7 +428,7 @@ function StatCounter({
     }
   }, [isInView, value, springValue, hasAnimated]);
   const displayValue = useTransform(springValue, latest => Math.floor(latest));
-  return <motion.div className="bg-card/50 backdrop-blur-sm p-6 rounded-xl flex flex-col items-center text-center group hover:bg-card border border-border transition-colors duration-300" variants={{
+  return <motion.div className="bg-card/50 backdrop-blur-xs p-6 rounded-xl flex flex-col items-center text-center group hover:bg-card border border-border transition-colors duration-300" variants={{
     hidden: {
       opacity: 0,
       y: 20

@@ -109,7 +109,7 @@ const WhyChooseUsSection = () => {
           }} viewport={{
             once: true
           }} className="group">
-                <div className="bg-gradient-to-br from-zinc-900/60 to-zinc-950/60 backdrop-blur-sm border border-zinc-800/50 rounded-xl p-5 h-full transition-all duration-500 hover:border-[#C8F200]/30 hover:bg-zinc-900/80">
+                <div className="bg-gradient-to-br from-zinc-900/60 to-zinc-950/60 backdrop-blur-xs border border-zinc-800/50 rounded-xl p-5 h-full transition-all duration-500 hover:border-[#C8F200]/30 hover:bg-zinc-900/80">
                   <div className="w-10 h-10 rounded-lg bg-[#C8F200]/10 flex items-center justify-center mb-4 group-hover:bg-[#C8F200]/20 transition-colors">
                     <reason.icon className="w-5 h-5 text-[#C8F200]" />
                   </div>
