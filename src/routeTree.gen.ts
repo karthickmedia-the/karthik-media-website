@@ -11,9 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as TrainingRouteImport } from './routes/training'
+import { Route as ServicesIndexRouteImport } from './routes/services/index'
 import { Route as ServicesContentCreationRouteImport } from './routes/services/content-creation'
 import { Route as ServicesFunnelsAutomationRouteImport } from './routes/services/funnels-automation'
 import { Route as ServicesGoogleAdsRouteImport } from './routes/services/google-ads'
@@ -31,6 +34,11 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CareersRoute = CareersRouteImport.update({
   id: '/careers',
   path: '/careers',
@@ -44,6 +52,16 @@ const CaseStudiesRoute = CaseStudiesRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrainingRoute = TrainingRouteImport.update({
+  id: '/training',
+  path: '/training',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesContentCreationRoute = ServicesContentCreationRouteImport.update({
@@ -81,97 +99,118 @@ const ServicesWebdesignRoute = ServicesWebdesignRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/blog': typeof BlogRoute
   '/careers': typeof CareersRoute
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/training': typeof TrainingRoute
   '/services/content-creation': typeof ServicesContentCreationRoute
   '/services/funnels-automation': typeof ServicesFunnelsAutomationRoute
   '/services/google-ads': typeof ServicesGoogleAdsRoute
   '/services/meta-ads': typeof ServicesMetaAdsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/webdesign': typeof ServicesWebdesignRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/blog': typeof BlogRoute
   '/careers': typeof CareersRoute
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/training': typeof TrainingRoute
   '/services/content-creation': typeof ServicesContentCreationRoute
   '/services/funnels-automation': typeof ServicesFunnelsAutomationRoute
   '/services/google-ads': typeof ServicesGoogleAdsRoute
   '/services/meta-ads': typeof ServicesMetaAdsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/webdesign': typeof ServicesWebdesignRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/blog': typeof BlogRoute
   '/careers': typeof CareersRoute
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/training': typeof TrainingRoute
   '/services/content-creation': typeof ServicesContentCreationRoute
   '/services/funnels-automation': typeof ServicesFunnelsAutomationRoute
   '/services/google-ads': typeof ServicesGoogleAdsRoute
   '/services/meta-ads': typeof ServicesMetaAdsRoute
   '/services/seo': typeof ServicesSeoRoute
   '/services/webdesign': typeof ServicesWebdesignRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/blog'
     | '/careers'
     | '/case-studies'
     | '/contact'
+    | '/training'
     | '/services/content-creation'
     | '/services/funnels-automation'
     | '/services/google-ads'
     | '/services/meta-ads'
     | '/services/seo'
     | '/services/webdesign'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/blog'
     | '/careers'
     | '/case-studies'
     | '/contact'
+    | '/training'
     | '/services/content-creation'
     | '/services/funnels-automation'
     | '/services/google-ads'
     | '/services/meta-ads'
     | '/services/seo'
     | '/services/webdesign'
+    | '/services'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/blog'
     | '/careers'
     | '/case-studies'
     | '/contact'
+    | '/training'
     | '/services/content-creation'
     | '/services/funnels-automation'
     | '/services/google-ads'
     | '/services/meta-ads'
     | '/services/seo'
     | '/services/webdesign'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BlogRoute: typeof BlogRoute
   CareersRoute: typeof CareersRoute
   CaseStudiesRoute: typeof CaseStudiesRoute
   ContactRoute: typeof ContactRoute
+  TrainingRoute: typeof TrainingRoute
   ServicesContentCreationRoute: typeof ServicesContentCreationRoute
   ServicesFunnelsAutomationRoute: typeof ServicesFunnelsAutomationRoute
   ServicesGoogleAdsRoute: typeof ServicesGoogleAdsRoute
   ServicesMetaAdsRoute: typeof ServicesMetaAdsRoute
   ServicesSeoRoute: typeof ServicesSeoRoute
   ServicesWebdesignRoute: typeof ServicesWebdesignRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -188,6 +227,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/careers': {
@@ -209,6 +255,20 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/training': {
+      id: '/training'
+      path: '/training'
+      fullPath: '/training'
+      preLoaderRoute: typeof TrainingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/content-creation': {
@@ -259,26 +319,19 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BlogRoute: BlogRoute,
   CareersRoute: CareersRoute,
   CaseStudiesRoute: CaseStudiesRoute,
   ContactRoute: ContactRoute,
+  TrainingRoute: TrainingRoute,
   ServicesContentCreationRoute: ServicesContentCreationRoute,
   ServicesFunnelsAutomationRoute: ServicesFunnelsAutomationRoute,
   ServicesGoogleAdsRoute: ServicesGoogleAdsRoute,
   ServicesMetaAdsRoute: ServicesMetaAdsRoute,
   ServicesSeoRoute: ServicesSeoRoute,
   ServicesWebdesignRoute: ServicesWebdesignRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

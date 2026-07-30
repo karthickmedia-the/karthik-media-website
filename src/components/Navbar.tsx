@@ -9,6 +9,9 @@ const Navbar = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
   const location = useLocation();
   const services = [{
+    name: 'All Services',
+    url: '/services'
+  }, {
     name: 'Web Design',
     url: '/services/webdesign'
   }, {
@@ -33,6 +36,12 @@ const Navbar = () => {
   }, {
     name: 'Case Studies',
     url: '/case-studies'
+  }, {
+    name: 'Training',
+    url: '/training'
+  }, {
+    name: 'Blog',
+    url: '/blog'
   }, {
     name: 'Careers',
     url: '/careers'
