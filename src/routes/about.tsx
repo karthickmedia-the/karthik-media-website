@@ -5,9 +5,9 @@ import { seoHead } from "@/lib/seo-head";
 export const Route = createFileRoute("/about")({
   head: () =>
     seoHead({
-      title: "About Us - Karthik Media | Digital Marketing Experts Since 2012",
+      title: "About Karthik Media | Digital Marketing Experts in Madurai",
       description:
-        "Learn about The Karthik Media - 12+ years of experience helping 116+ businesses grow with result-driven digital marketing across 8+ industries.",
+        "Meet the team behind Karthik Media — a Madurai-based digital marketing agency helping brands scale with data-driven SEO, ads, and content strategies since 2012.",
       path: "/about",
     }),
   component: About,

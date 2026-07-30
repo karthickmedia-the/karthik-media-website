@@ -5,9 +5,9 @@ import { seoHead } from "@/lib/seo-head";
 export const Route = createFileRoute("/services/google-ads")({
   head: () =>
     seoHead({
-      title: "Google Ads Management Services | PPC Advertising | Karthik Media",
+      title: "Google Ads Management Madurai | PPC Experts – Karthik Media",
       description:
-        "Expert Google Ads management. Search, Display, Shopping, YouTube, Performance Max campaigns. 500% average ROAS, 65% lower CPA, 10M+ ad spend managed.",
+        "Get more leads with expertly managed Google Ads campaigns. Karthik Media's Madurai-based PPC team maximizes ROI while cutting wasted ad spend.",
       path: "/services/google-ads",
     }),
   component: GoogleAdsService,

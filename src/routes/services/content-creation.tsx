@@ -5,9 +5,9 @@ import { seoHead } from "@/lib/seo-head";
 export const Route = createFileRoute("/services/content-creation")({
   head: () =>
     seoHead({
-      title: "Content Creation Services | Video, Photography, Design | Karthik Media",
+      title: "Content Marketing Services Madurai | Karthik Media",
       description:
-        "Creative content for SMBs. Video production, photography, graphic design, motion graphics. 3X engagement increase, 150% organic reach growth.",
+        "Attract and convert your audience with strategic content marketing from Karthik Media — blogs, copywriting & content strategy built to rank and convert.",
       path: "/services/content-creation",
     }),
   component: ContentCreationService,
