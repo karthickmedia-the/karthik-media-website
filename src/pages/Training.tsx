@@ -86,7 +86,7 @@ const Training = () => {
               their own campaigns, and working professionals adding digital skills.
             </p>
             <p className="mt-6 text-muted-foreground">
-              Training happens at our Madurai office — No 193, 1st floor, South Masi Street.
+              Training happens at our Madurai office — First Floor, Lavanya Complex, Plot No 1, Theni Rd, Gnyanam Nagar, Achampattu.
               Talk to us to check the next batch date.
             </p>
           </div>

@@ -42,9 +42,9 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Visit Us",
-      value: "HMS Colony, Madurai 625016",
-      href: "https://maps.google.com/?q=HMS+Colony,+Madurai,+Tamil+Nadu,+India",
-      description: "46/6, Sekar Flour Mill Compound"
+      value: "Achampattu, Madurai 625019",
+      href: "https://maps.google.com/?q=First+Floor,+Lavanya+Complex,+Plot+No+1,+Theni+Rd,+Gnyanam+Nagar,+Achampattu,+Madurai,+Tamil+Nadu+625019",
+      description: "First Floor, Lavanya Complex, Plot No 1, Theni Rd"
     },
     {
       icon: Clock,
@@ -402,14 +402,14 @@ const Contact = () => {
           >
             <div className="aspect-[21/9] bg-white/5">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.5!2d78.1!3d9.93!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c5eb08f18fe5%3A0x8b8b8b8b8b8b8b8b!2sHMS%20Colony%2C%20Madurai%2C%20Tamil%20Nadu%20625016!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.5!2d78.1!3d9.93!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwNTYnMDAuMCJOIDc4wrAwNycwMC4wIkU!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg)' }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="The Karthik Media Location - HMS Colony, Madurai"
+                title="The Karthik Media Location - Achampattu, Madurai"
               />
             </div>
             
@@ -417,12 +417,13 @@ const Contact = () => {
             <div className="absolute bottom-6 left-6 bg-black/90 backdrop-blur-xl border border-[#C8F200]/30 rounded-2xl p-6 max-w-sm">
               <h4 className="font-bold text-lg text-white mb-2">The Karthik Media</h4>
               <p className="text-gray-400 text-sm mb-4">
-                46/6, Sekar Flour Mill Compound,<br />
-                HMS Colony 1st Street,<br />
-                Madurai, Tamil Nadu 625016
+                First Floor, Lavanya Complex,<br />
+                Plot No 1, Theni Rd,<br />
+                Gnyanam Nagar, Achampattu,<br />
+                Madurai, Tamil Nadu 625019
               </p>
               <a
-                href="https://maps.google.com/?q=HMS+Colony,+Madurai,+Tamil+Nadu,+India"
+                href="https://maps.google.com/?q=First+Floor,+Lavanya+Complex,+Plot+No+1,+Theni+Rd,+Gnyanam+Nagar,+Achampattu,+Madurai,+Tamil+Nadu+625019"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-[#C8F200] text-sm font-medium hover:underline"

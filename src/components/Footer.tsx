@@ -50,8 +50,8 @@ const Footer = () => {
     },
     {
       icon: <MapPin size={18} className="text-primary" />,
-      text: "46/6, HMS Colony 1st St, Madurai 625016",
-      href: "https://maps.google.com/?q=HMS+Colony,+Madurai,+Tamil+Nadu,+India",
+      text: "First Floor, Lavanya Complex, Plot No 1, Theni Rd, Gnyanam Nagar, Achampattu, Madurai 625019",
+      href: "https://maps.google.com/?q=First+Floor,+Lavanya+Complex,+Plot+No+1,+Theni+Rd,+Gnyanam+Nagar,+Achampattu,+Madurai,+Tamil+Nadu+625019",
     },
   ];
 
