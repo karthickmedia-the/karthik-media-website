@@ -30,10 +30,10 @@ const ORGANIZATION_JSONLD = JSON.stringify({
   foundingDate: "2023",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "No 193, 1st floor, South Masi Street",
+    streetAddress: "First Floor, Lavanya Complex, Plot No 1, Theni Rd, Gnyanam Nagar, Achampattu",
     addressLocality: "Madurai",
     addressRegion: "Tamil Nadu",
-    postalCode: "625001",
+    postalCode: "625019",
     addressCountry: "IN",
   },
   contactPoint: {
@@ -68,10 +68,10 @@ const LOCAL_BUSINESS_JSONLD = JSON.stringify({
   priceRange: "₹₹",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "No 193, 1st floor, South Masi Street",
+    streetAddress: "First Floor, Lavanya Complex, Plot No 1, Theni Rd, Gnyanam Nagar, Achampattu",
     addressLocality: "Madurai",
     addressRegion: "Tamil Nadu",
-    postalCode: "625001",
+    postalCode: "625019",
     addressCountry: "IN",
   },
   geo: { "@type": "GeoCoordinates", latitude: "9.9252", longitude: "78.1198" },
