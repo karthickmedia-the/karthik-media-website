@@ -13,7 +13,7 @@ import { FooterBackgroundGradient, TextHoverEffect } from "@/components/ui/hover
 const Footer = () => {
   const footerLinks = [
     {
-      title: "Services",
+      title: "Our Services",
       links: [
         { label: "Web Design Services", href: "/services/webdesign" },
         { label: "SEO Services", href: "/services/seo" },
